@@ -4,8 +4,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        'dm-sans': ['DM Sans', 'sans-serif'],
-        'cormorant-infant': ['Cormorant Infant', 'serif'],
+        dmsans: ['DM Sans', 'sans-serif'],
+        cormorant: ['Cormorant Infant', 'serif'],
         roxale: ['"Roxale Story"', 'serif'],
         'roxale-calligraphy': ['"Roxale Story Calligraphy"', 'serif'],
       },
