@@ -2,7 +2,12 @@
 export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        'dm-sans': ['DM Sans', 'sans-serif'],
+        'cormorant-infant': ['Cormorant Infant', 'serif'],
+      },
+    },
   },
   plugins: [],
 };
