@@ -2,7 +2,11 @@ import React from 'react'
 
 const App = () => {
   return (
-    <div className='font-libre text-red-500'>App</div>
+    <>
+      <h1 className="font-roxale">Regular Roxale Story</h1>
+      <h1 className="font-roxale italic">Italic Roxale Story</h1>
+      <h1 className="font-roxale-calligraphy">Roxale Story Calligraphy</h1>
+    </>
   )
 }
 
