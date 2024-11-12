@@ -6,6 +6,8 @@ export default {
       fontFamily: {
         'dm-sans': ['DM Sans', 'sans-serif'],
         'cormorant-infant': ['Cormorant Infant', 'serif'],
+        roxale: ['"Roxale Story"', 'serif'],
+        'roxale-calligraphy': ['"Roxale Story Calligraphy"', 'serif'],
       },
     },
   },
