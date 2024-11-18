@@ -71,14 +71,27 @@ const Header = () => {
     };
 
     return (
-        <header className='tracking-wide fixed w-full z-50'>
+        <header className='tracking-wide fixed w-full z-50 font-dmsans'>
             {/* Top bar */}
-            <section className='py-2 bg-primary text-white text-right px-4 flex items-center gap-4 justify-end'>
-                <FaPhone className='text-lg' />
-                <p className='text-base font-bold'>+1 (469) 995-5351</p>
-                <button className="bg-tertiary text-white uppercase font-semibold py-2 px-4 rounded-md text-sm">
-                    Check Availability
-                </button>
+            <section className='py-2 bg-primary text-white px-4'>
+                <div className='flex justify-between items-center'>
+                    {/* Left Column */}
+                    <div className='flex flex-col'>
+                        <p className='text-xs font-normal uppercase'>Now Booking Reservations for Next Season</p>
+                        <p className='text-sm uppercase font-light tracking-widest text-fifth'>Get Your Spot On The River</p>
+                    </div>
+
+                    {/* Right Column */}
+                    <div className='flex items-center gap-6'>
+                        <p className='text-base font-regular'>
+                            <FaPhone className='text-base inline-block mr-2' />
+                            +1 (469) 995-5351
+                        </p>
+                        <button className="bg-tertiary text-white uppercase font-semibold py-2 px-4 rounded-md text-sm">
+                            Check Availability
+                        </button>
+                    </div>
+                </div>
             </section>
 
             {/* Main header */}
@@ -103,7 +116,7 @@ const Header = () => {
                         </li>
                         {Object.entries(menuItems).map(([key, value]) => (
                             <li key={key} className='group static px-3'>
-                                <span className='hover:text-tertiary text-white block font-bold text-[15px] py-4 cursor-pointer'>
+                                <span className='hover:text-tertiary text-white block font-regular text-[15px] py-4 cursor-pointer'>
                                     {key}
                                 </span>
                                 {/* Full-width white background that appears on hover */}
@@ -207,7 +220,7 @@ const Header = () => {
                         <li className='px-3'>
                             <Link
                                 to="/contact"
-                                className={`block font-bold text-[15px] py-4 ${location.pathname === '/contact' ? 'text-tertiary' : 'text-white hover:text-tertiary'
+                                className={`block font-regular text-[15px] py-4 ${location.pathname === '/contact' ? 'text-tertiary' : 'text-white hover:text-tertiary'
                                     }`}
                             >
                                 Contact
