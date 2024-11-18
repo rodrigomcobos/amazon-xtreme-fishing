@@ -1,15 +1,21 @@
 import React from 'react'
+import Logo from '../../assets/logos/amazonxtremelogo.png'
+import { FaPhone } from "react-icons/fa6";
+
 
 const Header = () => {
     return (
         <header className='shadow-md font-sans tracking-wide relative z-50'>
-            <section className='py-2 bg-[#007bff] text-white text-right px-10'>
-                <p className='text-sm'><strong className="mx-3">Address:</strong>SWF New York 185669<strong className="mx-3">Contact
-                    No:</strong>1800333665</p>
+            <section className='py-2 bg-[#007bff] text-white text-right px-10 flex items-center gap-4 justify-end'>
+                <FaPhone className='text-lg' />
+                <p className='text-base font-bold'>+1 (469) 995-5351</p>
+                <button className="bg-white text-[#007bff] font-semibold py-1 px-4 border border-[#007bff] rounded-md">
+                    Check Availability
+                </button>
             </section>
 
             <div className='flex flex-wrap items-center justify-between gap-4 px-10 py-4 bg-white min-h-[70px]'>
-                <a href="#"><img src="https://readymadeui.com/readymadeui.svg" alt="logo" className='w-36' />
+                <a href="#"><img src={Logo} alt="logo" className='w-36' />
                 </a>
 
                 <div id="collapseMenu"
@@ -26,7 +32,7 @@ const Header = () => {
                     </button>
 
                     <ul
-                        className='lg:flex lg:gap-x-5 max-lg:space-y-3 max-lg:fixed max-lg:bg-white max-lg:w-1/2 max-lg:min-w-[300px] max-lg:top-0 max-lg:left-0 max-lg:p-6 max-lg:h-full max-lg:shadow-md max-lg:overflow-auto z-50'>
+                        className='lg:flex lg:gap-x-5 max-lg:space-y-3 max-lg:fixed max-lg:bg-white max-lg:w-1/2 max-lg:min-w-[300px] max-lg:top-0 max-lg:left-0 max-lg:p-6 max-lg:h-full max-lg:shadow-md max-lg:overflow-auto z-50 uppercase'>
                         <li className='mb-6 hidden max-lg:block'>
                             <a href="#"><img src="https://readymadeui.com/readymadeui.svg" alt="logo" className='w-36' />
                             </a>
@@ -36,22 +42,19 @@ const Header = () => {
                                 className='hover:text-[#007bff] text-[#007bff] block font-bold text-[15px]'>Home</a>
                         </li>
                         <li className='max-lg:border-b max-lg:py-3 px-3'><a href='#'
-                            className='hover:text-[#007bff] text-[#333] block font-bold text-[15px]'>Team</a>
-                        </li>
-                        <li className='max-lg:border-b max-lg:py-3 px-3'><a href='#'
-                            className='hover:text-[#007bff] text-[#333] block font-bold text-[15px]'>Feature</a>
-                        </li>
-                        <li className='max-lg:border-b max-lg:py-3 px-3'><a href='#'
-                            className='hover:text-[#007bff] text-[#333] block font-bold text-[15px]'>Blog</a>
-                        </li>
-                        <li className='max-lg:border-b max-lg:py-3 px-3'><a href='#'
                             className='hover:text-[#007bff] text-[#333] block font-bold text-[15px]'>About</a>
                         </li>
                         <li className='max-lg:border-b max-lg:py-3 px-3'><a href='#'
-                            className='hover:text-[#007bff] text-[#333] block font-bold text-[15px]'>Contact</a>
+                            className='hover:text-[#007bff] text-[#333] block font-bold text-[15px]'>Destinations</a>
                         </li>
                         <li className='max-lg:border-b max-lg:py-3 px-3'><a href='#'
-                            className='hover:text-[#007bff] text-[#333] block font-bold text-[15px]'>Source</a>
+                            className='hover:text-[#007bff] text-[#333] block font-bold text-[15px]'>Experience</a>
+                        </li>
+                        <li className='max-lg:border-b max-lg:py-3 px-3'><a href='#'
+                            className='hover:text-[#007bff] text-[#333] block font-bold text-[15px]'>Gallery</a>
+                        </li>
+                        <li className='max-lg:border-b max-lg:py-3 px-3'><a href='#'
+                            className='hover:text-[#007bff] text-[#333] block font-bold text-[15px]'>Contact</a>
                         </li>
                     </ul>
                 </div>
