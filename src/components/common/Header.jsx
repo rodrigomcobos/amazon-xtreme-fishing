@@ -43,25 +43,29 @@ const Header = () => {
     };
 
     return (
-        <header className='shadow-md font-sans tracking-wide relative z-50'>
+        <header className='tracking-wide relative z-50'>
             {/* Top bar */}
-            <section className='py-2 bg-[#007bff] text-white text-right px-10 flex items-center gap-4 justify-end'>
+            <section className='py-2 bg-black text-white text-right px-10 flex items-center gap-4 justify-end'>
                 <FaPhone className='text-lg' />
                 <p className='text-base font-bold'>+1 (469) 995-5351</p>
-                <button className="bg-white text-[#007bff] font-semibold py-1 px-4 border border-[#007bff] rounded-md">
+                <button className="bg-zinc-600 text-white uppercase font-semibold py-2 px-4 rounded-md text-sm">
                     Check Availability
                 </button>
             </section>
 
             {/* Main header */}
-            <div className='flex flex-wrap items-center justify-between gap-4 px-4 min-h-[70px] group/nav'>
-                <a href="#"><img src={Logo} alt="logo" className='w-36' /></a>
+            <div className='flex flex-wrap items-center justify-between gap-4 px-4 min-h-[70px] overflow-visible'>
+                <div className='relative -bottom-4'>
+                    <a href="#">
+                        <img src={Logo} alt="logo" className='w-48' />
+                    </a>
+                </div>
 
                 {/* Desktop Navigation */}
-                <div className='hidden lg:block static'>
+                <div className='hidden lg:block'>
                     <ul className='flex gap-x-5 uppercase'>
                         <li className='px-3'>
-                            <a href='#' className='hover:text-[#007bff] text-[#007bff] block font-bold text-[15px]'>
+                            <a href='#' className='hover:text-[#007bff] text-[#007bff] block font-bold text-[15px] py-6'>
                                 Home
                             </a>
                         </li>
@@ -73,47 +77,49 @@ const Header = () => {
                                 {/* Full-width white background that appears on hover */}
                                 <div className='invisible group-hover:visible opacity-0 group-hover:opacity-100 transition-all duration-300 absolute top-0 left-1/2 -translate-x-1/2 w-screen h-full bg-white -z-10' />
 
-                                {/* Dropdown content */}
-                                <div className='invisible group-hover:visible absolute left-0 top-full mt-0 w-64 bg-white shadow-lg overflow-hidden opacity-0 group-hover:opacity-100 transition-all duration-300'>
-                                    {Array.isArray(value) ? (
-                                        <ul className='py-2'>
-                                            {value.map((item, index) => (
-                                                <li key={index}>
-                                                    <a href='#' className='block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-[#007bff]'>
-                                                        {item}
-                                                    </a>
-                                                </li>
-                                            ))}
-                                        </ul>
-                                    ) : (
-                                        <ul className='py-2'>
-                                            {value.main.map((item, index) => (
-                                                <li key={index} className='group/submenu relative'>
-                                                    <a href='#' className='block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-[#007bff]'>
-                                                        {item}
-                                                        {item === 'Species' && (
-                                                            <div className='invisible group-hover/submenu:visible absolute left-full top-0 w-48 bg-white shadow-lg overflow-hidden opacity-0 group-hover/submenu:opacity-100 transition-all duration-300'>
-                                                                <ul className='py-2'>
+                                {/* Full-width dropdown content */}
+                                <div className='invisible group-hover:visible absolute left-1/2 -translate-x-1/2 top-full mt-0 w-full min-w-screen bg-white overflow-hidden opacity-0 group-hover:opacity-100 transition-all duration-300'>
+                                    <div className='container mx-auto px-4'>
+                                        {Array.isArray(value) ? (
+                                            <ul className='py-8 grid grid-cols-4 gap-4'>
+                                                {value.map((item, index) => (
+                                                    <li key={index}>
+                                                        <a href='#' className='block py-2 text-sm text-gray-700 hover:text-[#007bff]'>
+                                                            {item}
+                                                        </a>
+                                                    </li>
+                                                ))}
+                                            </ul>
+                                        ) : (
+                                            <div className='py-8'>
+                                                <ul className='grid grid-cols-4 gap-4'>
+                                                    {value.main.map((item, index) => (
+                                                        <li key={index} className='group/submenu relative'>
+                                                            <a href='#' className='block py-2 text-sm text-gray-700 hover:text-[#007bff]'>
+                                                                {item}
+                                                            </a>
+                                                            {item === 'Species' && (
+                                                                <ul className='mt-2 space-y-2'>
                                                                     {value.species.map((species, idx) => (
                                                                         <li key={idx}>
-                                                                            <a href='#' className='block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-[#007bff]'>
+                                                                            <a href='#' className='block py-1 text-sm text-gray-600 hover:text-[#007bff] pl-4'>
                                                                                 {species}
                                                                             </a>
                                                                         </li>
                                                                     ))}
                                                                 </ul>
-                                                            </div>
-                                                        )}
-                                                    </a>
-                                                </li>
-                                            ))}
-                                        </ul>
-                                    )}
+                                                            )}
+                                                        </li>
+                                                    ))}
+                                                </ul>
+                                            </div>
+                                        )}
+                                    </div>
                                 </div>
                             </li>
                         ))}
                         <li className='px-3'>
-                            <a href='#' className='hover:text-[#007bff] text-[#333] block font-bold text-[15px]'>
+                            <a href='#' className='hover:text-[#007bff] text-[#333] block font-bold text-[15px] py-6'>
                                 Contact
                             </a>
                         </li>
