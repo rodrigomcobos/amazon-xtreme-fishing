@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import Logo from '../../assets/logos/amazonxtremelogo.png';
+import Placeholder from '../../assets/images/placeholder.png';
 import { FaPhone } from "react-icons/fa6";
 
 const Header = () => {
@@ -36,22 +37,33 @@ const Header = () => {
             { name: 'Headwaters Safari Camp', path: '/headwaters-camp' },
             { name: 'Peacock Bass Expeditions', path: '/peacock-bass-expeditions' }
         ],
-        'Experience': {
-            main: [
-                { name: 'Experience The Amazon', path: '/experience' },
-                { name: 'Getting There', path: '/getting-there' },
-                { name: 'Lures & Tackle', path: '/lures-and-tackle' },
-                { name: 'Passport & Visa', path: '/passport-and-visa' },
-                { name: 'Travel Insurance', path: '/travel-insurance' },
-                { name: 'Why Us', path: '/why-us' },
-                { name: 'FAQs', path: '/faq' },
-                { name: 'Species', path: '/species' }
-            ],
-            species: [
-                { name: 'Fish Species', path: '/species' },
-                { name: 'Fish Specie...', path: '/species/peacock-bass' }
-            ]
-        },
+        'Experience': [
+            { name: 'Experience The Amazon', path: '/experience' },
+            { name: 'Getting There', path: '/getting-there' },
+            { name: 'Lures & Tackle', path: '/lures-and-tackle' },
+            { name: 'Passport & Visa', path: '/passport-and-visa' },
+            { name: 'Travel Insurance', path: '/travel-insurance' },
+            { name: 'Why Us', path: '/why-us' },
+            { name: 'FAQs', path: '/faq' },
+        ],
+        'Species': [
+            { name: 'All Fish Species', path: '/species' },
+            { name: 'Peacock Bass', path: '/species/peacock-bass' },
+            { name: 'Red Tail Catfish', path: '/species/red-tail-catfish' },
+            { name: 'Goliath Catfish', path: '/species/goliath-catfish' },
+            { name: 'Arapaima', path: '/species/arapaima' },
+            { name: 'Piranha Species', path: '/species/piranha' },
+            { name: 'Traira', path: '/species/traira' },
+            { name: 'Arowana', path: '/species/arowana' },
+            { name: 'Payara', path: '/species/payara' },
+            { name: 'Giant Oscar', path: '/species/giant-oscar' },
+            { name: 'Needle Jaw', path: '/species/needle-jaw' },
+            { name: 'Aracu', path: '/species/aracu' },
+            { name: 'Pacu', path: '/species/pacu' },
+            { name: 'Bodo', path: '/species/bodo' },
+            { name: 'Sorubim', path: '/species/sorubim' },
+            { name: 'Tambaqui', path: '/species/tambaqui' },
+        ],
         'Gallery': [
             { name: 'Pictures', path: '/pictures' },
             { name: 'Videos', path: '/videos' }
@@ -61,38 +73,37 @@ const Header = () => {
     return (
         <header className='tracking-wide fixed w-full z-50'>
             {/* Top bar */}
-            <section className='py-2 bg-black text-white text-right px-4 flex items-center gap-4 justify-end'>
+            <section className='py-2 bg-primary text-white text-right px-4 flex items-center gap-4 justify-end'>
                 <FaPhone className='text-lg' />
                 <p className='text-base font-bold'>+1 (469) 995-5351</p>
-                <button className="bg-zinc-600 text-white uppercase font-semibold py-2 px-4 rounded-md text-sm">
+                <button className="bg-tertiary text-white uppercase font-semibold py-2 px-4 rounded-md text-sm">
                     Check Availability
                 </button>
             </section>
 
             {/* Main header */}
             <div className={`flex flex-wrap items-center justify-between gap-4 px-4 min-h-[70px] overflow-visible transition-all duration-300 ${isScrolled ? 'bg-white shadow-lg' : ''}`}>
-                <div className='relative -bottom-4'>
+                <div className='relative -bottom-4 z-50'>
                     <Link to="/">
                         <img src={Logo} alt="logo" className='w-48' />
                     </Link>
                 </div>
 
                 {/* Desktop Navigation */}
-                {/* Desktop Navigation */}
                 <div className='hidden lg:block w-auto'>
                     <ul className='flex gap-x-5 uppercase'>
                         <li className='px-3'>
                             <Link
                                 to="/"
-                                className={`block font-bold text-[15px] py-4 ${location.pathname === '/' ? 'text-[#007bff]' : 'text-white hover:text-[#007bff]'
+                                className={`block font-bold text-[15px] py-4 ${location.pathname === '/' ? 'text-tertiary' : 'text-white hover:text-tertiary'
                                     }`}
                             >
                                 Home
                             </Link>
                         </li>
                         {Object.entries(menuItems).map(([key, value]) => (
-                            <li key={key} className='group static px-3'> {/* Changed from relative to static */}
-                                <span className='hover:text-[#007bff] text-white block font-bold text-[15px] py-4 cursor-pointer'>
+                            <li key={key} className='group static px-3'>
+                                <span className='hover:text-tertiary text-white block font-bold text-[15px] py-4 cursor-pointer'>
                                     {key}
                                 </span>
                                 {/* Full-width white background that appears on hover */}
@@ -102,55 +113,91 @@ const Header = () => {
                                 <div className='invisible group-hover:visible absolute left-0 right-0 top-full mt-0 w-full bg-white overflow-hidden opacity-0 group-hover:opacity-100 transition-all duration-300 border-t border-gray-100'>
                                     <div className='container mx-auto px-4'>
                                         {Array.isArray(value) ? (
-                                            <ul className='py-8 grid grid-cols-2 gap-x-12 gap-y-4 max-w-3xl mx-auto'>
-                                                {value.map((item, index) => (
-                                                    <li key={index}>
-                                                        <Link
-                                                            to={item.path}
-                                                            className={`block py-2 text-sm ${location.pathname === item.path
-                                                                    ? 'text-[#007bff]'
-                                                                    : 'text-gray-700 hover:text-[#007bff]'
-                                                                }`}
-                                                        >
-                                                            {item.name}
-                                                        </Link>
-                                                    </li>
-                                                ))}
-                                            </ul>
+                                            <div className='py-8 max-w-6xl mx-auto'>
+                                                <div className='grid grid-cols-12 gap-8'>
+                                                    {/* Image Column */}
+                                                    <div className='col-span-4'>
+                                                        <img
+                                                            src={Placeholder}
+                                                            alt="Category Image"
+                                                            className="w-full h-[200px] object-cover rounded-lg"
+                                                        />
+                                                    </div>
+
+                                                    {/* Links Section - Split into two columns */}
+                                                    <div className='col-span-8'>
+                                                        <div className='grid grid-cols-2 gap-x-12 gap-y-4 relative'>
+                                                            {/* Divider line */}
+                                                            <div className='absolute top-0 bottom-0 left-1/2 w-px bg-gray-200' />
+
+                                                            {value.map((item, index) => (
+                                                                <li key={index} className='list-none'>
+                                                                    <Link
+                                                                        to={item.path}
+                                                                        className={`block py-2 text-sm ${location.pathname === item.path
+                                                                            ? 'text-tertiary'
+                                                                            : 'text-gray-700 hover:text-tertiary'
+                                                                            }`}
+                                                                    >
+                                                                        {item.name}
+                                                                    </Link>
+                                                                </li>
+                                                            ))}
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         ) : (
-                                            <div className='py-8'>
-                                                <ul className='grid grid-cols-2 gap-x-12 gap-y-4 max-w-3xl mx-auto'>
-                                                    {value.main.map((item, index) => (
-                                                        <li key={index} className='group/submenu relative'>
-                                                            <Link
-                                                                to={item.path}
-                                                                className={`block py-2 text-sm ${location.pathname === item.path
-                                                                        ? 'text-[#007bff]'
-                                                                        : 'text-gray-700 hover:text-[#007bff]'
-                                                                    }`}
-                                                            >
-                                                                {item.name}
-                                                            </Link>
-                                                            {item.name === 'Species' && (
-                                                                <ul className='mt-2 space-y-2'>
-                                                                    {value.species.map((species, idx) => (
-                                                                        <li key={idx}>
-                                                                            <Link
-                                                                                to={species.path}
-                                                                                className={`block py-1 text-sm pl-4 ${location.pathname === species.path
-                                                                                        ? 'text-[#007bff]'
-                                                                                        : 'text-gray-600 hover:text-[#007bff]'
-                                                                                    }`}
-                                                                            >
-                                                                                {species.name}
-                                                                            </Link>
-                                                                        </li>
-                                                                    ))}
-                                                                </ul>
-                                                            )}
-                                                        </li>
-                                                    ))}
-                                                </ul>
+                                            <div className='py-8 max-w-6xl mx-auto'>
+                                                <div className='grid grid-cols-12 gap-8'>
+                                                    {/* Image Column */}
+                                                    <div className='col-span-4'>
+                                                        <img
+                                                            src={Placeholder}
+                                                            alt="Category Image"
+                                                            className="w-full h-[200px] object-cover rounded-lg"
+                                                        />
+                                                    </div>
+
+                                                    {/* Links Section - Split into two columns */}
+                                                    <div className='col-span-8'>
+                                                        <div className='grid grid-cols-2 gap-x-12 gap-y-4 relative'>
+                                                            {/* Divider line */}
+                                                            <div className='absolute top-0 bottom-0 left-1/2 w-px bg-gray-200' />
+
+                                                            {value.main.map((item, index) => (
+                                                                <li key={index} className='list-none group/submenu relative'>
+                                                                    <Link
+                                                                        to={item.path}
+                                                                        className={`block py-2 text-sm ${location.pathname === item.path
+                                                                            ? 'text-tertiary'
+                                                                            : 'text-gray-700 hover:text-tertiary'
+                                                                            }`}
+                                                                    >
+                                                                        {item.name}
+                                                                    </Link>
+                                                                    {item.name === 'Species' && (
+                                                                        <ul className='mt-2 space-y-2 pl-4'>
+                                                                            {value.species.map((species, idx) => (
+                                                                                <li key={idx}>
+                                                                                    <Link
+                                                                                        to={species.path}
+                                                                                        className={`block py-1 text-sm ${location.pathname === species.path
+                                                                                            ? 'text-tertiary'
+                                                                                            : 'text-gray-600 hover:text-tertiary'
+                                                                                            }`}
+                                                                                    >
+                                                                                        {species.name}
+                                                                                    </Link>
+                                                                                </li>
+                                                                            ))}
+                                                                        </ul>
+                                                                    )}
+                                                                </li>
+                                                            ))}
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
                                         )}
                                     </div>
@@ -160,7 +207,7 @@ const Header = () => {
                         <li className='px-3'>
                             <Link
                                 to="/contact"
-                                className={`block font-bold text-[15px] py-4 ${location.pathname === '/contact' ? 'text-[#007bff]' : 'text-white hover:text-[#007bff]'
+                                className={`block font-bold text-[15px] py-4 ${location.pathname === '/contact' ? 'text-tertiary' : 'text-white hover:text-tertiary'
                                     }`}
                             >
                                 Contact
@@ -194,7 +241,7 @@ const Header = () => {
                                 <li className='border-b'>
                                     <Link
                                         to="/"
-                                        className={`block px-4 py-2 font-bold ${location.pathname === '/' ? 'text-[#007bff]' : 'text-gray-800'
+                                        className={`block px-4 py-2 font-bold ${location.pathname === '/' ? 'text-tertiary' : 'text-gray-800'
                                             }`}
                                         onClick={() => setMobileMenuOpen(false)}
                                     >
@@ -211,7 +258,7 @@ const Header = () => {
                                                         <li key={index}>
                                                             <Link
                                                                 to={item.path}
-                                                                className={`block py-1 text-sm ${location.pathname === item.path ? 'text-[#007bff]' : 'text-gray-600 hover:text-[#007bff]'
+                                                                className={`block py-1 text-sm ${location.pathname === item.path ? 'text-tertiary' : 'text-gray-600 hover:text-tertiary'
                                                                     }`}
                                                                 onClick={() => setMobileMenuOpen(false)}
                                                             >
@@ -225,7 +272,7 @@ const Header = () => {
                                                             <li key={index}>
                                                                 <Link
                                                                     to={item.path}
-                                                                    className={`block py-1 text-sm ${location.pathname === item.path ? 'text-[#007bff]' : 'text-gray-600 hover:text-[#007bff]'
+                                                                    className={`block py-1 text-sm ${location.pathname === item.path ? 'text-tertiary' : 'text-gray-600 hover:text-tertiary'
                                                                         }`}
                                                                     onClick={() => setMobileMenuOpen(false)}
                                                                 >
@@ -237,7 +284,7 @@ const Header = () => {
                                                                             <li key={idx}>
                                                                                 <Link
                                                                                     to={species.path}
-                                                                                    className={`block py-1 text-sm ${location.pathname === species.path ? 'text-[#007bff]' : 'text-gray-600 hover:text-[#007bff]'
+                                                                                    className={`block py-1 text-sm ${location.pathname === species.path ? 'text-tertiary' : 'text-gray-600 hover:text-tertiary'
                                                                                         }`}
                                                                                     onClick={() => setMobileMenuOpen(false)}
                                                                                 >
@@ -258,7 +305,7 @@ const Header = () => {
                                 <li className='border-b'>
                                     <Link
                                         to="/contact"
-                                        className={`block px-4 py-2 font-bold ${location.pathname === '/contact' ? 'text-[#007bff]' : 'text-gray-800'
+                                        className={`block px-4 py-2 font-bold ${location.pathname === '/contact' ? 'text-tertiary' : 'text-gray-800'
                                             }`}
                                         onClick={() => setMobileMenuOpen(false)}
                                     >
