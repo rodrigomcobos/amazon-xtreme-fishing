@@ -1,44 +1,45 @@
 import React, { useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import Logo from '../../assets/logos/amazonxtremelogo.png';
 import { FaPhone } from "react-icons/fa6";
 
 const Header = () => {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+    const location = useLocation();
 
     const menuItems = {
         'About': [
-            'About Us',
-            'Welcome',
-            'Experience The Amazon',
-            'Meet Your Host',
-            'Meet Your Staff'
+            { name: 'About Us', path: '/about-us' },
+            { name: 'Welcome', path: '/welcome' },
+            { name: 'Experience The Amazon', path: '/experience-the-amazon' },
+            { name: 'Meet Your Host', path: '/meet-your-host' },
         ],
         'Destinations': [
-            'Our Destinations',
-            'The Zaltan Mothership',
-            'The Zaltan Lodge',
-            'Headwaters Safari Camp',
-            'Peacock Bass Expeditions'
+            { name: 'Our Destinations', path: '/destinations' },
+            { name: 'The Zaltan Mothership', path: '/zaltan-mothership' },
+            { name: 'The Zaltan Lodge', path: '/zaltan-lodge' },
+            { name: 'Headwaters Safari Camp', path: '/headwaters-camp' },
+            { name: 'Peacock Bass Expeditions', path: '/peacock-bass-expeditions' }
         ],
         'Experience': {
             main: [
-                'Experience The Amazon',
-                'Getting There',
-                'Lures & Tackle',
-                'Passport & Visa',
-                'Travel Insurance',
-                'Why Us',
-                'FAQs',
-                'Species'
+                { name: 'Experience The Amazon', path: '/experience' },
+                { name: 'Getting There', path: '/getting-there' },
+                { name: 'Lures & Tackle', path: '/lures-and-tackle' },
+                { name: 'Passport & Visa', path: '/passport-and-visa' },
+                { name: 'Travel Insurance', path: '/travel-insurance' },
+                { name: 'Why Us', path: '/why-us' },
+                { name: 'FAQs', path: '/faq' },
+                { name: 'Species', path: '/species' }
             ],
             species: [
-                'Fish Species',
-                'Fish Specie...'
+                { name: 'Fish Species', path: '/species' },
+                { name: 'Fish Specie...', path: '/species/peacock-bass' } // Update with actual species paths
             ]
         },
         'Gallery': [
-            'Pictures',
-            'Videos'
+            { name: 'Pictures', path: '/pictures' },
+            { name: 'Videos', path: '/videos' }
         ]
     };
 
@@ -56,24 +57,28 @@ const Header = () => {
             {/* Main header */}
             <div className='flex flex-wrap items-center justify-between gap-4 px-4 min-h-[70px] overflow-visible'>
                 <div className='relative -bottom-4'>
-                    <a href="#">
+                    <Link to="/">
                         <img src={Logo} alt="logo" className='w-48' />
-                    </a>
+                    </Link>
                 </div>
 
                 {/* Desktop Navigation */}
                 <div className='hidden lg:block'>
                     <ul className='flex gap-x-5 uppercase'>
                         <li className='px-3'>
-                            <a href='#' className='hover:text-[#007bff] text-[#007bff] block font-bold text-[15px] py-6'>
+                            <Link
+                                to="/"
+                                className={`block font-bold text-[15px] py-6 ${location.pathname === '/' ? 'text-[#007bff]' : 'text-[#333] hover:text-[#007bff]'
+                                    }`}
+                            >
                                 Home
-                            </a>
+                            </Link>
                         </li>
                         {Object.entries(menuItems).map(([key, value]) => (
                             <li key={key} className='group relative px-3'>
-                                <a href='#' className='hover:text-[#007bff] text-[#333] block font-bold text-[15px] py-6'>
+                                <span className='hover:text-[#007bff] text-[#333] block font-bold text-[15px] py-6 cursor-pointer'>
                                     {key}
-                                </a>
+                                </span>
                                 {/* Full-width white background that appears on hover */}
                                 <div className='invisible group-hover:visible opacity-0 group-hover:opacity-100 transition-all duration-300 absolute top-0 left-1/2 -translate-x-1/2 w-screen h-full bg-white -z-10' />
 
@@ -84,9 +89,13 @@ const Header = () => {
                                             <ul className='py-8 grid grid-cols-4 gap-4'>
                                                 {value.map((item, index) => (
                                                     <li key={index}>
-                                                        <a href='#' className='block py-2 text-sm text-gray-700 hover:text-[#007bff]'>
-                                                            {item}
-                                                        </a>
+                                                        <Link
+                                                            to={item.path}
+                                                            className={`block py-2 text-sm ${location.pathname === item.path ? 'text-[#007bff]' : 'text-gray-700 hover:text-[#007bff]'
+                                                                }`}
+                                                        >
+                                                            {item.name}
+                                                        </Link>
                                                     </li>
                                                 ))}
                                             </ul>
@@ -95,16 +104,24 @@ const Header = () => {
                                                 <ul className='grid grid-cols-4 gap-4'>
                                                     {value.main.map((item, index) => (
                                                         <li key={index} className='group/submenu relative'>
-                                                            <a href='#' className='block py-2 text-sm text-gray-700 hover:text-[#007bff]'>
-                                                                {item}
-                                                            </a>
-                                                            {item === 'Species' && (
+                                                            <Link
+                                                                to={item.path}
+                                                                className={`block py-2 text-sm ${location.pathname === item.path ? 'text-[#007bff]' : 'text-gray-700 hover:text-[#007bff]'
+                                                                    }`}
+                                                            >
+                                                                {item.name}
+                                                            </Link>
+                                                            {item.name === 'Species' && (
                                                                 <ul className='mt-2 space-y-2'>
                                                                     {value.species.map((species, idx) => (
                                                                         <li key={idx}>
-                                                                            <a href='#' className='block py-1 text-sm text-gray-600 hover:text-[#007bff] pl-4'>
-                                                                                {species}
-                                                                            </a>
+                                                                            <Link
+                                                                                to={species.path}
+                                                                                className={`block py-1 text-sm pl-4 ${location.pathname === species.path ? 'text-[#007bff]' : 'text-gray-600 hover:text-[#007bff]'
+                                                                                    }`}
+                                                                            >
+                                                                                {species.name}
+                                                                            </Link>
                                                                         </li>
                                                                     ))}
                                                                 </ul>
@@ -119,9 +136,13 @@ const Header = () => {
                             </li>
                         ))}
                         <li className='px-3'>
-                            <a href='#' className='hover:text-[#007bff] text-[#333] block font-bold text-[15px] py-6'>
+                            <Link
+                                to="/contact"
+                                className={`block font-bold text-[15px] py-6 ${location.pathname === '/contact' ? 'text-[#007bff]' : 'text-[#333] hover:text-[#007bff]'
+                                    }`}
+                            >
                                 Contact
-                            </a>
+                            </Link>
                         </li>
                     </ul>
                 </div>
@@ -149,7 +170,13 @@ const Header = () => {
                         <div className='bg-white w-64 h-full overflow-y-auto'>
                             <ul className='py-4'>
                                 <li className='border-b'>
-                                    <a href='#' className='block px-4 py-2 text-[#007bff] font-bold'>Home</a>
+                                    <Link
+                                        to="/"
+                                        className={`block px-4 py-2 font-bold ${location.pathname === '/' ? 'text-[#007bff]' : 'text-gray-800'}`}
+                                        onClick={() => setMobileMenuOpen(false)}
+                                    >
+                                        Home
+                                    </Link>
                                 </li>
                                 {Object.entries(menuItems).map(([key, value]) => (
                                     <li key={key} className='border-b'>
@@ -159,25 +186,46 @@ const Header = () => {
                                                 {Array.isArray(value) ? (
                                                     value.map((item, index) => (
                                                         <li key={index}>
-                                                            <a href='#' className='block py-1 text-sm text-gray-600 hover:text-[#007bff]'>
-                                                                {item}
-                                                            </a>
+                                                            <Link
+                                                                to={item.path}
+                                                                className={`block py-1 text-sm ${location.pathname === item.path
+                                                                        ? 'text-[#007bff]'
+                                                                        : 'text-gray-600 hover:text-[#007bff]'
+                                                                    }`}
+                                                                onClick={() => setMobileMenuOpen(false)}
+                                                            >
+                                                                {item.name}
+                                                            </Link>
                                                         </li>
                                                     ))
                                                 ) : (
                                                     <>
                                                         {value.main.map((item, index) => (
                                                             <li key={index}>
-                                                                <a href='#' className='block py-1 text-sm text-gray-600 hover:text-[#007bff]'>
-                                                                    {item}
-                                                                </a>
-                                                                {item === 'Species' && (
+                                                                <Link
+                                                                    to={item.path}
+                                                                    className={`block py-1 text-sm ${location.pathname === item.path
+                                                                            ? 'text-[#007bff]'
+                                                                            : 'text-gray-600 hover:text-[#007bff]'
+                                                                        }`}
+                                                                    onClick={() => setMobileMenuOpen(false)}
+                                                                >
+                                                                    {item.name}
+                                                                </Link>
+                                                                {item.name === 'Species' && (
                                                                     <ul className='ml-4 mt-1'>
                                                                         {value.species.map((species, idx) => (
                                                                             <li key={idx}>
-                                                                                <a href='#' className='block py-1 text-sm text-gray-600 hover:text-[#007bff]'>
-                                                                                    {species}
-                                                                                </a>
+                                                                                <Link
+                                                                                    to={species.path}
+                                                                                    className={`block py-1 text-sm ${location.pathname === species.path
+                                                                                            ? 'text-[#007bff]'
+                                                                                            : 'text-gray-600 hover:text-[#007bff]'
+                                                                                        }`}
+                                                                                    onClick={() => setMobileMenuOpen(false)}
+                                                                                >
+                                                                                    {species.name}
+                                                                                </Link>
                                                                             </li>
                                                                         ))}
                                                                     </ul>
@@ -191,7 +239,16 @@ const Header = () => {
                                     </li>
                                 ))}
                                 <li className='border-b'>
-                                    <a href='#' className='block px-4 py-2 text-gray-800 font-bold'>Contact</a>
+                                    <Link
+                                        to="/contact"
+                                        className={`block px-4 py-2 font-bold ${location.pathname === '/contact'
+                                                ? 'text-[#007bff]'
+                                                : 'text-gray-800'
+                                            }`}
+                                        onClick={() => setMobileMenuOpen(false)}
+                                    >
+                                        Contact
+                                    </Link>
                                 </li>
                             </ul>
                         </div>

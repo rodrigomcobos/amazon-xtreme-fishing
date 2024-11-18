@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 
 // Common Components
 import Header from './components/common/Header';
@@ -39,7 +39,7 @@ import Videos from './pages/Gallery/Videos';
 
 const App = () => {
   return (
-    <BrowserRouter>
+    <>
       <Header />
       <Routes>
         {/* Main Routes */}
@@ -78,7 +78,7 @@ const App = () => {
       </Routes>
       <Footer />
       <CookieDisclaimer />
-    </BrowserRouter>
+    </>
   );
 };
 
