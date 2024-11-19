@@ -97,7 +97,7 @@ const App = () => {
         <Route path="/videos" element={<Videos />} />
       </Routes>
       <Footer />
-      <CookieDisclaimer />
+      {/* <CookieDisclaimer /> */}
     </>
   );
 };

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import Logo from '../../assets/logos/amazonxtremelogo.png';
-import { FaPhone } from "react-icons/fa6";
+import { FaPhone, FaChevronDown, FaChevronUp, FaBars } from "react-icons/fa6";
 import PlaceholderImage from '../../assets/images/placeholder.png';
 
 const Header = () => {
@@ -95,7 +95,7 @@ const Header = () => {
     return (
         <header className='tracking-wide fixed w-full z-50 font-dmsans'>
             {/* Top bar */}
-            <section className='py-2 bg-primary text-white px-4'>
+            <section className='py-2 bg-primary text-white px-6'>
                 <div className='flex justify-between items-center'>
                     {/* Left Column */}
                     <div className='flex flex-col'>
