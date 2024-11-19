@@ -22,7 +22,7 @@ const Hero = () => {
             </video>
 
             {/* Gradient Overlays */}
-            <div className="absolute inset-0 bg-gradient-to-b from-primary/90 via-primary/50 to-primary/20" />
+            <div className="absolute inset-0 bg-gradient-to-b from-primary/85 via-primary/60 to-primary/20" />
             {/* Additional top gradient for navbar area */}
             <div className="absolute inset-0 bg-gradient-to-t from-transparent to-black/70 h-32" />
 
@@ -38,10 +38,10 @@ const Hero = () => {
                     Heart of the Amazon
                 </h1>
                 <section className="flex flex-col sm:flex-row gap-5">
-                    <button className="ring-2 ring-white text-sm hover:bg-secondary hover:ring-2 hover:ring-fifth hover:text-fifth text-white font-bold py-3 px-8 rounded-md transition duration-500 uppercase font-dmsans">
+                    <button className="ring-1 ring-white text-sm hover:bg-secondary hover:ring-1 hover:ring-fifth hover:text-fifth text-white font-bold py-3 px-8 rounded-md transition duration-500 uppercase font-dmsans">
                         Plan Your Adventure
                     </button>
-                    <button className="ring-2 ring-white text-sm hover:bg-secondary hover:ring-2 hover:ring-fifth hover:text-fifth text-white font-bold py-3 px-8 rounded-md transition duration-500 uppercase font-dmsans">
+                    <button className="ring-1 ring-white text-sm hover:bg-secondary hover:ring-1 hover:ring-fifth hover:text-fifth text-white font-bold py-3 px-8 rounded-md transition duration-500 uppercase font-dmsans">
                         Learn More About Peacock Bass
                     </button>
                 </section>

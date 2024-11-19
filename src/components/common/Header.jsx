@@ -108,7 +108,7 @@ const Header = () => {
                             +1 (469) 995-5351
                         </p>
                         <button className="bg-tertiary text-white uppercase font-semibold py-2 px-4 rounded-md text-sm hover:ring-2 hover:ring-fifth transition duration-500 hover:bg-secondary hover:text-fifth">
-                            Check Availability
+                            Book Now
                         </button>
                     </div>
                 </div>
