@@ -9,6 +9,7 @@ import CookieDisclaimer from './components/common/CookieDisclaimer';
 import Home from './pages/Home';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsAndConditions from './pages/TermsAndConditions';
+import CovidPolicy from './pages/CovidPolicy';
 import Contact from './pages/Contact';
 // About Pages
 import AboutUs from './pages/About/AboutUs';
@@ -21,6 +22,8 @@ import TheZaltanMothership from './pages/Destinations/TheZaltanMothership';
 import TheZaltanLodge from './pages/Destinations/TheZaltanLodge';
 import HeadwatersCamp from './pages/Destinations/HeadwatersCamp';
 import PeacockBassExpeditions from './pages/Destinations/PeacockBassExpeditions';
+import Xingu from './pages/Destinations/Xingu';
+import EcoLodge from './pages/Destinations/EcoLodge';
 // Experience Pages
 import Experience from './pages/Experience/Experience';
 import WhyUs from './pages/Experience/WhyUs';
@@ -61,6 +64,7 @@ const App = () => {
         <Route path="/contact" element={<Contact />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
+        <Route path="/covid-policy" element={<CovidPolicy />} />
 
         {/* About Routes */}
         <Route path="/about-us" element={<AboutUs />} />
@@ -72,6 +76,8 @@ const App = () => {
         <Route path="/destinations" element={<AllDestinations />} />
         <Route path="/zaltan-mothership" element={<TheZaltanMothership />} />
         <Route path="/zaltan-lodge" element={<TheZaltanLodge />} />
+        <Route path="/ecolodge" element={<EcoLodge />} />
+        <Route path="/xingu" element={<Xingu />} />
         <Route path="/headwaters-camp" element={<HeadwatersCamp />} />
         <Route path="/peacock-bass-expeditions" element={<PeacockBassExpeditions />} />
 

@@ -38,10 +38,10 @@ const Hero = () => {
                     Heart of the Amazon
                 </h1>
                 <section className="flex flex-col sm:flex-row gap-5">
-                    <button className="ring-1 ring-white text-sm hover:bg-secondary hover:ring-1 hover:ring-fifth hover:text-fifth text-white font-bold py-3 px-8 rounded-md transition duration-500 uppercase font-dmsans">
+                    <button className="ring-1 ring-white text-sm hover:bg-secondary hover:ring-1 hover:ring-fifth hover:text-fifth text-white font-normal py-3 px-8 rounded-md transition duration-500 uppercase font-dmsans">
                         Plan Your Adventure
                     </button>
-                    <button className="ring-1 ring-white text-sm hover:bg-secondary hover:ring-1 hover:ring-fifth hover:text-fifth text-white font-bold py-3 px-8 rounded-md transition duration-500 uppercase font-dmsans">
+                    <button className="ring-1 ring-white text-sm hover:bg-secondary hover:ring-1 hover:ring-fifth hover:text-fifth text-white font-normal py-3 px-8 rounded-md transition duration-500 uppercase font-dmsans">
                         Learn More About Peacock Bass
                     </button>
                 </section>
