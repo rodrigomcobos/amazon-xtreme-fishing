@@ -1,17 +1,30 @@
 import React from 'react';
+import HeroVideo from '../../assets/videos/herovideo.mp4';
 
 const Hero = () => {
     return (
-        <section className="relative h-[95dvh] sm:h-[1000px] w-full">
-            {/* Placeholder Image */}
-            <img
-                src="/api/placeholder/1920/1200"
-                alt="Hero background"
-                className="w-full h-full object-cover"
-            />
+        <section className="relative h-[95dvh] sm:h-[1000px] w-full overflow-hidden">
+            {/* Video Background */}
+            <video
+                autoPlay
+                muted
+                loop
+                playsInline
+                className="absolute top-0 left-0 w-full h-full object-cover"
+            >
+                <source src={HeroVideo} type="video/mp4" />
+                {/* Fallback for browsers that don't support video */}
+                <img
+                    src="/api/placeholder/1920/1200"
+                    alt="Hero background"
+                    className="w-full h-full object-cover"
+                />
+            </video>
 
-            {/* Optional Overlay */}
-            <div className="absolute inset-0 bg-black/30" />
+            {/* Gradient Overlays */}
+            <div className="absolute inset-0 bg-gradient-to-b from-primary/90 via-primary/50 to-primary/20" />
+            {/* Additional top gradient for navbar area */}
+            <div className="absolute inset-0 bg-gradient-to-t from-transparent to-black/70 h-32" />
 
             {/* Content Container */}
             <div className="absolute inset-0 flex flex-col items-center justify-center text-white z-10">
@@ -24,11 +37,11 @@ const Hero = () => {
                 <h1 className="text-7xl font-roxale font-bold uppercase mb-10">
                     Heart of the Amazon
                 </h1>
-                <section className="flex gap-5">
-                    <button className="bg-tertiary hover:bg-secondary text-white font-bold py-3 px-8 rounded-md transition duration-300 uppercase font-dmsans">
+                <section className="flex flex-col sm:flex-row gap-5">
+                    <button className="ring-2 ring-white text-sm hover:bg-secondary hover:ring-2 hover:ring-fifth hover:text-fifth text-white font-bold py-3 px-8 rounded-md transition duration-500 uppercase font-dmsans">
                         Plan Your Adventure
                     </button>
-                    <button className="bg-tertiary hover:bg-secondary text-white font-bold py-3 px-8 rounded-md transition duration-300 uppercase font-dmsans">
+                    <button className="ring-2 ring-white text-sm hover:bg-secondary hover:ring-2 hover:ring-fifth hover:text-fifth text-white font-bold py-3 px-8 rounded-md transition duration-500 uppercase font-dmsans">
                         Learn More About Peacock Bass
                     </button>
                 </section>
