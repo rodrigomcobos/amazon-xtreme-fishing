@@ -8,7 +8,7 @@ export default {
         secondary: '#3c3d37',
         tertiary: '#697565',
         fourth: '#ecdfcc',
-        fifth: '#FBA834',
+        fifth: '#E8AA42',
       },
       fontFamily: {
         dmsans: ['DM Sans', 'sans-serif'],

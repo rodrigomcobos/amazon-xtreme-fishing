@@ -15,15 +15,23 @@ const Hero = () => {
 
             {/* Content Container */}
             <div className="absolute inset-0 flex flex-col items-center justify-center text-white z-10">
-                <h1 className="text-6xl font-roxale uppercase mb-6">
-                    Welcome to Amazon Xtreme
-                </h1>
-                <p className="text-base mb-8 max-w-2xl text-center font-dmsans uppercase">
-                    Experience the ultimate fishing adventure in the heart of the Amazon
+                <p className="text-base mb-2 max-w-2xl text-center font-dmsans uppercase">
+                    Catch the Ultimate Trophy
                 </p>
-                <button className="bg-tertiary hover:bg-secondary text-white font-bold py-3 px-8 rounded-md transition duration-300 uppercase font-dmsans">
-                    Book Your Adventure
-                </button>
+                <h1 className="text-5xl font-roxale uppercase mb-1">
+                    Peacock Bass Fishing in the
+                </h1>
+                <h1 className="text-7xl font-roxale font-bold uppercase mb-10">
+                    Heart of the Amazon
+                </h1>
+                <section className="flex gap-5">
+                    <button className="bg-tertiary hover:bg-secondary text-white font-bold py-3 px-8 rounded-md transition duration-300 uppercase font-dmsans">
+                        Plan Your Adventure
+                    </button>
+                    <button className="bg-tertiary hover:bg-secondary text-white font-bold py-3 px-8 rounded-md transition duration-300 uppercase font-dmsans">
+                        Learn More About Peacock Bass
+                    </button>
+                </section>
             </div>
         </section>
     );
