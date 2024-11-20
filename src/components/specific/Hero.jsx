@@ -24,7 +24,7 @@ const Hero = () => {
             {/* Gradient Overlays */}
             <div className="absolute inset-0 bg-gradient-to-b from-primary/75 via-primary/40 to-primary/10" />
             {/* Additional top gradient for navbar area */}
-            <div className="absolute inset-0 bg-gradient-to-t from-transparent to-black/70 h-32" />
+            <div className="absolute inset-0 bg-gradient-to-t from-transparent to-black/80 h-32" />
 
             {/* Content Container */}
             <div className="absolute inset-0 flex flex-col items-center justify-center text-white z-10">
