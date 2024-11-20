@@ -4,10 +4,10 @@ import Topographic from '../../assets/images/topographic.png';
 
 const Footer = () => {
     return (
-        <footer className="relative bg-gradient-to-b from-primary via-primary to-black py-12 px-6 font-dmsans">
+        <footer className="bg-gradient-to-b from-primary via-primary to-black py-12 px-6 font-dmsans fixed bottom-0 w-full">
             {/* Background Image */}
             <div
-                className="absolute inset-0 w-full h-full opacity-50 pointer-events-none"
+                className="absolute inset-0 w-full h-full opacity-60 pointer-events-none"
                 style={{
                     backgroundImage: `url(${Topographic})`,
                     backgroundRepeat: 'repeat',
@@ -44,7 +44,7 @@ const Footer = () => {
                 <section className="grid max-sm:grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mt-12 w-full mx-auto">
                     {/* About Section */}
                     <div>
-                        <h4 className="text-lg font-semibold mb-4 text-tertiary uppercase">About</h4>
+                        <h4 className="text-base font-semibold mb-4 text-tertiary uppercase">About</h4>
                         <ul className="space-y-4">
                             <li><Link to="/about-us" className="text-gray-300 hover:text-tertiary transition duration-300 text-sm">About Us</Link></li>
                             <li><Link to="/welcome" className="text-gray-300 hover:text-tertiary transition duration-300 text-sm">Welcome</Link></li>
@@ -55,7 +55,7 @@ const Footer = () => {
 
                     {/* Destinations Section */}
                     <div>
-                        <h4 className="text-lg font-semibold mb-4 text-tertiary uppercase">Destinations</h4>
+                        <h4 className="text-base font-semibold mb-4 text-tertiary uppercase">Destinations</h4>
                         <ul className="space-y-4">
                             <li><Link to="/destinations" className="text-gray-300 hover:text-tertiary transition duration-300 text-sm">Our Destinations</Link></li>
                             <li><Link to="/zaltan-mothership" className="text-gray-300 hover:text-tertiary transition duration-300 text-sm">The Zaltan Mothership</Link></li>
@@ -69,7 +69,7 @@ const Footer = () => {
 
                     {/* Experience Section */}
                     <div>
-                        <h4 className="text-lg font-semibold mb-4 text-tertiary uppercase">Experience</h4>
+                        <h4 className="text-base font-semibold mb-4 text-tertiary uppercase">Experience</h4>
                         <ul className="space-y-4">
                             <li><Link to="/experience" className="text-gray-300 hover:text-tertiary transition duration-300 text-sm">Experience The Amazon</Link></li>
                             <li><Link to="/getting-there" className="text-gray-300 hover:text-tertiary transition duration-300 text-sm">Getting There</Link></li>
@@ -83,7 +83,7 @@ const Footer = () => {
 
                     {/* Gallery Section */}
                     <div>
-                        <h4 className="text-lg font-semibold mb-4 text-tertiary uppercase">Gallery</h4>
+                        <h4 className="text-base font-semibold mb-4 text-tertiary uppercase">Gallery</h4>
                         <ul className="space-y-4">
                             <li><Link to="/pictures" className="text-gray-300 hover:text-tertiary transition duration-300 text-sm">Pictures</Link></li>
                             <li><Link to="/videos" className="text-gray-300 hover:text-tertiary transition duration-300 text-sm">Videos</Link></li>
