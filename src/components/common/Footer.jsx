@@ -80,25 +80,25 @@ const Footer = () => {
                         <h4 className="text-sm font-semibold mb-4 text-tertiary uppercase">Social Links</h4>
                         {/* Social Icons */}
                         <section className="grid grid-cols-4 gap-6 pr-20">
-                            <a href="#" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-tertiary transition-colors">
+                            <a href="https://www.facebook.com/amazonmarc" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-tertiary transition-colors" aria-label="Visit our Facebook page">
                                 <FaFacebook size={24} />
                             </a>
-                            <a href="#" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-tertiary transition-colors">
+                            <a href="https://www.instagram.com/amazonxtreme/" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-tertiary transition-colors" aria-label="Visit our Instagram page">
                                 <FaInstagram size={24} />
                             </a>
-                            <a href="#" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-tertiary transition-colors">
+                            <a href="https://www.linkedin.com/in/amazonxtremefishing/" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-tertiary transition-colors" aria-label="Visit our LinkedIn profile">
                                 <FaLinkedin size={24} />
                             </a>
-                            <a href="#" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-tertiary transition-colors">
+                            <a href="https://www.youtube.com/channel/UCEwzJPEIRP5JgRh8YbN67kg" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-tertiary transition-colors" aria-label="Visit our YouTube channel">
                                 <FaYoutube size={24} />
                             </a>
-                            <a href="#" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-tertiary transition-colors">
+                            <a href="https://x.com/amazonxtreme" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-tertiary transition-colors" aria-label="Visit our Twitter page">
                                 <FaXTwitter size={24} />
                             </a>
-                            <a href="#" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-tertiary transition-colors">
+                            <a href="https://www.google.com/search?q=amazon+xtreme+fishing&sca_esv=f3da8a737b321c34&sxsrf=ADLYWILgxqffQNCXzSI0yEUrZYeMGV2EnQ%3A1732073174156&source=hp&ei=1lY9Z4z1BouhptQPjYmDgQY&iflsig=AL9hbdgAAAAAZz1k5pAZBIxKYYWMUu8evjyyXm04qFzL&gs_ssp=eJzj4tVP1zc0TDY1Lyopr8wzYLRSNaiwMDNJNkpJTTYwSTE2STIztTKoMDFOTbQ0MTNJtTRIsUgyM_ISTcxNrMrPU6goKUrNTVVIyyzOyMxLBwBi7hel&oq=amazon&gs_lp=Egdnd3Mtd2l6IgZhbWF6b24qAggBMgQQIxgnMhMQLhiABBjHARgnGIoFGI4FGK8BMhEQLhiABBixAxjRAxiDARjHATILEAAYgAQYkQIYigUyCxAAGIAEGJECGIoFMgsQABiABBixAxiDATILEAAYgAQYsQMYgwEyCBAAGIAEGLEDMggQABiABBixAzILEAAYgAQYsQMYgwFIpg1QAFizBXAAeACQAQCYAa0BoAGsBaoBAzIuNLgBA8gBAPgBAZgCBqACtgXCAgoQIxiABBgnGIoFwgIREC4YgAQYkQIY0QMYxwEYigXCAg4QLhiABBixAxjRAxjHAcICCxAuGIAEGNEDGMcBmAMAkgcDMi40oAevVQ&sclient=gws-wiz#" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-tertiary transition-colors" aria-label="Search us on Google">
                                 <FaGooglePlus size={24} />
                             </a>
-                            <a href="#" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-tertiary transition-colors">
+                            <a href="https://www.pinterest.com/amazonxtreme/" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-tertiary transition-colors" aria-label="Visit our Pinterest page">
                                 <FaPinterest size={24} />
                             </a>
                         </section>
@@ -138,17 +138,23 @@ const Footer = () => {
                         <h4 className="text-sm font-semibold mb-4 text-tertiary uppercase">Our Partners</h4>
                         <div className="space-y-6">
                             <div className="flex items-center gap-4">
-                                <img src={MartinTravelLogo} alt="Martin Travel Services" className="w-24 h-auto" />
+                                <a href="https://www.martintravelservices.com/" target="_blank" rel="noopener noreferrer">
+                                    <img src={MartinTravelLogo} alt="Martin Travel Services" className="w-40 h-auto" />
+                                </a>
                                 <p className="text-gray-300 text-sm">Contact Kevin with Martin Travel Services at (800) 627-8468 for Airline Reservations.</p>
                             </div>
                             <hr className="my-1 border-secondary" />
                             <div className="flex items-center gap-4">
-                                <img src={MercureLogo} alt="Mercure" className="w-24 h-auto" />
+                                <a href="https://all.accor.com/hotel/5671/index.en.shtml" target="_blank" rel="noopener noreferrer">
+                                    <img src={MercureLogo} alt="Mercure" className="w-64 h-auto" />
+                                </a>
                                 <p className="text-gray-300 text-sm">Located in the exclusive area of Manaus, it is about 15 minutes from the international airport, the city centre and the industrial district.</p>
                             </div>
                             <hr className="my-1 border-secondary" />
                             <div className="flex items-center gap-4">
-                                <img src={GlobalRescueLogo} alt="Global Rescue" className="w-24 h-auto" />
+                                <a href="https://partner.globalrescue.com/amazonxtremefishing/index.html" target="_blank" rel="noopener noreferrer">
+                                    <img src={GlobalRescueLogo} alt="Global Rescue" className="w-56 h-auto" />
+                                </a>
                                 <p className="text-gray-300 text-sm">Amazon Xtreme Fishing strongly recommends that you enroll with Global rescue prior to embarking on your trip.</p>
                             </div>
                         </div>
