@@ -129,15 +129,15 @@ const Header = () => {
                 </section>
 
                 {/* Main header */}
-                <div className={`flex flex-wrap items-center justify-between gap-4 px-4 min-h-[70px] overflow-visible transition-all duration-300 ${isScrolled ? 'bg-white shadow-lg' : ''}`}>
-                    <div className={`relative -bottom-4 z-50 transition-all duration-300 ${isScrolled ? '-bottom-2' : '-bottom-4'}`}>
+                <div className={`flex flex-wrap items-center justify-between gap-4 px-4 min-h-[80px] overflow-visible transition-all duration-300 ${isScrolled ? 'bg-white shadow-lg' : ''}`}>
+                    <div className={`relative -bottom-4 z-50 transition-all duration-300 ${isScrolled ? '-bottom-0' : '-bottom-5'}`}>
                         <Link to="/">
                             <img
                                 src={Logo}
                                 alt="logo"
                                 className={`transition-all duration-300 ${isScrolled
                                     ? 'w-24 sm:w-32'
-                                    : 'w-32 sm:w-56'
+                                    : 'w-36 sm:w-56'
                                     }`}
                             />
                         </Link>

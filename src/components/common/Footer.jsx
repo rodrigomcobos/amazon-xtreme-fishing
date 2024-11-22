@@ -12,6 +12,7 @@ import {
 } from 'react-icons/fa6';
 // Background Overlay
 import Topographic from '../../assets/images/topographic.png';
+import FooterBackground from '../../assets/images/footerbackground.png';
 // Logos
 import GlobalRescueLogo from '../../assets/logos/globalrescuelogo.png';
 import MercureLogo from '../../assets/logos/mercurelogo.png';
@@ -27,7 +28,7 @@ const Footer = () => {
         <footer className="bg-gradient-to-b from-primary via-primary to-black py-12 px-3 sm:px-4 font-dmsans w-full mt-auto relative">
             {/* Background Image - Changed positioning to relative to footer */}
             <div
-                className="absolute inset-0 w-full h-full opacity-60 pointer-events-none"
+                className="absolute inset-0 w-full h-full opacity-75 pointer-events-none"
                 style={{
                     backgroundImage: `url(${Topographic})`,
                     backgroundRepeat: 'repeat',
