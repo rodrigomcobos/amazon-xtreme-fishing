@@ -61,13 +61,17 @@ const Footer = () => {
                 <hr className="my-8 border-secondary" />
 
                 {/* Footer Content */}
-                <section
-                    className="grid max-sm:grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 my-12 w-full mx-auto"
-                    style={{
-                        // Define grid template columns widths
-                        gridTemplateColumns: 'minmax(0, 20%) minmax(0, 20%) minmax(0, 20%) minmax(0, 40%)'
-                    }}
-                >
+                <style>
+                    {`
+    @media (min-width: 1024px) {
+      .footer-grid {
+        grid-template-columns: minmax(0, 20%) minmax(0, 20%) minmax(0, 20%) minmax(0, 40%);
+      }
+    }
+  `}
+                </style>
+
+                <section className="grid max-sm:grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 my-12 w-full mx-auto footer-grid">
                     {/* About Section */}
                     <section>
                         <h4 className="text-sm font-semibold mb-4 text-tertiary uppercase">About</h4>
@@ -95,14 +99,13 @@ const Footer = () => {
                             <a href="https://x.com/amazonxtreme" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-tertiary transition-colors" aria-label="Visit our Twitter page">
                                 <FaXTwitter size={24} />
                             </a>
-                            <a href="https://www.google.com/search?q=amazon+xtreme+fishing&sca_esv=f3da8a737b321c34&sxsrf=ADLYWILgxqffQNCXzSI0yEUrZYeMGV2EnQ%3A1732073174156&source=hp&ei=1lY9Z4z1BouhptQPjYmDgQY&iflsig=AL9hbdgAAAAAZz1k5pAZBIxKYYWMUu8evjyyXm04qFzL&gs_ssp=eJzj4tVP1zc0TDY1Lyopr8wzYLRSNaiwMDNJNkpJTTYwSTE2STIztTKoMDFOTbQ0MTNJtTRIsUgyM_ISTcxNrMrPU6goKUrNTVVIyyzOyMxLBwBi7hel&oq=amazon&gs_lp=Egdnd3Mtd2l6IgZhbWF6b24qAggBMgQQIxgnMhMQLhiABBjHARgnGIoFGI4FGK8BMhEQLhiABBixAxjRAxiDARjHATILEAAYgAQYkQIYigUyCxAAGIAEGJECGIoFMgsQABiABBixAxiDATILEAAYgAQYsQMYgwEyCBAAGIAEGLEDMggQABiABBixAzILEAAYgAQYsQMYgwFIpg1QAFizBXAAeACQAQCYAa0BoAGsBaoBAzIuNLgBA8gBAPgBAZgCBqACtgXCAgoQIxiABBgnGIoFwgIREC4YgAQYkQIY0QMYxwEYigXCAg4QLhiABBixAxjRAxjHAcICCxAuGIAEGNEDGMcBmAMAkgcDMi40oAevVQ&sclient=gws-wiz#" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-tertiary transition-colors" aria-label="Search us on Google">
+                            <a href="https://www.google.com/search?q=amazon+xtreme+fishing" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-tertiary transition-colors" aria-label="Search us on Google">
                                 <FaGooglePlus size={24} />
                             </a>
                             <a href="https://www.pinterest.com/amazonxtreme/" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-tertiary transition-colors" aria-label="Visit our Pinterest page">
                                 <FaPinterest size={24} />
                             </a>
                         </section>
-
                     </section>
 
                     {/* Destinations Section */}
