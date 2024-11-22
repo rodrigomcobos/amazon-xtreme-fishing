@@ -56,49 +56,51 @@ import Videos from './pages/Gallery/Videos';
 
 const App = () => {
   return (
-    <>
+    <div className="min-h-screen flex flex-col">
       <Header />
-      <Routes>
-        {/* Main Routes */}
-        <Route path="/" element={<Home />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-        <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
-        <Route path="/covid-policy" element={<CovidPolicy />} />
+      <main className="flex-1">
+        <Routes>
+          {/* Main Routes */}
+          <Route path="/" element={<Home />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
+          <Route path="/covid-policy" element={<CovidPolicy />} />
 
-        {/* About Routes */}
-        <Route path="/about-us" element={<AboutUs />} />
-        <Route path="/welcome" element={<Welcome />} />
-        <Route path="/experience-the-amazon" element={<ExperienceTheAmazon />} />
-        <Route path="/meet-your-host" element={<MeetYourHost />} />
+          {/* About Routes */}
+          <Route path="/about-us" element={<AboutUs />} />
+          <Route path="/welcome" element={<Welcome />} />
+          <Route path="/experience-the-amazon" element={<ExperienceTheAmazon />} />
+          <Route path="/meet-your-host" element={<MeetYourHost />} />
 
-        {/* Destination Routes */}
-        <Route path="/destinations" element={<AllDestinations />} />
-        <Route path="/zaltan-mothership" element={<TheZaltanMothership />} />
-        <Route path="/zaltan-lodge" element={<TheZaltanLodge />} />
-        <Route path="/ecolodge" element={<EcoLodge />} />
-        <Route path="/xingu" element={<Xingu />} />
-        <Route path="/headwaters-camp" element={<HeadwatersCamp />} />
-        <Route path="/peacock-bass-expeditions" element={<PeacockBassExpeditions />} />
+          {/* Destination Routes */}
+          <Route path="/destinations" element={<AllDestinations />} />
+          <Route path="/zaltan-mothership" element={<TheZaltanMothership />} />
+          <Route path="/zaltan-lodge" element={<TheZaltanLodge />} />
+          <Route path="/ecolodge" element={<EcoLodge />} />
+          <Route path="/xingu" element={<Xingu />} />
+          <Route path="/headwaters-camp" element={<HeadwatersCamp />} />
+          <Route path="/peacock-bass-expeditions" element={<PeacockBassExpeditions />} />
 
-        {/* Experience Routes */}
-        <Route path="/experience" element={<Experience />} />
-        <Route path="/getting-there" element={<GettingThere />} />
-        <Route path="/lures-and-tackle" element={<LuresAndTackle />} />
-        <Route path="/passport-and-visa" element={<PassportAndVisa />} />
-        <Route path="/travel-insurance" element={<TravelInsurance />} />
-        <Route path="/why-us" element={<WhyUs />} />
-        <Route path="/faq" element={<FAQ />} />
-        <Route path="/species" element={<Species />} />
-        <Route path="/species/:id" element={<FishSpeciePage />} />
+          {/* Experience Routes */}
+          <Route path="/experience" element={<Experience />} />
+          <Route path="/getting-there" element={<GettingThere />} />
+          <Route path="/lures-and-tackle" element={<LuresAndTackle />} />
+          <Route path="/passport-and-visa" element={<PassportAndVisa />} />
+          <Route path="/travel-insurance" element={<TravelInsurance />} />
+          <Route path="/why-us" element={<WhyUs />} />
+          <Route path="/faq" element={<FAQ />} />
+          <Route path="/species" element={<Species />} />
+          <Route path="/species/:id" element={<FishSpeciePage />} />
 
-        {/* Gallery Routes */}
-        <Route path="/pictures" element={<Pictures />} />
-        <Route path="/videos" element={<Videos />} />
-      </Routes>
+          {/* Gallery Routes */}
+          <Route path="/pictures" element={<Pictures />} />
+          <Route path="/videos" element={<Videos />} />
+        </Routes>
+      </main>
       <Footer />
       {/* <CookieDisclaimer /> */}
-    </>
+    </div>
   );
 };
 

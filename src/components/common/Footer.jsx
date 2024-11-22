@@ -24,15 +24,17 @@ import KLuresLogo from '../../assets/logos/klureslogo.png';
 
 const Footer = () => {
     return (
-        <footer className="bg-gradient-to-b from-primary via-primary to-black py-12 px-3 font-dmsans fixed bottom-0 w-full">
-            {/* Background Image */}
+        <footer className="bg-gradient-to-b from-primary via-primary to-black py-12 px-3 font-dmsans w-full mt-auto relative">
+            {/* Background Image - Changed positioning to relative to footer */}
             <div
                 className="absolute inset-0 w-full h-full opacity-60 pointer-events-none"
                 style={{
                     backgroundImage: `url(${Topographic})`,
                     backgroundRepeat: 'repeat',
                     backgroundSize: 'cover',
-                    mixBlendMode: 'overlay'
+                    mixBlendMode: 'overlay',
+                    top: 0,
+                    left: 0
                 }}
             />
 

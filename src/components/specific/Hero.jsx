@@ -31,10 +31,10 @@ const Hero = () => {
                 <p className="text-sm sm:text-base mb-2 max-w-2xl text-center font-dmsans uppercase">
                     Catch the Ultimate Trophy
                 </p>
-                <h1 className="text-2xl sm:text-4xl md:text-5xl font-roxale uppercase mb-1 text-center">
+                <h1 className="text-[1.8rem] sm:text-4xl md:text-5xl font-roxale uppercase mb-1 text-center">
                     Peacock Bass Fishing in the
                 </h1>
-                <h1 className="text-3xl sm:text-5xl md:text-7xl font-roxale font-bold uppercase mb-6 sm:mb-10 text-center">
+                <h1 className="text-[2.2rem] sm:text-5xl md:text-7xl font-roxale font-bold uppercase mb-6 sm:mb-10 text-center">
                     Heart of the Amazon
                 </h1>
                 <section className="flex flex-col sm:flex-row gap-4 sm:gap-5 w-full max-w-lg sm:max-w-2xl justify-center">
