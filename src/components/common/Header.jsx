@@ -9,6 +9,11 @@ import {
     FaEnvelope
 } from "react-icons/fa6";
 import PlaceholderImage from '../../assets/images/placeholder.png';
+import AboutMenuImg from '../../assets/images/aboutmenuimg.png';
+import DestinationsMenuImg from '../../assets/images/destinationsmenuimg.png';
+import ExperienceMenuImg from '../../assets/images/experiencemenuimg.png';
+import SpeciesMenuImg from '../../assets/images/speciesmenuimg.png';
+import GalleryMenuImg from '../../assets/images/gallerymenuimg.png';
 
 const Header = () => {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -37,7 +42,7 @@ const Header = () => {
                 { name: 'Experience The Amazon', path: '/experience-the-amazon' },
                 { name: 'Meet Your Host', path: '/meet-your-host' },
             ],
-            image: PlaceholderImage,
+            image: AboutMenuImg,
             alt: 'About Us in the Amazon'
         },
         'Destinations': {
@@ -50,7 +55,7 @@ const Header = () => {
                 { name: 'Headwaters Safari Camp', path: '/headwaters-camp' },
                 { name: 'Peacock Bass Expeditions', path: '/peacock-bass-expeditions' },
             ],
-            image: PlaceholderImage,
+            image: DestinationsMenuImg,
             alt: 'Our Amazon Destinations'
         },
         'Experience': {
@@ -63,7 +68,7 @@ const Header = () => {
                 { name: 'Why Us', path: '/why-us' },
                 { name: 'FAQs', path: '/faq' },
             ],
-            image: PlaceholderImage,
+            image: ExperienceMenuImg,
             alt: 'Amazon Experience'
         },
         'Species': {
@@ -85,7 +90,7 @@ const Header = () => {
                 { name: 'Sorubim', path: '/species/sorubim' },
                 { name: 'Tambaqui', path: '/species/tambaqui' },
             ],
-            image: PlaceholderImage,
+            image: SpeciesMenuImg,
             alt: 'Amazon Fish Species'
         },
         'Gallery': {
@@ -93,7 +98,7 @@ const Header = () => {
                 { name: 'Pictures', path: '/pictures' },
                 { name: 'Videos', path: '/videos' }
             ],
-            image: PlaceholderImage,
+            image: GalleryMenuImg,
             alt: 'Amazon Gallery'
         }
     };
@@ -131,8 +136,8 @@ const Header = () => {
                                 src={Logo}
                                 alt="logo"
                                 className={`transition-all duration-300 ${isScrolled
-                                    ? 'w-24 sm:w-32' // Smaller on mobile when scrolled
-                                    : 'w-32 sm:w-56' // Smaller on mobile when not scrolled
+                                    ? 'w-24 sm:w-32'
+                                    : 'w-32 sm:w-56'
                                     }`}
                             />
                         </Link>
