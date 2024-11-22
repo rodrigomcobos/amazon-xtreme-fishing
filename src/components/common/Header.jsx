@@ -102,7 +102,7 @@ const Header = () => {
         <>
             <header className='tracking-wide fixed w-full z-50 font-dmsans'>
                 {/* Top bar */}
-                <section className='py-2 bg-primary text-white px-2'>
+                <section className='py-2 bg-primary text-white sm:px-4 px-2'>
                     <div className='flex justify-between items-center'>
                         {/* Left Column */}
                         <div className='flex flex-col items-center sm:items-start mx-auto sm:mx-0'>
@@ -131,8 +131,8 @@ const Header = () => {
                                 src={Logo}
                                 alt="logo"
                                 className={`transition-all duration-300 ${isScrolled
-                                        ? 'w-24 sm:w-32' // Smaller on mobile when scrolled
-                                        : 'w-32 sm:w-56' // Smaller on mobile when not scrolled
+                                    ? 'w-24 sm:w-32' // Smaller on mobile when scrolled
+                                    : 'w-32 sm:w-56' // Smaller on mobile when not scrolled
                                     }`}
                             />
                         </Link>

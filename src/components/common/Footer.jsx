@@ -24,7 +24,7 @@ import KLuresLogo from '../../assets/logos/klureslogo.png';
 
 const Footer = () => {
     return (
-        <footer className="bg-gradient-to-b from-primary via-primary to-black py-12 px-3 font-dmsans w-full mt-auto relative">
+        <footer className="bg-gradient-to-b from-primary via-primary to-black py-12 px-3 sm:px-4 font-dmsans w-full mt-auto relative">
             {/* Background Image - Changed positioning to relative to footer */}
             <div
                 className="absolute inset-0 w-full h-full opacity-60 pointer-events-none"
