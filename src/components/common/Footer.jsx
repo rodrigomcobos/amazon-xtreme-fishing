@@ -24,7 +24,7 @@ import KLuresLogo from '../../assets/logos/klureslogo.png';
 
 const Footer = () => {
     return (
-        <footer className="bg-gradient-to-b from-primary via-primary to-black py-12 px-6 font-dmsans fixed bottom-0 w-full">
+        <footer className="bg-gradient-to-b from-primary via-primary to-black py-12 px-3 font-dmsans fixed bottom-0 w-full">
             {/* Background Image */}
             <div
                 className="absolute inset-0 w-full h-full opacity-60 pointer-events-none"
@@ -41,7 +41,7 @@ const Footer = () => {
                 {/* Newsletter Section */}
                 <section className="grid max-sm:grid-cols-1 lg:grid-cols-3 items-center gap-8 mb-12">
                     <div className='lg:col-span-2'>
-                        <h2 className="text-xl font-semibold text-tertiary uppercase mb-4">Stay Hooked on the Adventure</h2>
+                        <h2 className="text-lg sm:text-xl font-semibold text-tertiary uppercase mb-4">Stay Hooked on the Adventure</h2>
                         <p className='text-gray-300 font-light text-sm'>Be the first to know about exclusive fishing trips, expert tips, and updates from the Amazon. <br />Subscribe to our newsletter and never miss the catch of a lifetime.</p>
                     </div>
                     <div className="bg-transparent border border-tertiary focus-within:border-fifth transition duration-500 flex px-1 py-1 rounded-full">
@@ -171,9 +171,9 @@ const Footer = () => {
                     © Copyright GoFish Adventures/ Amazon Xtreme Fishing Adventures LLC 2004-2024 All Rights Reserved. <br />This website and its content is available only for public display and reproduction, distribution, or transmission of any content is expressly prohibited.
                 </p>
                 <div className='flex justify-center space-x-4 mt-2'>
-                    <Link to="/terms-and-conditions" className='text-gray-300 hover:text-tertiary transition duration-300 text-base'>Terms & Conditions</Link>
-                    <Link to="/privacy-policy" className='text-gray-300 hover:text-tertiary transition duration-300 text-base'>Privacy Policy</Link>
-                    <Link to="/covid-policy" className='text-gray-300 hover:text-tertiary transition duration-300 text-base'>Covid Policy</Link>
+                    <Link to="/terms-and-conditions" className='text-gray-300 hover:text-tertiary transition duration-300 text-xs sm:text-base'>Terms & Conditions</Link>
+                    <Link to="/privacy-policy" className='text-gray-300 hover:text-tertiary transition duration-300 text-xs sm:text-base'>Privacy Policy</Link>
+                    <Link to="/covid-policy" className='text-gray-300 hover:text-tertiary transition duration-300 text-xs sm:text-base'>Covid Policy</Link>
                 </div>
             </div>
         </footer>
