@@ -39,10 +39,10 @@ const Hero = () => {
                 </h1>
                 <section className="flex flex-col sm:flex-row gap-4 sm:gap-5 w-full max-w-lg sm:max-w-2xl justify-center px-10 sm:px-0">
                     <button className="w-full sm:w-auto ring-1 ring-white text-sm hover:bg-secondary hover:ring-1 hover:ring-fifth hover:text-fifth text-white font-normal py-3 px-8 rounded-md transition duration-500 uppercase font-dmsans">
-                        Plan Your Adventure
+                        Plan Your Trip
                     </button>
                     <button className="w-full sm:w-auto ring-1 ring-white text-sm hover:bg-secondary hover:ring-1 hover:ring-fifth hover:text-fifth text-white font-normal py-3 px-8 rounded-md transition duration-500 uppercase font-dmsans">
-                        Learn More About Us
+                        Explore Destinations
                     </button>
                 </section>
             </section>
