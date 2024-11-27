@@ -11,7 +11,7 @@ const Introduction = () => {
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
                     {/* Text Content - changes layout on medium screens */}
                     <section className="font-dmsans mt-4 md:mt-4 lg:mt-24 sm:mt-10 pb-20 lg:pb-32">
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-8 md:gap-12 pr-0 sm:pr-20">
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-8 md:gap-12 pr-0 sm:pr-14">
                             {/* Title Content */}
                             <section className='mb-2 md:mb-8 sm:mb-8 lg:mb-2'>
                                 <h2 className="text-xl md:text-2xl lg:text-2xl mb-2 leading-tight text-gray-900 uppercase font-dmsans">
