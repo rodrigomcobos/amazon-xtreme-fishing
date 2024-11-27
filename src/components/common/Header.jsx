@@ -1,14 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import Portal from '../Portal/Portal';
 import Logo from '../../assets/logos/amazonxtremelogo.png';
+import Topographic from '../../assets/images/topographicwhite.png';
 import {
     FaPhone,
     FaChevronDown,
     FaChevronUp,
     FaBars,
-    FaEnvelope
+    FaEnvelope,
+    FaXmark
 } from "react-icons/fa6";
-import PlaceholderImage from '../../assets/images/placeholder.png';
 import AboutMenuImg from '../../assets/images/aboutmenuimg.png';
 import DestinationsMenuImg from '../../assets/images/destinationsmenuimg.png';
 import ExperienceMenuImg from '../../assets/images/experiencemenuimg.png';
@@ -18,21 +20,58 @@ import GalleryMenuImg from '../../assets/images/gallerymenuimg.png';
 const Header = () => {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
+    const [openAccordion, setOpenAccordion] = useState('');
+    const [isVisible, setIsVisible] = useState(true);
+    const [lastScrollY, setLastScrollY] = useState(0);
     const location = useLocation();
 
-    // Add scroll event listener
+    // Control header visibility on scroll
     useEffect(() => {
-        const handleScroll = () => {
-            if (window.scrollY > 0) {
-                setIsScrolled(true);
-            } else {
-                setIsScrolled(false);
+        const controlNavbar = () => {
+            if (typeof window !== 'undefined') {
+                const currentScrollY = window.scrollY;
+
+                // For scroll up/down detection with threshold
+                if (currentScrollY > lastScrollY && currentScrollY > 200) {
+                    // Scrolling down & past threshold
+                    setIsVisible(false);
+                } else {
+                    // Scrolling up or above threshold
+                    setIsVisible(true);
+                }
+
+                // For background color change
+                if (currentScrollY > 0) {
+                    setIsScrolled(true);
+                } else {
+                    setIsScrolled(false);
+                }
+
+                setLastScrollY(currentScrollY);
             }
         };
 
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
+        window.addEventListener('scroll', controlNavbar);
+        return () => {
+            window.removeEventListener('scroll', controlNavbar);
+        };
+    }, [lastScrollY]);
+
+    // Handle body scroll when mobile menu is open
+    useEffect(() => {
+        if (mobileMenuOpen) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'unset';
+        }
+        return () => {
+            document.body.style.overflow = 'unset';
+        };
+    }, [mobileMenuOpen]);
+
+    const toggleAccordion = (key) => {
+        setOpenAccordion(openAccordion === key ? '' : key);
+    };
 
     const menuItems = {
         'About': {
@@ -105,14 +144,17 @@ const Header = () => {
 
     return (
         <>
-            <header className='tracking-wide fixed w-full z-50 font-dmsans'>
+            <header
+                className={`tracking-wide fixed w-full z-50 font-dmsans transform transition-transform duration-300 ${isVisible ? 'translate-y-0' : '-translate-y-full'
+                    }`}
+            >
                 {/* Top bar */}
                 <section className='py-2 bg-primary text-white sm:px-4 px-2'>
                     <div className='flex justify-between items-center'>
                         {/* Left Column */}
                         <div className='flex flex-col items-center sm:items-start mx-auto sm:mx-0'>
                             <p className='text-xs font-normal uppercase'>Now Booking Reservations for Next Season</p>
-                            <p className='text-sm uppercase font-light tracking-wide text-fifth'>Get Your Spot On The River Today</p>
+                            <p className='text-xs sm:text-sm uppercase font-light tracking-wide text-fifth'>Get Your Spot On The River Today</p>
                         </div>
 
                         {/* Right Column */}
@@ -243,59 +285,92 @@ const Header = () => {
                             </svg>
                         )}
                     </button>
-
-                    {/* Mobile Navigation */}
-                    {mobileMenuOpen && (
-                        <div className='lg:hidden fixed inset-0 bg-black bg-opacity-50 z-50'>
-                            <nav className='bg-white w-64 h-full overflow-y-auto'>
-                                <ul className='py-4'>
-                                    <li className='border-b'>
-                                        <Link
-                                            to="/"
-                                            className={`block px-4 py-2 font-bold ${location.pathname === '/' ? 'text-tertiary' : 'text-gray-800'}`}
-                                            onClick={() => setMobileMenuOpen(false)}
-                                        >
-                                            Home
-                                        </Link>
-                                    </li>
-                                    {Object.entries(menuItems).map(([key, value]) => (
-                                        <li key={key} className='border-b'>
-                                            <div className='px-4 py-2'>
-                                                <span className='font-bold text-gray-800'>{key}</span>
-                                                <ul className='ml-4 mt-2'>
-                                                    {value.items.map((item, index) => (
-                                                        <li key={index}>
-                                                            <Link
-                                                                to={item.path}
-                                                                className={`block py-1 text-sm ${location.pathname === item.path ? 'text-tertiary' : 'text-gray-600 hover:text-tertiary'}`}
-                                                                onClick={() => setMobileMenuOpen(false)}
-                                                            >
-                                                                {item.name}
-                                                            </Link>
-                                                        </li>
-                                                    ))}
-                                                </ul>
-                                            </div>
-                                        </li>
-                                    ))}
-                                    <li className='border-b'>
-                                        <Link
-                                            to="/contact"
-                                            className={`block px-4 py-2 font-bold ${location.pathname === '/contact' ? 'text-tertiary' : 'text-gray-800'}`}
-                                            onClick={() => setMobileMenuOpen(false)}
-                                        >
-                                            Contact
-                                        </Link>
-                                    </li>
-                                </ul>
-                            </nav>
-                        </div>
-                    )}
                 </div>
             </header>
 
+            {/* Mobile menu portal */}
+            {mobileMenuOpen && (
+                <Portal>
+                    <div className='fixed inset-0 bg-primary z-[60] overflow-y-auto'>
+                        {/* Topographic Background */}
+                        <div
+                            className="absolute inset-0 w-full h-full opacity-100 pointer-events-none"
+                            style={{
+                                backgroundImage: `url(${Topographic})`,
+                                backgroundRepeat: 'repeat',
+                                backgroundSize: 'cover',
+                                mixBlendMode: 'overlay',
+                            }}
+                        />
+
+                        {/* Close button */}
+                        <button
+                            onClick={() => setMobileMenuOpen(false)}
+                            className="absolute top-6 right-6 text-white z-50"
+                        >
+                            <FaXmark className="w-8 h-8" />
+                        </button>
+
+                        {/* Mobile Menu Content */}
+                        <nav className='relative z-10 pt-20 px-6'>
+                            <ul className='space-y-4'>
+                                <li>
+                                    <Link
+                                        to="/"
+                                        className="block py-2 text-xl font-bold text-white hover:text-tertiary transition-colors"
+                                        onClick={() => setMobileMenuOpen(false)}
+                                    >
+                                        Home
+                                    </Link>
+                                </li>
+                                {Object.entries(menuItems).map(([key, value]) => (
+                                    <li key={key} className="border-b border-secondary">
+                                        <button
+                                            onClick={() => toggleAccordion(key)}
+                                            className="w-full flex justify-between items-center py-4 text-xl font-bold text-white hover:text-tertiary transition-colors"
+                                        >
+                                            {key}
+                                            {openAccordion === key ? (
+                                                <FaChevronUp className="w-5 h-5" />
+                                            ) : (
+                                                <FaChevronDown className="w-5 h-5" />
+                                            )}
+                                        </button>
+                                        {openAccordion === key && (
+                                            <ul className="pl-4 pb-4 space-y-3">
+                                                {value.items.map((item, index) => (
+                                                    <li key={index}>
+                                                        <Link
+                                                            to={item.path}
+                                                            className="block py-2 text-gray-300 hover:text-tertiary transition-colors"
+                                                            onClick={() => setMobileMenuOpen(false)}
+                                                        >
+                                                            {item.name}
+                                                        </Link>
+                                                    </li>
+                                                ))}
+                                            </ul>
+                                        )}
+                                    </li>
+                                ))}
+                                <li>
+                                    <Link
+                                        to="/contact"
+                                        className="block py-2 text-xl font-bold text-white hover:text-tertiary transition-colors"
+                                        onClick={() => setMobileMenuOpen(false)}
+                                    >
+                                        Contact
+                                    </Link>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </Portal>
+            )}
+
             {/* Floating Contact Buttons - Only visible on mobile */}
-            <div className="fixed bottom-4 right-4 flex flex-col gap-3 lg:hidden z-50">
+            <div className={`fixed bottom-4 right-4 flex flex-col gap-3 lg:hidden z-50 transform transition-transform duration-300 ${isVisible ? 'translate-y-0' : 'translate-y-24'
+                }`}>
                 {/* Email Button */}
                 <a
                     href="mailto:info@amazonxtremefishing.com"

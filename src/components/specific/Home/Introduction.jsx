@@ -5,19 +5,19 @@ const Introduction = () => {
     return (
         <div className="relative">
             {/* Content Container */}
-            <div className="max-w-[90%] lg:max-w-[95%] mx-auto">
+            <div className="max-w-[95%] lg:max-w-[95%] mx-auto">
                 {/* Mobile and Large: 2 columns (text | image) */}
                 {/* Medium: 1 row for text (title | description) and 1 row for image */}
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
                     {/* Text Content - changes layout on medium screens */}
-                    <section className="font-dmsans mt-4 md:mt-4 lg:mt-24 sm:mt-10 pb-10 lg:pb-32">
+                    <section className="font-dmsans mt-4 md:mt-4 lg:mt-24 sm:mt-10 pb-20 lg:pb-32">
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-8 md:gap-12 pr-0 sm:pr-20">
                             {/* Title Content */}
                             <section className='mb-2 md:mb-8 sm:mb-8 lg:mb-2'>
                                 <h2 className="text-xl md:text-2xl lg:text-2xl mb-2 leading-tight text-gray-900 uppercase font-dmsans">
                                     Experience the <br />
                                 </h2>
-                                <h2 className="font-roxale-calligraphy text-3xl md:text-4xl lg:text-5xl font-bold pl-4">
+                                <h2 className="font-roxale-calligraphy text-3xl md:text-4xl lg:text-5xl font-bold pl-0 sm:pl-4">
                                     Very Best of the Amazon
                                 </h2>
                                 <h2 className="font-roxale-calligraphy text-3xl md:text-4xl lg:text-5xl font-bold text-right">
