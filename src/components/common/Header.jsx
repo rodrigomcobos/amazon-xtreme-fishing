@@ -130,7 +130,7 @@ const Header = () => {
 
                 {/* Main header */}
                 <div className={`flex flex-wrap items-center justify-between gap-4 px-4 min-h-[80px] overflow-visible transition-all duration-300 ${isScrolled ? 'bg-white shadow-lg' : ''}`}>
-                    <div className={`relative -bottom-4 z-50 transition-all duration-300 ${isScrolled ? '-bottom-0' : '-bottom-5'}`}>
+                    <div className={`relative -bottom-1 z-50 transition-all duration-300 ${isScrolled ? '-bottom-0' : '-bottom-5'}`}>
                         <Link to="/">
                             <img
                                 src={Logo}
