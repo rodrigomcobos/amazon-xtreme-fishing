@@ -22,7 +22,7 @@ const Hero = () => {
             </video>
 
             {/* Gradient Overlays */}
-            <div className="absolute inset-0 bg-gradient-to-b from-primary/75 via-primary/40 to-primary/10" />
+            <div className="absolute inset-0 bg-gradient-to-b from-primary/75 via-primary/40 to-primary/30" />
             {/* Additional top gradient for navbar area */}
             <div className="absolute inset-0 bg-gradient-to-t from-transparent to-black/80 h-32" />
 
