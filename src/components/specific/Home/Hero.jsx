@@ -3,7 +3,7 @@ import HeroVideo from '../../../assets/videos/herovideo.mp4';
 
 const Hero = () => {
     return (
-        <section className="relative h-[95dvh] sm:h-[1000px] w-full overflow-hidden">
+        <section className="relative h-[100dvh] sm:h-[1200px] w-full overflow-hidden">
             {/* Video Background */}
             <video
                 autoPlay
@@ -27,7 +27,7 @@ const Hero = () => {
             <div className="absolute inset-0 bg-gradient-to-t from-transparent to-black/80 h-32" />
 
             {/* Content Container */}
-            <section className="absolute inset-0 flex flex-col items-center justify-center text-white z-10 px-2 md:px-6">
+            <section className="absolute inset-0 flex flex-col items-center justify-center text-white z-10 px-2 md:px-6 pt-24 sm:pt-0">
                 <p className="text-sm sm:text-base mb-2 max-w-2xl text-center font-dmsans uppercase">
                     Catch the Ultimate Trophy
                 </p>

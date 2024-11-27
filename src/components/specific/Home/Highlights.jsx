@@ -64,7 +64,7 @@ const Highlights = () => {
     }, [highlights.length, isTransitioning]);
 
     return (
-        <div className="-mt-24 z-10 max-w-[90%] lg:max-w-[90%] mx-auto mb-0 md:mb-24 lg:mb-8">
+        <div className="-mt-12 sm:-mt-24 z-10 max-w-[90%] lg:max-w-[90%] mx-auto mb-14 md:mb-24 lg:mb-24">
             {/* Mobile Slider */}
             <div className="md:hidden relative">
                 <div className="overflow-hidden">
