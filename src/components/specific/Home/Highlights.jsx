@@ -17,7 +17,7 @@ const HighlightCard = ({ title, description, backgroundImage }) => (
         <div className="absolute bottom-0 left-0 right-0 p-6 z-10">
             <div className="flex flex-col items-center text-center space-y-3 font-dmsans">
                 <h3 className="text-xl font-medium text-white">{title}</h3>
-                <hr className='w-1/3 group-hover:w-2/3 border-t-2 border-fifth transition-all duration-300 ease-in-out' />
+                <hr className='w-1/4 group-hover:w-2/3 border-t-2 border-fifth transition-all duration-300 ease-in-out' />
                 <p className="text-gray-200 text-sm">{description}</p>
             </div>
         </div>
