@@ -2,6 +2,7 @@ import React from 'react';
 import Hero from '../components/specific/Home/Hero';
 import Highlights from '../components/specific/Home/Highlights';
 import Introduction from '../components/specific/Home/Introduction';
+import Accommodations from '../components/specific/Home/Accomodations';
 import IntroductionBackgroundImg from '../assets/images/introductionbackgroundimg.svg';
 
 const Home = () => {
@@ -24,6 +25,7 @@ const Home = () => {
                     <Introduction />
                 </div>
             </div>
+            <Accommodations />
         </div>
     );
 };
