@@ -11,6 +11,7 @@ import {
     FaEnvelope,
     FaXmark
 } from "react-icons/fa6";
+import { FaPhoneSquareAlt } from "react-icons/fa";
 import AboutMenuImg from '../../assets/images/aboutmenuimg.png';
 import DestinationsMenuImg from '../../assets/images/destinationsmenuimg.png';
 import ExperienceMenuImg from '../../assets/images/experiencemenuimg.png';
@@ -160,7 +161,7 @@ const Header = () => {
                         {/* Right Column */}
                         <div className='hidden sm:flex items-center gap-6'>
                             <p className='text-base font-normal'>
-                                <FaPhone className='text-base inline-block mr-2' />
+                                <FaPhoneSquareAlt size={20} className='text-base inline-block mr-2' />
                                 +1 (469) 995-5351
                             </p>
                             <button className="bg-tertiary text-white uppercase font-semibold py-2 px-4 rounded-md text-sm hover:ring-2 hover:ring-fifth transition duration-500 hover:bg-secondary hover:text-fifth">
