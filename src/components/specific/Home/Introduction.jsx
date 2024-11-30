@@ -26,7 +26,7 @@ const Introduction = () => {
                             </section>
 
                             {/** Description Content **/}
-                            <section className="text-gray-700 text-sm md:text-sm sm:text-base">
+                            <section className="text-gray-700 text-sm md:text-sm sm:text-base font-light">
                                 <p className="leading-relaxed pb-4">
                                     Immerse yourself in the heart of the Amazon Rainforest, where we combine unmatched fishing experiences with 5-star accommodations or rustic retreats tailored to your style. Located on the legendary Rio Negro River, our pristine waters are home to Trophy Peacock Bass, setting the stage for an adventure of a lifetime.
                                 </p>

@@ -18,7 +18,7 @@ const HighlightCard = ({ title, description, backgroundImage }) => (
             <div className="flex flex-col items-center text-center space-y-3 font-dmsans">
                 <h3 className="text-xl font-medium text-white">{title}</h3>
                 <hr className='w-1/4 group-hover:w-2/3 border-t-2 border-fifth transition-all duration-300 ease-in-out' />
-                <p className="text-gray-200 text-sm">{description}</p>
+                <p className="text-gray-200 text-sm font-light">{description}</p>
             </div>
         </div>
     </div>
@@ -36,7 +36,7 @@ const Highlights = () => {
         },
         {
             title: "Multispecies Adventures",
-            description: "Target legendary Peacock Bass, massive Catfish, and a variety of other species.",
+            description: "Target legendary Peacock Bass, massive Catfish, and a variety of exotic species from the Rio Negro River.",
             image: HighlightImg2
         },
         {
