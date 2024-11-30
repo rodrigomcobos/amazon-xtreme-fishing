@@ -17,10 +17,10 @@ const Introduction = () => {
                                 <h2 className="text-xl md:text-2xl lg:text-2xl mb-2 leading-tight text-gray-900 uppercase font-dmsans">
                                     Experience the <br />
                                 </h2>
-                                <h2 className="font-roxale-calligraphy text-3xl md:text-4xl lg:text-5xl font-bold pl-0 sm:pl-4">
+                                <h2 className="font-roxale-calligraphy text-3xl md:text-4xl lg:text-5xl font-bold pl-0 sm:pl-4 text-tertiary">
                                     Very Best of the Amazon
                                 </h2>
-                                <h2 className="font-roxale-calligraphy text-3xl md:text-4xl lg:text-5xl font-bold text-right">
+                                <h2 className="font-roxale-calligraphy text-3xl md:text-4xl lg:text-5xl font-bold text-right text-tertiary">
                                     in One Place
                                 </h2>
                             </section>

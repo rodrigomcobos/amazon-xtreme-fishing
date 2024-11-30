@@ -75,7 +75,7 @@ const Accommodations = () => {
 
                     {/* Section Headline */}
                     <h3 className="text-xl md:text-2xl lg:text-3xl font-bold tracking-wide text-prumary mb-6 font-roxale">
-                        <span className='font-roxale italic'>All Inclusive Amenities at the World<span className='font-dmsans font-light'>'</span>s</span><br />
+                        <span className='font-roxale italic text-tertiary'>All Inclusive Amenities at the World<span className='font-dmsans font-light'>'</span>s</span><br />
                         BEST FISHING DESTINATION IN THE AMAZON
                     </h3>
 
