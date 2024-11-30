@@ -30,9 +30,9 @@ const Accommodations = () => {
     }, [images.length, isTransitioning]);
 
     return (
-        <section className="relative mb-14">
+        <section className="relative mb-8 sm:mb-16">
             {/* Full-width image container with overlay */}
-            <div className="w-full h-[500px] bg-gray-200 relative border-t-8 border-tertiary overflow-hidden">
+            <div className="w-full h-[350px] sm:h-[500px] bg-gray-200 relative border-t-8 border-tertiary overflow-hidden">
                 {/* Images */}
                 {images.map((image, index) => (
                     <div
