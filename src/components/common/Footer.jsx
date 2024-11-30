@@ -12,7 +12,6 @@ import {
 } from 'react-icons/fa6';
 // Background Overlay
 import Topographic from '../../assets/images/topographic.png';
-import FooterBackground from '../../assets/images/footerbackground.png';
 // Logos
 import GlobalRescueLogo from '../../assets/logos/globalrescuelogo.png';
 import MercureLogo from '../../assets/logos/mercurelogo.png';
