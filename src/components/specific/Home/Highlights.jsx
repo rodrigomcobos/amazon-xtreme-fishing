@@ -9,16 +9,20 @@ const HighlightCard = ({ title, description, backgroundImage }) => (
         <img
             src={backgroundImage}
             alt={title}
-            className="absolute w-full h-full object-cover object-center"
+            className="absolute w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-110"
         />
 
+        {/* Frosted glass overlay - appears on hover */}
+        <div className="absolute inset-0 backdrop-blur-sm bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+        {/* Gradient overlay */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-black/0 group-hover:via-black/60 group-hover:to-black/30 transition duration-500" />
 
         <div className="absolute bottom-0 left-0 right-0 p-6 z-10">
             <div className="flex flex-col items-center text-center space-y-3 font-dmsans">
-                <h3 className="text-xl font-medium text-white">{title}</h3>
+                <h3 className="text-xl font-medium text-white group-hover:text-white/90 transition-colors duration-500">{title}</h3>
                 <hr className='w-1/4 group-hover:w-2/3 border-t-2 border-fifth transition-all duration-300 ease-in-out' />
-                <p className="text-gray-200 text-sm font-light">{description}</p>
+                <p className="text-gray-200 text-sm font-light group-hover:text-white/80 transition-colors duration-500">{description}</p>
             </div>
         </div>
     </div>
