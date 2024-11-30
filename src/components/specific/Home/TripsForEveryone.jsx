@@ -107,6 +107,11 @@ const TripsForEveryone = () => {
                         />
                     ))}
                 </div>
+                <div className="flex justify-center mt-10">
+                    <button className="ring-1 ring-primary text-sm hover:bg-secondary hover:ring-1 hover:ring-fifth hover:text-fifth text-primary font-normal py-3 px-8 rounded-md transition duration-500 uppercase font-dmsans">
+                        Get Your Trip Started
+                    </button>
+                </div>
             </div>
         </section>
     );
