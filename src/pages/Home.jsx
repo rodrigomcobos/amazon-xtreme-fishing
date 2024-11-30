@@ -4,6 +4,7 @@ import Highlights from '../components/specific/Home/Highlights';
 import Introduction from '../components/specific/Home/Introduction';
 import Accommodations from '../components/specific/Home/Accomodations';
 import TripsForEveryone from '../components/specific/Home/TripsForEveryone';
+import OurAffiliates from '../components/specific/Home/OurAffiliates';
 import IntroductionBackgroundImg from '../assets/images/introductionbackgroundimg.svg';
 
 const Home = () => {
@@ -28,6 +29,7 @@ const Home = () => {
             </div>
             <Accommodations />
             <TripsForEveryone />
+            <OurAffiliates />
         </div>
     );
 };
