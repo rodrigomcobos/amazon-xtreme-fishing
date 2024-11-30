@@ -36,8 +36,8 @@ const Introduction = () => {
                                 <p className="leading-relaxed pb-10">
                                     Experience a warm welcome, unforgettable moments, and a destination that truly stands as the best in the Amazon—and the world—for Peacock Bass fishing.
                                 </p>
-                                <div className="sm:flex sm:justify-center lg:justify-end">
-                                    <button className="w-full sm:w-auto ring-1 ring-primary text-sm hover:bg-secondary hover:ring-1 hover:ring-fifth hover:text-fifth text-primary font-normal py-3 px-8 rounded-md transition duration-500 uppercase font-dmsans">
+                                <div className="sm:flex sm:justify-center lg:justify-end mx-14">
+                                    <button className="w-full sm:w-auto ring-1 ring-primary text-sm hover:bg-secondary hover:ring-1 hover:ring-fifth hover:text-fifth text-primary font-normal py-3 px-8 rounded-md transition duration-500 uppercase font-dmsans mx-auto">
                                         Learn More
                                     </button>
                                 </div>
