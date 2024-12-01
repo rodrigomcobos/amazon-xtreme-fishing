@@ -14,37 +14,43 @@ const OurDestinations = () => {
             name: "Zaltana Mothership",
             description: "The Zaltan, a 5-star floating hotel, redefines world-class fishing. Designed to meet the expectations of the most discerning anglers, it delivers an unparalleled Peacock Bass fishing experience in the heart of a new frontier.",
             backgroundImg: ZaltanaBoatImg,
+            buttonLink: '#',
         },
         {
             name: "Zaltana Lodge",
             description: "The Zaltana Lodge, our newest destination, combines rustic charm with modern comfort, offering anglers a unique Amazon experience. Set in untouched rainforest, it features cozy accommodations, expert guides, and access to exceptional fishing waters. Perfect for families, private groups, or passionate anglers seeking adventure and unforgettable memories.",
             backgroundImg: ZaltanaLodgeImg,
+            buttonLink: '#',
         },
         {
             name: "EcoLodge da Barra",
             description: "The Ecolodge is uniquely situated at the tri-border of Amazonas, Mato Grosso, and Pará states. Here, the Juruena and Teles-Pires rivers merge to form the crystal-clear Tapajós River. One of our greatest advantages is year-round fishing, made possible by this exceptional location.",
             backgroundImg: EcolodgeImg,
+            buttonLink: '#',
         },
         {
             name: "Xingu Reservation",
             description: "Experience the Xingu Indigenous Reservation, where exceptional fishing meets authentic cultural immersion. Sleep under the stars in comfortable native accommodations, fish in pristine waters, and connect with the rich traditions of the local indigenous tribes. Guided by native experts, this adventure offers an unparalleled glimpse into the true heart of the Amazon.",
             backgroundImg: XinguReservationImg,
+            buttonLink: '#',
         },
         {
             name: "Peacock Bass Expeditions",
             description: "Designed for passionate anglers, this adventure offers cozy accommodations with a touch of excitement. Equipped with smaller fishing boats, exploring remote fishing spots is effortless. Perfect for private groups, family trips, or fishing friends.",
             backgroundImg: PeacockBassExpeditionsImg,
+            buttonLink: '#',
         },
         {
             name: "Galapagos Fishing",
             description: "Galapagos Fishing offers an unparalleled adventure in one of the world's most unique ecosystems. Our newest destination combines stunning island scenery with exceptional fishing opportunities, targeting species like tuna, marlin, and more. With expert guides, comfortable accommodations, and endless exploration, it's perfect for anglers, families, and groups seeking a once-in-a-lifetime experience.",
             backgroundImg: GalapagosFishingImg,
+            buttonLink: '#',
         }
     ];
 
     return (
-        <>
-            <h2 className="text-3xl font-bold text-primary text-center py-8 font-roxale">Our Destinations</h2>
+        <section className='my-14'>
+            <h2 className="text-3xl font-bold text-tertiary text-center py-8 font-roxale">Our Destinations</h2>
             <ul className="flex min-h-[600px] max-h-[600px] m-0 p-0 overflow-hidden list-none bg-black">
                 {destinations.map((destination, index) => (
                     <li
@@ -91,6 +97,11 @@ const OurDestinations = () => {
                                     <p className="text-white text-base font-light font-dmsans">
                                         {destination.description}
                                     </p>
+                                    <div className="flex justify-end mt-4">
+                                        <button className="btn-white">
+                                            Learn More
+                                        </button>
+                                    </div>
                                 </div>
                             )}
                         </div>
@@ -117,7 +128,7 @@ const OurDestinations = () => {
                     animation-delay: 200ms;
                 }
             `}</style>
-        </>
+        </section>
     );
 };
 
