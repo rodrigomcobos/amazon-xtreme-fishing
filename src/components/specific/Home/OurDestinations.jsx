@@ -51,15 +51,19 @@ const OurDestinations = () => {
     return (
         <section className='my-14'>
             <h2 className="text-3xl font-bold text-tertiary text-center py-8 font-roxale">Our Destinations</h2>
-            <ul className="flex min-h-[600px] max-h-[600px] m-0 p-0 overflow-hidden list-none bg-black">
+            <ul className="flex flex-row md:min-h-[650px] md:max-h-[650px] m-0 p-0 overflow-hidden list-none bg-black 
+                          max-md:flex-col max-md:min-h-fit max-md:h-fit">
                 {destinations.map((destination, index) => (
                     <li
                         key={index}
                         className={`relative cursor-pointer transition-all duration-500 ease-in-out
-                            ${activeIndex === index ? 'w-[calc(100%-320px)]' : 'w-16'}`}
+                            ${activeIndex === index
+                                ? 'md:w-[calc(100%-320px)] max-md:h-[calc(100vh-400px)]'
+                                : 'md:w-16 max-md:h-16'}
+                            max-md:w-full max-md:last:mb-0`}
                         onClick={() => setActiveIndex(index)}
                     >
-                        {/* Background Image with Overlay */}
+                        {/* Rest of the component structure remains the same */}
                         <div className="absolute inset-0">
                             <img
                                 src={destination.backgroundImg}
@@ -68,14 +72,12 @@ const OurDestinations = () => {
                             />
                             <div className={`absolute inset-0 transition-all duration-500
                                 ${activeIndex === index
-                                    ? 'bg-gradient-to-b from-black/70 to-black/30'
+                                    ? 'bg-gradient-to-t from-black/75 to-black/50 sm:bg-gradient-to-t sm:from-black/75 sm:to-black/20'
                                     : 'backdrop-blur-md bg-black/40'}`}
                             />
                         </div>
 
-                        {/* Content Container */}
                         <div className="relative flex w-full h-full">
-                            {/* Title */}
                             {activeIndex === index ? (
                                 <div className="absolute top-8 left-8 opacity-0 animate-fadeIn">
                                     <h2 className="text-white text-xl font-normal font-dmsans uppercase">
@@ -85,19 +87,19 @@ const OurDestinations = () => {
                                 </div>
                             ) : (
                                 <div className="w-full flex justify-center items-center">
-                                    <h2 className="text-white text-xl font-normal whitespace-nowrap -rotate-90 uppercase font-dmsans">
+                                    <h2 className="text-white text-xl font-normal whitespace-nowrap uppercase font-dmsans
+                                                 md:-rotate-90 max-md:rotate-0">
                                         {destination.name}
                                     </h2>
                                 </div>
                             )}
 
-                            {/* Description - Only visible when active */}
                             {activeIndex === index && (
                                 <div className="absolute bottom-8 right-8 max-w-lg opacity-0 animate-fadeIn animation-delay-200">
-                                    <p className="text-white text-base font-light font-dmsans">
+                                    <p className="text-white text-base font-light font-dmsans ml-8 sm:ml-0 text-center sm:text-left">
                                         {destination.description}
                                     </p>
-                                    <div className="flex justify-end mt-4">
+                                    <div className="flex justify-end mt-4 ml-8 sm:ml-0">
                                         <button className="btn-white">
                                             Learn More
                                         </button>
@@ -109,7 +111,7 @@ const OurDestinations = () => {
                 ))}
             </ul>
 
-            {/* Add animation keyframes */}
+            {/* Animations remain the same */}
             <style jsx global>{`
                 @keyframes fadeIn {
                     from {
