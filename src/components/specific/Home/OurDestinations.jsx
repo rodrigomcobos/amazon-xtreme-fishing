@@ -37,7 +37,7 @@ const OurDestinations = () => {
         },
         {
             name: "Galapagos Fishing",
-            description: "Galapagos Fishing offers an unparalleled adventure in one of the world’s most unique ecosystems. Our newest destination combines stunning island scenery with exceptional fishing opportunities, targeting species like tuna, marlin, and more. With expert guides, comfortable accommodations, and endless exploration, it’s perfect for anglers, families, and groups seeking a once-in-a-lifetime experience.",
+            description: "Galapagos Fishing offers an unparalleled adventure in one of the world's most unique ecosystems. Our newest destination combines stunning island scenery with exceptional fishing opportunities, targeting species like tuna, marlin, and more. With expert guides, comfortable accommodations, and endless exploration, it's perfect for anglers, families, and groups seeking a once-in-a-lifetime experience.",
             backgroundImg: GalapagosFishingImg,
         }
     ];
@@ -60,7 +60,11 @@ const OurDestinations = () => {
                                 alt={destination.name}
                                 className="w-full h-full object-cover"
                             />
-                            <div className="absolute inset-0 bg-gradient-to-b from-black/70 to-black/30" />
+                            <div className={`absolute inset-0 transition-all duration-500
+                                ${activeIndex === index
+                                    ? 'bg-gradient-to-b from-black/70 to-black/30'
+                                    : 'backdrop-blur-md bg-black/40'}`}
+                            />
                         </div>
 
                         {/* Content Container */}
