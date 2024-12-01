@@ -9,6 +9,7 @@ import BassProLogoImg from '../../../assets/images/bassprologo.png';
 import CabelasLogoImg from '../../../assets/images/cabelaslogo.png';
 import AmazonLogoImg from '../../../assets/images/amazonlogo.png';
 import TripadvisorLogoImg from '../../../assets/images/tripadvisorlogo.png';
+import DSCLogoImg from '../../../assets/images/dsclogo.png';
 
 const OurAffiliates = () => {
     const affiliates = [
@@ -21,6 +22,7 @@ const OurAffiliates = () => {
         { logo: CabelasLogoImg, link: '#', alt: 'Cabelas Logo' },
         { logo: AmazonLogoImg, link: '#', alt: 'Amazon Logo' },
         { logo: TripadvisorLogoImg, link: '#', alt: 'Tripadvisor Logo' },
+        { logo: DSCLogoImg, link: '#', alt: 'DSC Logo' },
     ];
 
     return (
