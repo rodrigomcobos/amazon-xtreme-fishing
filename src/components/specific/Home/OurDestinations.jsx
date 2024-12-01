@@ -12,7 +12,7 @@ const OurDestinations = () => {
     const destinations = [
         {
             name: "Zaltana Mothership",
-            description: "The Zaltan, a 5-star floating hotel, redefines world-class fishing. Designed to meet the expectations of the most discerning anglers, it delivers an unparalleled Peacock Bass fishing experience in the heart of a new frontier.",
+            description: "The Zaltana Mothership, a 5-star floating hotel, redefines world-class fishing with unmatched luxury and innovation. Crafted to exceed the expectations of the most discerning anglers, it offers exceptional comfort, gourmet dining, and cutting-edge amenities. Experience an unparalleled Peacock Bass fishing adventure in the heart of a new frontier, where every detail is designed to elevate your journey.",
             backgroundImg: ZaltanaBoatImg,
             buttonLink: '#',
         },
@@ -49,9 +49,9 @@ const OurDestinations = () => {
     ];
 
     return (
-        <section className='my-14'>
+        <section className='my-2 sm:my-14'>
             <h2 className="text-3xl font-bold text-tertiary text-center py-8 font-roxale">Our Destinations</h2>
-            <ul className="flex flex-row md:min-h-[650px] md:max-h-[650px] m-0 p-0 overflow-hidden list-none bg-black 
+            <ul className="flex flex-row md:min-h-[750px] md:max-h-[750px] m-0 p-0 overflow-hidden list-none bg-black 
                           max-md:flex-col max-md:min-h-fit max-md:h-fit">
                 {destinations.map((destination, index) => (
                     <li
@@ -63,7 +63,6 @@ const OurDestinations = () => {
                             max-md:w-full max-md:last:mb-0`}
                         onClick={() => setActiveIndex(index)}
                     >
-                        {/* Rest of the component structure remains the same */}
                         <div className="absolute inset-0">
                             <img
                                 src={destination.backgroundImg}
@@ -80,7 +79,7 @@ const OurDestinations = () => {
                         <div className="relative flex w-full h-full">
                             {activeIndex === index ? (
                                 <div className="absolute top-8 left-8 opacity-0 animate-fadeIn">
-                                    <h2 className="text-white text-xl font-normal font-dmsans uppercase">
+                                    <h2 className="text-white text-xl sm:text-2xl font-roxale uppercase font-bold">
                                         {destination.name}
                                     </h2>
                                     <hr className='w-full border-t-2 border-fifth mt-2' />
@@ -111,7 +110,6 @@ const OurDestinations = () => {
                 ))}
             </ul>
 
-            {/* Animations remain the same */}
             <style jsx global>{`
                 @keyframes fadeIn {
                     from {
