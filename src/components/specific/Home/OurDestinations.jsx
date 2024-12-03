@@ -50,7 +50,8 @@ const OurDestinations = () => {
 
     return (
         <section className='my-2 sm:my-14'>
-            <h2 className="text-3xl font-bold text-tertiary text-center py-8 font-roxale">Our Destinations</h2>
+            <h2 className="text-3xl font-bold text-tertiary text-center py-8 font-roxale">Experience Packages</h2>
+
             <ul className="flex flex-row md:min-h-[750px] md:max-h-[750px] m-0 p-0 overflow-hidden list-none bg-black 
                           max-md:flex-col max-md:min-h-fit max-md:h-fit">
                 {destinations.map((destination, index) => (
