@@ -1,32 +1,6 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef } from 'react';
 import { MdChevronLeft, MdChevronRight, MdFormatQuote } from 'react-icons/md';
-import CharlieReviewImg from '../../../assets/images/charliereviewimg.png';
-import ThomasReviewImg from '../../../assets/images/thomasreviewimg.png';
-import MarkReviewImg from '../../../assets/images/markreviewimg.png';
-
-const testimonialData = [
-    {
-        id: 1,
-        name: "Charlie Burda",
-        title: "FEBRUARY 2012",
-        quote: "I have been Peacock Bass fishing in Brazil 4 times with Marc. We have never had any problems or issues relating to the travels. It is a long trip getting there, but once you arrive, you are well taken care of. Marc is extremely knowledgeable of the area, the fishing and the current conditions. He has always been well prepared and made the trips enjoyable. I look forward to more trips with Marc in the future.",
-        image: CharlieReviewImg,
-    },
-    {
-        id: 2,
-        name: "Thomas Pope",
-        title: "JANUARY 2023",
-        quote: "My first experience fishing for Peacock Bass was nothing short of extraordinary. From start to finish, the journey was smooth and well-organized, with no hiccups or complications along the way. While the trip to the Amazon is lengthy, every detail is thoughtfully planned, ensuring a stress-free and enjoyable travel experience. Once you arrive, the exceptional hospitality and attention to detail make you feel instantly at ease and ready for the adventure of a lifetime.",
-        image: ThomasReviewImg,
-    },
-    {
-        id: 3,
-        name: "Mark Goodwin",
-        title: "OCTOBER 2024",
-        quote: "Fishing with Marc has become an annual tradition I look forward to every year. His deep expertise, passion for the sport, and knowledge of the Amazon make each trip unforgettable. From the seamless planning to the exceptional hospitality, everything is top-notch. Marc's ability to adapt to conditions and ensure the best fishing experience is unmatched. Year after year, the thrill of landing incredible Peacock Bass and the camaraderie on the water keep me coming back. It's more than a trip—it's an experience I wouldn't trade for anything.",
-        image: MarkReviewImg,
-    }
-];
+import { testimonialData } from '../../../data/TestimonialsData/Testimonials';
 
 const Testimonials = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -40,6 +14,10 @@ const Testimonials = () => {
 
     const handleNext = () => {
         setCurrentIndex((prev) => (prev === testimonialData.length - 1 ? 0 : prev + 1));
+    };
+
+    const handleImageClick = (index) => {
+        setCurrentIndex(index);
     };
 
     const onTouchStart = (e) => {
@@ -104,6 +82,7 @@ const Testimonials = () => {
                                     className={`flex flex-col items-center transition-all duration-500 w-full max-w-2xl mx-auto
                                         ${isActive ? 'opacity-100 scale-100' : 'opacity-0 scale-75 hidden md:block'}
                                         ${isPrevious || isNext ? 'md:opacity-60 md:scale-75 cursor-pointer' : ''}`}
+                                    onClick={() => (isPrevious || isNext) && handleImageClick(index)}
                                 >
                                     {isActive && (
                                         <div className="max-w-xl text-center mb-8">
