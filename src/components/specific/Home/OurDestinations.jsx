@@ -12,13 +12,13 @@ const OurDestinations = () => {
     const destinations = [
         {
             name: "Zaltana Mothership",
-            description: "The Zaltana Mothership, a 5-star floating hotel, redefines world-class fishing with unmatched luxury and innovation. Crafted to exceed the expectations of the most discerning anglers, it offers exceptional comfort, gourmet dining, and cutting-edge amenities. Experience an unparalleled Peacock Bass fishing adventure in the heart of a new frontier, where every detail is designed to elevate your journey.",
+            description: "The Zaltana Mothership, a 5-star floating hotel, redefines world-class fishing with unmatched luxury and innovation. Crafted to exceed the expectations of the most discerning anglers, it offers exceptional comfort, gourmet dining, and cutting-edge amenities.",
             backgroundImg: ZaltanaBoatImg,
             buttonLink: '#',
         },
         {
             name: "Zaltana Lodge",
-            description: "The Zaltana Lodge, our newest destination, combines rustic charm with modern comfort, offering anglers a unique Amazon experience. Set in untouched rainforest, it features cozy accommodations, expert guides, and access to exceptional fishing waters. Perfect for families, private groups, or passionate anglers seeking adventure and unforgettable memories.",
+            description: "The Zaltana Lodge, our newest destination, combines rustic charm with modern comfort, offering anglers a unique Amazon experience. Set in untouched rainforest, it features cozy accommodations, expert guides, and access to exceptional fishing waters.",
             backgroundImg: ZaltanaLodgeImg,
             buttonLink: '#',
         },
@@ -30,7 +30,7 @@ const OurDestinations = () => {
         },
         {
             name: "Xingu Reservation",
-            description: "Experience the Xingu Indigenous Reservation, where exceptional fishing meets authentic cultural immersion. Sleep under the stars in comfortable native accommodations, fish in pristine waters, and connect with the rich traditions of the local indigenous tribes. Guided by native experts, this adventure offers an unparalleled glimpse into the true heart of the Amazon.",
+            description: "Experience the Xingu Indigenous Reservation, where exceptional fishing meets authentic cultural immersion. Sleep under the stars in comfortable native accommodations, fish in pristine waters, and connect with the rich traditions of the local indigenous tribes.",
             backgroundImg: XinguReservationImg,
             buttonLink: '#',
         },
@@ -42,7 +42,7 @@ const OurDestinations = () => {
         },
         {
             name: "Galapagos Fishing",
-            description: "Galapagos Fishing offers an unparalleled adventure in one of the world's most unique ecosystems. Our newest destination combines stunning island scenery with exceptional fishing opportunities, targeting species like tuna, marlin, and more. With expert guides, comfortable accommodations, and endless exploration, it's perfect for anglers, families, and groups seeking a once-in-a-lifetime experience.",
+            description: "Galapagos Fishing offers an unparalleled adventure in one of the world's most unique ecosystems. Our newest destination combines stunning island scenery with exceptional fishing opportunities, targeting species like tuna, marlin, and more. With expert guides, comfortable accommodations, and endless exploration, a once-in-a-lifetime experience.",
             backgroundImg: GalapagosFishingImg,
             buttonLink: '#',
         }
@@ -50,7 +50,8 @@ const OurDestinations = () => {
 
     return (
         <section className='my-2 sm:my-14'>
-            <h2 className="text-3xl font-bold text-tertiary text-center py-8 font-roxale">Our Destinations</h2>
+            <h2 className="section-title text-center my-8">Experience Packages</h2>
+
             <ul className="flex flex-row md:min-h-[750px] md:max-h-[750px] m-0 p-0 overflow-hidden list-none bg-black 
                           max-md:flex-col max-md:min-h-fit max-md:h-fit">
                 {destinations.map((destination, index) => (
@@ -78,14 +79,14 @@ const OurDestinations = () => {
 
                         <div className="relative flex w-full h-full">
                             {activeIndex === index ? (
-                                <div className="absolute top-8 left-8 opacity-0 animate-fadeIn">
+                                <div className="absolute top-4 left-4 sm:top-8 sm:left-8 opacity-0 animate-fadeIn">
                                     <h2 className="text-white text-xl sm:text-2xl font-roxale uppercase font-bold">
                                         {destination.name}
                                     </h2>
                                     <hr className='w-full border-t-2 border-fifth mt-2' />
                                 </div>
                             ) : (
-                                <div className="w-full flex justify-center items-center">
+                                <div className="w-full flex justify-center items-center py-4 md:py-0">
                                     <h2 className="text-white text-xl font-normal whitespace-nowrap uppercase font-dmsans
                                                  md:-rotate-90 max-md:rotate-0">
                                         {destination.name}
@@ -94,11 +95,11 @@ const OurDestinations = () => {
                             )}
 
                             {activeIndex === index && (
-                                <div className="absolute bottom-8 right-8 max-w-lg opacity-0 animate-fadeIn animation-delay-200">
-                                    <p className="text-white text-base font-light font-dmsans ml-8 sm:ml-0 text-center sm:text-left">
+                                <div className="absolute bottom-4 right-4 sm:bottom-8 sm:right-8 left-4 sm:left-auto max-w-lg opacity-0 animate-fadeIn animation-delay-200">
+                                    <p className="text-white text-base font-light font-dmsans sm:ml-0 text-left mt-20 sm:mt-0">
                                         {destination.description}
                                     </p>
-                                    <div className="flex justify-end mt-4 ml-8 sm:ml-0">
+                                    <div className="flex justify-end mt-4">
                                         <button className="btn-white">
                                             Learn More
                                         </button>

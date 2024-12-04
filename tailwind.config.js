@@ -47,6 +47,10 @@ export default {
           '@apply btn ring-1 ring-primary text-primary hover:bg-secondary hover:ring-1 hover:ring-fifth hover:text-fifth':
             {},
         },
+        '.section-title': {
+          '@apply text-2xl sm:text-3xl md:text-3xl font-bold text-tertiary mb-2 font-roxale':
+            {},
+        },
       });
     },
   ],

@@ -8,6 +8,7 @@ import Accommodations from '../components/specific/Home/Accomodations';
 import TripsForEveryone from '../components/specific/Home/TripsForEveryone';
 import OurAffiliates from '../components/specific/Home/OurAffiliates';
 import OurDestinations from '../components/specific/Home/OurDestinations';
+import Testimonials from '../components/specific/Home/Testimonials';
 
 // Import the background image
 import IntroductionBackgroundImg from '../assets/images/introductionbackgroundimg.svg';
@@ -35,6 +36,7 @@ const Home = () => {
             <Accommodations />
             <TripsForEveryone />
             <OurDestinations />
+            <Testimonials />
             <OurAffiliates />
         </div>
     );

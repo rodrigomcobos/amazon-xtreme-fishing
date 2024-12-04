@@ -88,7 +88,7 @@ const TripsForEveryone = () => {
             <div className="max-w-[95%] sm:max-w-9xl mx-auto">
                 {/* Section Header */}
                 <div className="text-center mb-12">
-                    <h2 className="text-3xl md:text-3xl font-bold text-tertiary mb-2 font-roxale">
+                    <h2 className="section-title">
                         Adventures Tailored to Every Group and Occasion
                     </h2>
                     <p className="text-gray-600 text-sm sm:text-lg md:text-base mb-14 font-dmsans uppercase">
