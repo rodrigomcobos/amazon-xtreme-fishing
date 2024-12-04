@@ -67,7 +67,7 @@ const Accommodations = () => {
 
                 <div className="max-w-3xl mx-auto text-center">
                     {/* Section Title */}
-                    <h2 className="text-sm sm:text-base mb-2 max-w-2xl mx-auto text-center font-dmsans uppercase">
+                    <h2 className="text-sm sm:text-base text-primary uppercase tracking-wider mb-2 font-dmsans">
                         Accommodations
                     </h2>
 

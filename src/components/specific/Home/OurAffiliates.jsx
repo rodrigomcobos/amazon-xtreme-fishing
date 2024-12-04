@@ -28,7 +28,7 @@ const OurAffiliates = () => {
     return (
         <section className="py-12">
             <div className="text-center mb-12">
-                <h2 className="text-2xl font-bold text-primary mb-2 font-roxale-calligraphy">
+                <h2 className="text-xl sm:text-2xl font-bold text-primary mb-2 font-roxale-calligraphy">
                     Our Affiliates
                 </h2>
                 <hr className='w-[14%] mx-auto border-t-2 border-fifth' />
@@ -45,12 +45,12 @@ const OurAffiliates = () => {
                         href={affiliate.link}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="mx-8 flex items-center justify-center"
+                        className="mx-4 sm:mx-8 flex items-center justify-center"
                     >
                         <img
                             src={affiliate.logo}
                             alt={affiliate.alt}
-                            className="h-20 w-auto object-contain opacity-75 hover:opacity-100 hover:scale-110 transition duration-300"
+                            className="h-16 sm:h-20 w-auto object-contain opacity-75 hover:opacity-100 hover:scale-110 transition duration-300"
                         />
                     </a>
                 ))}
