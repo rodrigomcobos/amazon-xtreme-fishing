@@ -48,7 +48,7 @@ export default {
             {},
         },
         '.section-title': {
-          '@apply text-2xl sm:text-3xl md:text-3xl font-bold text-tertiary mb-2 font-roxale':
+          '@apply text-3xl sm:text-3xl md:text-3xl font-bold text-tertiary mb-2 font-roxale':
             {},
         },
       });
