@@ -1,20 +1,50 @@
-import React from 'react';
-
-// These would be replaced with actual Instagram images
-const dummyInstagramPosts = [
-    { id: 1, image: "/api/placeholder/400/400" },
-    { id: 2, image: "/api/placeholder/400/400" },
-    { id: 3, image: "/api/placeholder/400/400" },
-    { id: 4, image: "/api/placeholder/400/400" },
-    { id: 5, image: "/api/placeholder/400/400" },
-    { id: 6, image: "/api/placeholder/400/400" },
-    { id: 7, image: "/api/placeholder/400/400" },
-    { id: 8, image: "/api/placeholder/400/400" },
-    { id: 9, image: "/api/placeholder/400/400" },
-    { id: 10, image: "/api/placeholder/400/400" },
-];
+import React, { useState, useEffect } from 'react';
+import { fetchInstagramPosts } from '../../../utils/instagramApi';
+import Marquee from 'react-fast-marquee';
 
 const Instagram = () => {
+    const [posts, setPosts] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
+
+    useEffect(() => {
+        async function loadPosts() {
+            try {
+                setLoading(true);
+                const data = await fetchInstagramPosts();
+                console.log('Fetched posts:', data); // For debugging
+                setPosts(data);
+            } catch (err) {
+                setError(err.message);
+                console.error('Error:', err);
+            } finally {
+                setLoading(false);
+            }
+        }
+
+        loadPosts();
+    }, []);
+
+    if (loading) {
+        return (
+            <section className="w-full py-16 overflow-hidden bg-white">
+                <div className="text-center">
+                    <p className="text-primary">Loading Instagram feed...</p>
+                </div>
+            </section>
+        );
+    }
+
+    if (error) {
+        return (
+            <section className="w-full py-16 overflow-hidden bg-white">
+                <div className="text-center">
+                    <p className="text-red-500">Failed to load Instagram feed</p>
+                </div>
+            </section>
+        );
+    }
+
     return (
         <section className="w-full py-16 overflow-hidden bg-white">
             {/* Title Section */}
@@ -25,75 +55,37 @@ const Instagram = () => {
                     href="https://www.instagram.com/amazonxtreme"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-2xl sm:text-3xl font-bold font-cormorant italic text-tertiary hover:text-fifth transition-colors"
+                    className="text-2xl sm:text-3xl font-bold font-roxale italic text-tertiary hover:text-fifth transition-colors"
                 >
                     @AMAZONXTREME
                 </a>
             </div>
 
-            {/* Marquee Container */}
-            <div className="relative w-full">
-                {/* First Marquee */}
-                <div className="flex animate-marquee">
-                    {dummyInstagramPosts.map((post) => (
-                        <div
+            {/* Instagram Feed */}
+            <div className="w-full">
+                <Marquee
+                    gradient={false}
+                    speed={35}
+                    pauseOnHover={true}
+                    className="overflow-hidden"
+                >
+                    {posts.map((post) => (
+                        <a
                             key={post.id}
-                            className="flex-shrink-0 w-64 h-64 mx-2"
+                            href={post.permalink}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex-shrink-0 w-48 h-48 mx-2 overflow-hidden"
                         >
                             <img
-                                src={post.image}
-                                alt={`Instagram post ${post.id}`}
-                                className="w-full h-full object-cover hover:opacity-75 transition-opacity cursor-pointer"
+                                src={post.media_url}
+                                alt={post.caption?.slice(0, 100) || 'Instagram post'}
+                                className="w-full h-full object-cover hover:opacity-75 transition-opacity duration-300"
                             />
-                        </div>
+                        </a>
                     ))}
-                </div>
-
-                {/* Duplicate Marquee for Seamless Loop */}
-                <div className="flex animate-marquee2">
-                    {dummyInstagramPosts.map((post) => (
-                        <div
-                            key={`duplicate-${post.id}`}
-                            className="flex-shrink-0 w-64 h-64 mx-2"
-                        >
-                            <img
-                                src={post.image}
-                                alt={`Instagram post ${post.id}`}
-                                className="w-full h-full object-cover hover:opacity-75 transition-opacity cursor-pointer"
-                            />
-                        </div>
-                    ))}
-                </div>
+                </Marquee>
             </div>
-
-            {/* Add required CSS animations */}
-            <style jsx global>{`
-                @keyframes marquee {
-                    0% {
-                        transform: translateX(0);
-                    }
-                    100% {
-                        transform: translateX(-100%);
-                    }
-                }
-                
-                .animate-marquee {
-                    animation: marquee 30s linear infinite;
-                    position: absolute;
-                }
-                
-                .animate-marquee2 {
-                    animation: marquee 30s linear infinite;
-                    position: absolute;
-                    left: 100%;
-                }
-                
-                /* Pause animation on hover */
-                .animate-marquee:hover,
-                .animate-marquee2:hover {
-                    animation-play-state: paused;
-                }
-            `}</style>
         </section>
     );
 };
