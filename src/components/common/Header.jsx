@@ -91,7 +91,7 @@ const Header = () => {
                 { name: 'The Zaltan Mothership', path: '/zaltan-mothership' },
                 { name: 'The Zaltan Lodge', path: '/zaltan-lodge' },
                 { name: 'Eco Lodge', path: '/ecolodge' },
-                { name: 'Xingu', path: '/xingu' },
+                { name: 'Xingu Reservation', path: '/xingu' },
                 { name: 'Headwaters Safari Camp', path: '/headwaters-camp' },
                 { name: 'Peacock Bass Expeditions', path: '/peacock-bass-expeditions' },
             ],

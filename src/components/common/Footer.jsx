@@ -118,7 +118,7 @@ const Footer = () => {
                             <li><Link to="/zaltan-mothership" className="text-gray-300 hover:text-tertiary transition duration-300 text-sm">The Zaltan Mothership</Link></li>
                             <li><Link to="/zaltan-lodge" className="text-gray-300 hover:text-tertiary transition duration-300 text-sm">The Zaltan Lodge</Link></li>
                             <li><Link to="/ecolodge" className="text-gray-300 hover:text-tertiary transition duration-300 text-sm">Eco Lodge</Link></li>
-                            <li><Link to="/xingu" className="text-gray-300 hover:text-tertiary transition duration-300 text-sm">Xingu</Link></li>
+                            <li><Link to="/xingu" className="text-gray-300 hover:text-tertiary transition duration-300 text-sm">Xingu Reservation</Link></li>
                             <li><Link to="/headwaters-camp" className="text-gray-300 hover:text-tertiary transition duration-300 text-sm">Headwaters Safari Camp</Link></li>
                             <li><Link to="/peacock-bass-expeditions" className="text-gray-300 hover:text-tertiary transition duration-300 text-sm">Peacock Bass Expeditions</Link></li>
                         </ul>
