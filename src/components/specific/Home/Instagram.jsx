@@ -1,19 +1,45 @@
 import React, { useState, useEffect } from 'react';
 import { fetchInstagramPosts } from '../../../utils/instagramApi';
-import Marquee from 'react-fast-marquee';
+import { MdChevronLeft, MdChevronRight } from 'react-icons/md';
 
 const Instagram = () => {
     const [posts, setPosts] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+    const [currentIndex, setCurrentIndex] = useState(6);
+    const [isTransitioning, setIsTransitioning] = useState(false);
+    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+    useEffect(() => {
+        const handleResize = () => {
+            setWindowWidth(window.innerWidth);
+        };
+
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
+    const getSlideIncrement = () => {
+        if (windowWidth >= 1024) return 5; // Large screens 5 columns
+        if (windowWidth >= 768) return 4;  // Medium screens 4 columns
+        return 2; // Small screens 2 columns
+    };
+
+    const getItemWidth = () => {
+        if (windowWidth >= 1024) return '20%'; // 5 columns
+        if (windowWidth >= 768) return '25%';      // 4 columns
+        return '50%';                              // 2 columns
+    };
 
     useEffect(() => {
         async function loadPosts() {
             try {
                 setLoading(true);
                 const data = await fetchInstagramPosts();
-                console.log('Fetched posts:', data); // For debugging
-                setPosts(data);
+                const increment = getSlideIncrement();
+                const duplicatedStart = data.slice(-increment);
+                const duplicatedEnd = data.slice(0, increment);
+                setPosts([...duplicatedStart, ...data, ...duplicatedEnd]);
             } catch (err) {
                 setError(err.message);
                 console.error('Error:', err);
@@ -24,6 +50,47 @@ const Instagram = () => {
 
         loadPosts();
     }, []);
+
+    const handleSlideChange = (direction) => {
+        if (isTransitioning) return;
+        setIsTransitioning(true);
+
+        const increment = direction === 'next' ? getSlideIncrement() : -getSlideIncrement();
+        const newIndex = currentIndex + increment;
+        setCurrentIndex(newIndex);
+
+        setTimeout(() => {
+            setIsTransitioning(false);
+            if (newIndex >= posts.length - getSlideIncrement()) {
+                setCurrentIndex(getSlideIncrement());
+            } else if (newIndex <= getSlideIncrement() - 1) {
+                setCurrentIndex(posts.length - (getSlideIncrement() * 2));
+            }
+        }, 500);
+    };
+
+    const renderMedia = (post) => {
+        if (post?.media_type === 'VIDEO') {
+            return (
+                <video
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    className="w-full h-full object-cover hover:opacity-75 transition-opacity duration-300"
+                >
+                    <source src={post.media_url} type="video/mp4" />
+                </video>
+            );
+        }
+        return (
+            <img
+                src={post.media_url}
+                alt={post.caption?.slice(0, 100) || 'Instagram post'}
+                className="w-full h-full object-cover hover:opacity-75 transition duration-500"
+            />
+        );
+    };
 
     if (loading) {
         return (
@@ -50,41 +117,58 @@ const Instagram = () => {
             {/* Title Section */}
             <div className="text-center mb-8">
                 <h2 className="text-base text-primary uppercase tracking-wider mb-2 font-dmsans">Follow us on Instagram</h2>
-                <hr className='w-1/6 mx-auto border-t-2 border-fifth mb-6' />
+                <hr className='w-3/12 mx-auto border-t-2 border-fifth mb-6' />
                 <a
                     href="https://www.instagram.com/amazonxtreme"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-2xl sm:text-3xl font-bold font-roxale italic text-tertiary hover:text-fifth transition-colors"
+                    className="text-2xl sm:text-3xl font-bold font-roxale italic text-tertiary hover:text-fifth transition duration-500"
                 >
-                    @AMAZONXTREME
+                    <span className='font-cormorant'>@</span>AmazonXtreme
                 </a>
             </div>
 
-            {/* Instagram Feed */}
-            <div className="w-full">
-                <Marquee
-                    gradient={false}
-                    speed={35}
-                    pauseOnHover={true}
-                    className="overflow-hidden"
-                >
-                    {posts.map((post) => (
-                        <a
-                            key={post.id}
-                            href={post.permalink}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="flex-shrink-0 w-48 h-48 mx-2 overflow-hidden"
-                        >
-                            <img
-                                src={post.media_url}
-                                alt={post.caption?.slice(0, 100) || 'Instagram post'}
-                                className="w-full h-full object-cover hover:opacity-75 transition-opacity duration-300"
-                            />
-                        </a>
-                    ))}
-                </Marquee>
+            {/* Instagram Feed Grid */}
+            <div className="relative w-screen -ml-[50vw] left-1/2">
+                <div className="relative max-w-[120%] mx-auto overflow-hidden">
+                    <div
+                        className={`flex ${isTransitioning ? 'transition-transform duration-500' : ''}`}
+                        style={{
+                            transform: `translateX(-${(currentIndex * parseFloat(getItemWidth()))}%)`,
+                        }}
+                    >
+                        {posts.map((post, index) => (
+                            <a
+                                key={`${post.id}-${index}`}
+                                href={post.permalink}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                style={{ width: getItemWidth() }}
+                                className="aspect-square flex-shrink-0"
+                            >
+                                <div className="w-full h-full px-2">
+                                    {renderMedia(post)}
+                                </div>
+                            </a>
+                        ))}
+                    </div>
+
+                    {/* Navigation Buttons */}
+                    <button
+                        onClick={() => handleSlideChange('prev')}
+                        className="absolute left-4 top-1/2 -translate-y-1/2 p-2 bg-white/80 rounded-full shadow-lg hover:bg-fifth hover:text-white transition duration-300 z-10"
+                        aria-label="Previous"
+                    >
+                        <MdChevronLeft size={24} />
+                    </button>
+                    <button
+                        onClick={() => handleSlideChange('next')}
+                        className="absolute right-4 top-1/2 -translate-y-1/2 p-2 bg-white/80 rounded-full shadow-lg hover:bg-fifth hover:text-white transition duration-300 z-10"
+                        aria-label="Next"
+                    >
+                        <MdChevronRight size={24} />
+                    </button>
+                </div>
             </div>
         </section>
     );
