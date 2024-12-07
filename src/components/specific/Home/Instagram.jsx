@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { fetchInstagramPosts } from '../../../utils/instagramApi';
 import { MdChevronLeft, MdChevronRight } from 'react-icons/md';
+import { FaInstagram } from "react-icons/fa";
+
 
 const Instagram = () => {
     const [posts, setPosts] = useState([]);
@@ -116,8 +118,8 @@ const Instagram = () => {
         <section className="w-full py-16 overflow-hidden bg-white">
             {/* Title Section */}
             <div className="text-center mb-8">
-                <h2 className="text-base text-primary uppercase tracking-wider mb-2 font-dmsans">Follow us on Instagram</h2>
-                <hr className='w-7/12 sm:w-3/12 mx-auto border-t-2 border-fifth mb-6' />
+                <h2 className="text-base text-primary uppercase tracking-wider mb-2 font-dmsans flex items-center justify-center">Follow us on Instagram<FaInstagram className='text-fifth ml-2' />                </h2>
+                <hr className='w-7/12 sm:w-[20%] mx-auto border-t-2 border-fifth mb-6' />
                 <a
                     href="https://www.instagram.com/amazonxtreme"
                     target="_blank"
