@@ -18,7 +18,7 @@ const Hero = () => {
 
             {/* Content Container */}
             <section className="absolute inset-0 flex flex-col items-center justify-center text-white z-10 px-2 md:px-6 pt-24 sm:pt-24">
-                <p className="text-sm sm:text-base mb-4 max-w-2xl text-center font-dmsans uppercase">
+                <p className="text-sm sm:text-base mb-2 max-w-2xl text-center font-dmsans uppercase">
                     Explore
                 </p>
                 <h1 className="text-2xl sm:text-4xl md:text-5xl font-roxale-calligraphy font-bold mb-1 text-center">
