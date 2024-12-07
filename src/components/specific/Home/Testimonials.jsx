@@ -53,10 +53,10 @@ const Testimonials = () => {
                 <h3 className="section-title text-center italic">Past Experiences and Reviews</h3>
             </div>
 
-            <div className="relative flex items-center justify-center">
+            <div className="relative">
                 <button
                     onClick={handlePrevious}
-                    className="absolute left-2 md:left-8 p-2 rounded-full hover:bg-fifth hover:text-white transition-colors z-10"
+                    className="absolute left-2 md:left-8 top-1/2 -translate-y-1/2 p-2 rounded-full hover:bg-fifth hover:text-white transition-colors z-30"
                     aria-label="Previous testimonial"
                 >
                     <MdChevronLeft size={24} />
@@ -81,10 +81,10 @@ const Testimonials = () => {
                             return (
                                 <div
                                     key={testimonial.id}
-                                    className={`flex flex-col items-center transition-all duration-500
+                                    className={`flex flex-col items-center
                                         ${isActive
-                                            ? 'w-full md:w-1/3 opacity-100 scale-100 z-20'
-                                            : 'w-full md:w-1/4 opacity-0 scale-75 hidden md:flex'}
+                                            ? 'opacity-100 transition-opacity duration-500 ease-in-out md:w-1/3 w-full scale-100 z-20'
+                                            : 'md:w-1/4 w-full opacity-0 scale-75 hidden md:flex'}
                                         ${(isPrevious || isNext)
                                             ? 'md:opacity-60 md:scale-75 cursor-pointer absolute'
                                             : ''}
@@ -93,18 +93,19 @@ const Testimonials = () => {
                                     onClick={() => (isPrevious || isNext) && handleImageClick(index)}
                                 >
                                     {isActive && (
-                                        <div className="max-w-lg text-center mb-6">
+                                        <div className="max-w-lg text-center mb-6 animate-fadeIn">
                                             <MdFormatQuote className="w-8 h-8 mx-auto mb-4 text-tertiary" />
                                             <p className="text-sm sm:text-base text-primary mb-4 font-dmsans font-light">{testimonial.quote}</p>
                                             <h4 className="font-bold text-lg font-roxale italic">{testimonial.name}</h4>
                                             <p className="text-tertiary font-dmsans text-sm">{testimonial.title}</p>
                                         </div>
                                     )}
-                                    <div className={`w-full overflow-hidden ${isActive ? 'h-72 md:h-96' : 'h-48 md:h-72'}`}>
+                                    <div className={`w-full overflow-hidden transition-all duration-500 ease-in-out
+                                        ${isActive ? 'h-72 md:h-96 opacity-100' : 'h-48 md:h-72 opacity-0 md:opacity-60'}`}>
                                         <img
                                             src={testimonial.image}
                                             alt={testimonial.name}
-                                            className="w-full h-full object-contain"
+                                            className="w-full h-full object-contain transition-opacity duration-500 ease-in-out"
                                         />
                                     </div>
                                 </div>
@@ -115,7 +116,7 @@ const Testimonials = () => {
 
                 <button
                     onClick={handleNext}
-                    className="absolute right-2 md:right-8 p-2 rounded-full hover:bg-fifth hover:text-white transition-colors z-10"
+                    className="absolute right-2 md:right-8 top-1/2 -translate-y-1/2 p-2 rounded-full hover:bg-fifth hover:text-white transition-colors z-30"
                     aria-label="Next testimonial"
                 >
                     <MdChevronRight size={24} />

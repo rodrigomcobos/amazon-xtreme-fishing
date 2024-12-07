@@ -45,7 +45,8 @@ const OurDestinations = () => {
             description: "Galapagos Fishing offers an unparalleled adventure in one of the world's most unique ecosystems. Our newest destination combines stunning island scenery with exceptional fishing opportunities, targeting species like tuna, marlin, and more. With expert guides, comfortable accommodations, and endless exploration, a once-in-a-lifetime experience.",
             backgroundImg: GalapagosFishingImg,
             buttonLink: '#',
-        }
+        },
+
     ];
 
     return (
