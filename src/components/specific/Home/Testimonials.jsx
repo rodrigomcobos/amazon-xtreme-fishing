@@ -49,7 +49,7 @@ const Testimonials = () => {
         <div className="w-full max-w-9xl mx-auto px-2 py-16">
             <div className="text-center mb-8 sm:mb-16">
                 <h2 className="text-sm sm:text-base text-primary uppercase tracking-wider mb-2 font-dmsans">Testimonials</h2>
-                <hr className='w-1/6 mx-auto border-t-2 border-fifth mb-6' />
+                <hr className='w-2/6 sm:w-1/6 mx-auto border-t-2 border-fifth mb-6' />
                 <h3 className="section-title text-center italic">Past Experiences and Reviews</h3>
             </div>
 

@@ -71,7 +71,7 @@ const Accommodations = () => {
                         Accommodations
                     </h2>
 
-                    <hr className='w-1/4 border-t-2 border-fifth mx-auto mb-4' />
+                    <hr className='w-2/4 sm:w-1/4 border-t-2 border-fifth mx-auto mb-4' />
 
                     {/* Section Headline */}
                     <h3 className="text-xl md:text-2xl lg:text-3xl font-bold tracking-wide text-prumary mb-6 font-roxale">

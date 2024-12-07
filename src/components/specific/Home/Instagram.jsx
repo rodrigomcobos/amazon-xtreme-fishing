@@ -117,7 +117,7 @@ const Instagram = () => {
             {/* Title Section */}
             <div className="text-center mb-8">
                 <h2 className="text-base text-primary uppercase tracking-wider mb-2 font-dmsans">Follow us on Instagram</h2>
-                <hr className='w-3/12 mx-auto border-t-2 border-fifth mb-6' />
+                <hr className='w-7/12 sm:w-3/12 mx-auto border-t-2 border-fifth mb-6' />
                 <a
                     href="https://www.instagram.com/amazonxtreme"
                     target="_blank"
