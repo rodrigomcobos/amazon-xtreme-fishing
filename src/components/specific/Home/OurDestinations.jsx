@@ -45,7 +45,8 @@ const OurDestinations = () => {
             description: "Galapagos Fishing offers an unparalleled adventure in one of the world's most unique ecosystems. Our newest destination combines stunning island scenery with exceptional fishing opportunities, targeting species like tuna, marlin, and more. With expert guides, comfortable accommodations, and endless exploration, a once-in-a-lifetime experience.",
             backgroundImg: GalapagosFishingImg,
             buttonLink: '#',
-        }
+        },
+
     ];
 
     return (
@@ -111,24 +112,26 @@ const OurDestinations = () => {
                 ))}
             </ul>
 
-            <style jsx global>{`
-                @keyframes fadeIn {
-                    from {
-                        opacity: 0;
-                        transform: translateY(10px);
-                    }
-                    to {
-                        opacity: 1;
-                        transform: translateY(0);
-                    }
-                }
-                .animate-fadeIn {
-                    animation: fadeIn 0.5s ease-out forwards;
-                }
-                .animation-delay-200 {
-                    animation-delay: 200ms;
-                }
-            `}</style>
+            <style>
+                {`
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .animate-fadeIn {
+            animation: fadeIn 0.5s ease-out forwards;
+        }
+        .animation-delay-200 {
+            animation-delay: 200ms;
+        }
+    `}
+            </style>
         </section>
     );
 };

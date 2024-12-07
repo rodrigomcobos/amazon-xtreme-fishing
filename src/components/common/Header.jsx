@@ -91,7 +91,7 @@ const Header = () => {
                 { name: 'The Zaltan Mothership', path: '/zaltan-mothership' },
                 { name: 'The Zaltan Lodge', path: '/zaltan-lodge' },
                 { name: 'Eco Lodge', path: '/ecolodge' },
-                { name: 'Xingu', path: '/xingu' },
+                { name: 'Xingu Reservation', path: '/xingu' },
                 { name: 'Headwaters Safari Camp', path: '/headwaters-camp' },
                 { name: 'Peacock Bass Expeditions', path: '/peacock-bass-expeditions' },
             ],
@@ -370,7 +370,7 @@ const Header = () => {
             )}
 
             {/* Floating Contact Buttons - Only visible on mobile */}
-            <div className={`fixed bottom-4 right-4 flex flex-col gap-3 lg:hidden z-50 transform transition-transform duration-300 ${isVisible ? 'translate-y-0' : 'translate-y-24'
+            <div className={`fixed bottom-4 right-4 flex flex-col gap-3 lg:hidden z-50 transform transition-transform duration-300 ${isVisible ? 'translate-y-0' : 'translate-y-32'
                 }`}>
                 {/* Email Button */}
                 <a

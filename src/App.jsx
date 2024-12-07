@@ -78,7 +78,7 @@ const App = () => {
           <Route path="/zaltan-mothership" element={<TheZaltanMothership />} />
           <Route path="/zaltan-lodge" element={<TheZaltanLodge />} />
           <Route path="/ecolodge" element={<EcoLodge />} />
-          <Route path="/xingu" element={<Xingu />} />
+          <Route path="/xingu-reservation" element={<Xingu />} />
           <Route path="/headwaters-camp" element={<HeadwatersCamp />} />
           <Route path="/peacock-bass-expeditions" element={<PeacockBassExpeditions />} />
 

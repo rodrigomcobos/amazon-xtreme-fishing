@@ -31,7 +31,7 @@ const OurAffiliates = () => {
                 <h2 className="text-xl sm:text-2xl font-bold text-primary mb-2 font-roxale-calligraphy">
                     Our Affiliates
                 </h2>
-                <hr className='w-[14%] mx-auto border-t-2 border-fifth' />
+                <hr className='w-1/3 sm:w-[13%] mx-auto border-t-2 border-fifth' />
             </div>
 
             <Marquee
