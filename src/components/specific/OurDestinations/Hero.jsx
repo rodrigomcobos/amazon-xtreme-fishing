@@ -12,7 +12,7 @@ const Hero = () => {
             />
 
             {/* Gradient Overlays */}
-            <div className="absolute inset-0 bg-gradient-to-b from-primary/90 via-primary/60 to-primary/30" />
+            <div className="absolute inset-0 bg-gradient-to-b from-primary/90 via-primary/70 to-primary/25" />
             {/* Additional top gradient for navbar area */}
             <div className="absolute inset-0 bg-gradient-to-t from-transparent to-black/80 h-32" />
 
