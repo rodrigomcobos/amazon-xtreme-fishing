@@ -3,7 +3,7 @@ import HeroImg from '../../../assets/images/destinationsheroimg.png';
 
 const Hero = () => {
     return (
-        <section className="relative h-[50dvh] sm:h-[600px] w-full overflow-hidden">
+        <section className="relative h-[60dvh] sm:h-[600px] w-full overflow-hidden">
             {/* Image Background */}
             <img
                 src={HeroImg}

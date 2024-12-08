@@ -183,7 +183,7 @@ const WeatherWidget = () => {
                 <div className="absolute right-0 top-1/2 -translate-y-1/2 opacity-[0.08]">
                     <WeatherIcon
                         condition={currentWeather?.weather[0].main}
-                        size={300}
+                        size={240}
                     />
                 </div>
             </div>
@@ -232,7 +232,7 @@ const DestinationsStrip = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, ease: "easeOut" }}
-            className="relative min-h-[150px] py-4 px-4 md:py-6 md:px-6 bg-white font-sans overflow-hidden -mt-20 z-10 max-w-[95%] lg:max-w-[90%] mx-auto rounded-lg mb-0 md:mb-24 lg:mb-8 shadow-lg"
+            className="relative min-h-[150px] py-4 px-4 md:py-6 md:px-6 bg-white font-sans overflow-hidden -mt-8 sm:-mt-20 z-10 max-w-[95%] lg:max-w-[90%] mx-auto rounded-lg mb-0 md:mb-24 lg:mb-8 shadow-lg"
         >
             <WeatherWidget />
         </motion.div>
