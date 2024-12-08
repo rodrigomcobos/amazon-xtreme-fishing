@@ -7,8 +7,21 @@ import {
     WiThunderstorm,
     WiSnow,
     WiFog,
-    WiDaySunnyOvercast
+    WiDaySunnyOvercast,
+    WiMoonNew,
+    WiMoonWaxingCrescent1,
+    WiMoonWaxingCrescent2,
+    WiMoonWaxingCrescent3,
+    WiMoonWaxingCrescent4,
+    WiMoonWaxingCrescent5,
+    WiMoonFull,
+    WiMoonWaningCrescent1,
+    WiMoonWaningCrescent2,
+    WiMoonWaningCrescent3,
+    WiMoonWaningCrescent4,
+    WiMoonWaningCrescent5
 } from 'react-icons/wi';
+import { Moon } from 'lunarphase-js';
 
 const WeatherIcon = ({ condition, size = 64 }) => {
     const getIcon = () => {
@@ -39,11 +52,39 @@ const WeatherIcon = ({ condition, size = 64 }) => {
     return getIcon();
 };
 
+const MoonPhaseIcon = ({ phase, size = 64 }) => {
+    const getMoonIcon = () => {
+        switch (phase) {
+            case 'NEW':
+                return <WiMoonNew size={size} />;
+            case 'WAXING_CRESCENT':
+                return <WiMoonWaxingCrescent3 size={size} />;
+            case 'FIRST_QUARTER':
+                return <WiMoonWaxingCrescent5 size={size} />;
+            case 'WAXING_GIBBOUS':
+                return <WiMoonWaxingCrescent4 size={size} />;
+            case 'FULL':
+                return <WiMoonFull size={size} />;
+            case 'WANING_GIBBOUS':
+                return <WiMoonWaningCrescent2 size={size} />;
+            case 'LAST_QUARTER':
+                return <WiMoonWaningCrescent3 size={size} />;
+            case 'WANING_CRESCENT':
+                return <WiMoonWaningCrescent4 size={size} />;
+            default:
+                return <WiMoonFull size={size} />;
+        }
+    };
+
+    return getMoonIcon();
+};
+
 const WeatherWidget = () => {
     const [currentWeather, setCurrentWeather] = useState(null);
     const [forecast, setForecast] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+    const [moonPhase, setMoonPhase] = useState(null);
 
     useEffect(() => {
         const fetchWeather = async () => {
@@ -72,6 +113,11 @@ const WeatherWidget = () => {
                     .filter(item => item.dt_txt.includes('12:00:00'))
                     .slice(0, 4);
                 setForecast(dailyForecasts);
+
+                // Get current moon phase
+                const currentPhase = Moon.lunarPhase();
+                setMoonPhase(currentPhase);
+
                 setError(null);
             } catch (err) {
                 console.error('Error fetching weather:', err);
@@ -108,25 +154,31 @@ const WeatherWidget = () => {
         });
     };
 
+    const formatMoonPhase = (phase) => {
+        return phase.split('_').map(word =>
+            word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()
+        ).join(' ');
+    };
+
     return (
-        <div className="grid md:grid-cols-2 gap-12">
+        <div className="grid md:grid-cols-12 divide-y md:divide-y-0 md:divide-x divide-gray-200">
             {/* Left Column - Current Weather */}
-            <div className="relative flex items-start">
+            <div className="relative flex items-start md:col-span-4 md:pr-6">
                 <div className="space-y-2 flex-1">
                     <h2 className="text-xl font-medium text-tertiary font-dmsans">Manaus, Brazil</h2>
                     <p className="text-gray-600 font-dmsans font-light text-sm">{formatDate(currentWeather?.dt)}</p>
                     <div className="text-4xl font-bold mt-4 text-tertiary font-dmsans">
                         {Math.round(currentWeather?.main.temp)}°F
                     </div>
-                    <div className="text-gray-600 text-xs font-dmsans font-light">
+                    <div className="text-gray-600 text-sm font-dmsans font-light">
                         H: {Math.round(currentWeather?.main.temp_max)}°F
                         L: {Math.round(currentWeather?.main.temp_min)}°F
                     </div>
                 </div>
                 <div className="space-y-2 ml-8">
                     <p className="capitalize text-gray-700 font-dmsans font-medium">{currentWeather?.weather[0].description}</p>
-                    <p className="text-gray-600 text-xs font-dmsans font-light">Wind: {Math.round(currentWeather?.wind.speed)} mph</p>
-                    <p className="text-gray-600 text-xs font-dmsans font-light">Humidity: {currentWeather?.main.humidity}%</p>
+                    <p className="text-gray-600 text-sm font-dmsans font-light">Wind: {Math.round(currentWeather?.wind.speed)} mph</p>
+                    <p className="text-gray-600 text-sm font-dmsans font-light">Humidity: {currentWeather?.main.humidity}%</p>
                 </div>
                 <div className="absolute right-0 top-1/2 -translate-y-1/2 opacity-[0.08]">
                     <WeatherIcon
@@ -136,8 +188,8 @@ const WeatherWidget = () => {
                 </div>
             </div>
 
-            {/* Right Column - 4-Day Forecast */}
-            <div className="grid grid-cols-4 gap-4">
+            {/* Middle Column - 4-Day Forecast */}
+            <div className="grid grid-cols-4 gap-4 md:col-span-5 py-6 md:py-0 md:px-6">
                 {forecast?.map((day) => (
                     <div
                         key={day.dt}
@@ -155,6 +207,20 @@ const WeatherWidget = () => {
                         </div>
                     </div>
                 ))}
+            </div>
+
+            {/* Right Column - Lunar Phase */}
+            <div className="flex flex-col items-center justify-center md:col-span-3 py-6 md:py-0 md:pl-6">
+                <h3 className="text-base font-medium text-tertiary font-dmsans mb-2">Current Moon Phase</h3>
+                <div className="relative text-fifth">
+                    <MoonPhaseIcon phase={moonPhase} size={60} />
+                </div>
+                <p className="text-gray-700 font-dmsans font-medium mt-2">
+                    {formatMoonPhase(moonPhase)}
+                </p>
+                <p className="text-gray-600 text-sm font-dmsans font-light mt-2">
+                    {Moon.lunarAgePercent().toFixed(1)}% through cycle
+                </p>
             </div>
         </div>
     );
