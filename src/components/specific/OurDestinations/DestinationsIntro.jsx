@@ -10,7 +10,7 @@ const DestinationsIntro = () => {
     const slides = [
         {
             title: "Cultural Connections in the Amazon",
-            description: "Immerse yourself in the traditions of the Amazon’s indigenous communities. Experience fishing paired with cultural discovery.",
+            description: "Immerse yourself in the traditions of the Amazon's indigenous communities. Experience fishing paired with cultural discovery.",
             image: DestinationIntroImg1
         },
         {
@@ -57,14 +57,17 @@ const DestinationsIntro = () => {
     };
 
     return (
-        <div className="bg-tertiary px-4 py-20 mt-32">
-            <div className="grid lg:grid-cols-2 gap-12 lg:max-w-7xl max-w-7xl mx-auto">
-                <div className="text-left">
+        <div className="bg-tertiary px-4 py-16 sm:py-20 pb-52 sm:pb-32 mt-20 sm:mt-32">
+            <div className="grid lg:grid-cols-2 gap-12 lg:gap-12 lg:max-w-7xl max-w-7xl mx-auto">
+                {/* Text Content */}
+                <section className="text-left order-1 lg:order-none">
                     <p className='text-base text-white uppercase font-dmsans font-light mb-4'>World Class Accommodations</p>
                     <h2 className="text-white text-3xl sm:text-5xl font-roxale italic font-bold mb-6">Have you planned your fishing trip yet <span className='font-cormorant italic font-light'>?</span></h2>
                     <p className="mb-4 text-sm text-white font-dmsans font-light">Whether you're after a premier luxury lodge, the #1 live-aboard houseboat, a private yacht, remote river expeditions, or exploratory fishing adventures, we'll help you find the perfect destination tailored to your travel needs, schedule, fishing goals, and budget. With years of hands-on experience and intimate knowledge of our regions, we provide expert guidance to create unforgettable experiences. If it's not already in our offerings, we'll customize it for you—whether it's outdoor TV shows, documentaries, research expeditions, missionary trips, or educational excursions. Even if you just want to escape on a private boat for a week, we'll turn your vision into reality.</p>
-                </div>
-                <div className="-mt-28 relative">
+                </section>
+
+                {/* Image Slideshow */}
+                <section className="order-2 lg:order-none lg:-mt-28 relative">
                     <div className="relative overflow-hidden rounded-lg">
                         {/* Current Slide */}
                         <img
@@ -88,9 +91,10 @@ const DestinationsIntro = () => {
                         />
                     </div>
 
-                    <section className="absolute -bottom-10 left-0 right-0 bg-secondary px-6 py-4 mx-6 rounded-lg">
-                        <div className="flex justify-between items-center">
-                            <div className="flex-1 mr-8">
+                    {/* Container with Text and Slide Buttons */}
+                    <section className="absolute -bottom-36 sm:-bottom-10 left-0 right-0 bg-secondary px-6 py-4 mx-6 rounded-lg">
+                        <div className="flex flex-col lg:flex-row lg:items-center">
+                            <div className="flex-1 mb-4 lg:mb-0 lg:mr-8">
                                 <div className="overflow-hidden">
                                     <h3
                                         className="text-white text-xl sm:text-xl font-roxale mb-2 transition-all duration-500 ease-in-out"
@@ -114,7 +118,7 @@ const DestinationsIntro = () => {
                                     </p>
                                 </div>
                             </div>
-                            <div className="flex gap-4">
+                            <div className="flex gap-4 justify-center lg:justify-start">
                                 <button
                                     onClick={goToPrevSlide}
                                     disabled={isAnimating}
@@ -132,7 +136,7 @@ const DestinationsIntro = () => {
                             </div>
                         </div>
                     </section>
-                </div>
+                </section>
             </div>
         </div>
     );
