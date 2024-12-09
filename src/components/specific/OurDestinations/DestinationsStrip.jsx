@@ -8,18 +8,6 @@ import {
     WiSnow,
     WiFog,
     WiDaySunnyOvercast,
-    WiMoonNew,
-    WiMoonWaxingGibbous1,
-    WiMoonWaxingGibbous2,
-    WiMoonWaxingGibbous3,
-    WiMoonWaxingGibbous4,
-    WiMoonWaxingGibbous5,
-    WiMoonFull,
-    WiMoonWaningCrescent1,
-    WiMoonWaningCrescent2,
-    WiMoonWaningCrescent3,
-    WiMoonWaningCrescent4,
-    WiMoonWaningCrescent5
 } from 'react-icons/wi';
 import { Moon } from 'lunarphase-js';
 
@@ -174,7 +162,7 @@ const WeatherWidget = () => {
                 {forecast?.map((day) => (
                     <div
                         key={day.dt}
-                        className="flex flex-col items-center p-3 bg-white rounded-lg hover:bg-white/75 transition-colors"
+                        className="flex flex-col items-center p-3 bg-white rounded-lg hover:bg-white/75 ring-1 ring-tertiary transition-colors"
                     >
                         <p className="font-semibold text-tertiary text-sm mb-2">{formatDate(day.dt)}</p>
                         <WeatherIcon
@@ -213,7 +201,7 @@ const DestinationsStrip = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, ease: "easeOut" }}
-            className="relative min-h-[150px] py-4 px-4 md:py-6 md:px-6 bg-white font-sans overflow-hidden -mt-8 sm:-mt-20 z-10 max-w-[95%] lg:max-w-[90%] mx-auto rounded-lg mb-0 md:mb-24 lg:mb-8 shadow-lg"
+            className="relative min-h-[150px] py-4 px-4 md:py-6 md:px-6 bg-white bg-gradient-to-b from-white to-tertiary/10 font-sans overflow-hidden -mt-8 sm:-mt-20 z-10 max-w-[95%] lg:max-w-[90%] mx-auto rounded-lg mb-0 md:mb-24 lg:mb-8 shadow-lg"
         >
             <WeatherWidget />
         </motion.div>
