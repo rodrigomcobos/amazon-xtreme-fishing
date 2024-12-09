@@ -70,7 +70,7 @@ const DestinationsIntro = () => {
                 </section>
 
                 {/* Image Slideshow */}
-                <section className="order-2 lg:order-none lg:-mt-28 relative">
+                <section className="order-2 lg:order-none lg:-mt-32 relative">
                     <div className="relative overflow-hidden rounded-lg">
                         {/* Current Slide */}
                         <img
