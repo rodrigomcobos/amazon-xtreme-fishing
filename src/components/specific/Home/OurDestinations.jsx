@@ -97,7 +97,7 @@ const OurDestinations = () => {
 
                             {activeIndex === index && (
                                 <div className="absolute bottom-4 right-4 sm:bottom-8 sm:right-8 left-4 sm:left-auto max-w-lg opacity-0 animate-fadeIn animation-delay-200">
-                                    <p className="text-white text-base font-light font-dmsans sm:ml-0 text-left mt-20 sm:mt-0">
+                                    <p className="text-white text-base font-light font-dmsans sm:ml-0 text-left mt-20 sm:mt-0 pl-0 md:pl-8 lg:pl-0">
                                         {destination.description}
                                     </p>
                                     <div className="flex justify-end mt-4">
