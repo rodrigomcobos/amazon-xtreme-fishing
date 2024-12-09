@@ -170,7 +170,7 @@ const WeatherWidget = () => {
             </div>
 
             {/* Middle Column - 4-Day Forecast */}
-            <div className="grid grid-cols-4 gap-4 md:col-span-5 py-6 md:py-0 md:px-6">
+            <div className="grid grid-cols-4 gap-4 md:col-span-6 py-6 md:py-0 md:px-6">
                 {forecast?.map((day) => (
                     <div
                         key={day.dt}
@@ -191,8 +191,8 @@ const WeatherWidget = () => {
             </div>
 
             {/* Right Column - Lunar Phase */}
-            <div className="flex flex-col items-center justify-center md:col-span-3 py-6 md:py-0 md:pl-6">
-                <h3 className="text-base font-medium text-tertiary font-dmsans mb-2">Current Moon Phase</h3>
+            <div className="flex flex-col items-center justify-center md:col-span-2 py-6 md:py-0 md:pl-6">
+                <h3 className="text-base text-center font-medium text-tertiary font-dmsans mb-2">Current Moon Phase</h3>
                 <div className="relative text-tertiary">  {/* Changed from text-fifth */}
                     <MoonPhaseIcon phase={moonPhase} size={60} />
                 </div>
