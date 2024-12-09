@@ -57,7 +57,7 @@ const DestinationsIntro = () => {
     };
 
     return (
-        <div className="bg-tertiary px-4 py-16 sm:py-20 pb-52 sm:pb-32 border-t-4 border-fifth">
+        <div className="bg-tertiary px-4 py-16 sm:py-20 pb-52 sm:pb-24 border-t-4 border-fifth">
             <div className="grid lg:grid-cols-2 gap-12 lg:gap-12 lg:max-w-7xl max-w-7xl mx-auto">
                 {/* Text Content */}
                 <section className="text-left order-1 lg:order-none">
