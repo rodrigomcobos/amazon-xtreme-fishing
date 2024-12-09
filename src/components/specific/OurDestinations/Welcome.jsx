@@ -82,7 +82,7 @@ const Welcome = () => {
         <div className="relative">
             {/* Background container */}
             <div
-                className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+                className="absolute inset-0 bg-cover bg-left bg-no-repeat"
                 style={{
                     backgroundImage: `url(${WelcomeBackgroundImg})`,
                 }}
@@ -92,7 +92,7 @@ const Welcome = () => {
             <div className="absolute inset-0 bg-gradient-to-b from-white via-white/40 to-transparent" />
 
             {/* Content Container */}
-            <div className="relative px-4 pt-12 pb-96">
+            <div className="relative px-4 pt-16 sm:pt-10 pb-[26rem]">
                 {/* Title */}
                 <h2 className="text-2xl md:text-3xl lg:text-3xl font-roxale text-center text-primary mb-8 uppercase">
                     Step Into the Wonders of the Amazon
@@ -101,16 +101,16 @@ const Welcome = () => {
                 {/* Stats Grid */}
                 <div
                     ref={ref}
-                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-16 max-w-6xl mx-auto"
+                    className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-8 max-w-6xl mx-auto"
                 >
                     {stats.map((stat, index) => (
                         <div key={index} className="text-center">
                             <div className="flex items-center justify-center gap-2">
-                                <div className="text-4xl md:text-4xl font-medium text-primary font-dmsans">
+                                <div className="text-3xl md:text-4xl font-medium text-primary font-dmsans">
                                     {counts[index].toFixed(stat.number % 1 === 0 ? 0 : 1)}
                                     {stat.suffix}
                                 </div>
-                                <div className="text-lg font-light font-dmsans text-primary">
+                                <div className="text-base sm:text-lg font-light font-dmsans text-primary">
                                     {stat.label}
                                 </div>
                             </div>
