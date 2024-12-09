@@ -95,9 +95,9 @@ const Welcome = () => {
             <div className="relative px-4 pt-16 sm:pt-10 pb-[26rem]">
                 {/* Title */}
                 <p className="text-sm sm:text-base mb-1 mx-auto text-center font-dmsans uppercase">
-                    Step Into
+                    Welcome to
                 </p>
-                <hr className='w-[7%] border-t-2 border-fifth mb-3 mx-auto' />
+                <hr className='w-[10%] border-t-2 border-fifth mb-3 mx-auto' />
                 <h2 className="text-2xl md:text-3xl lg:text-3xl font-roxale text-center text-primary mb-8 uppercase">
                     The Wonders of the Amazon
                 </h2>

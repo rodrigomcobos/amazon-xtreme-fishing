@@ -9,11 +9,11 @@ import {
     WiFog,
     WiDaySunnyOvercast,
     WiMoonNew,
-    WiMoonWaxingCrescent1,
-    WiMoonWaxingCrescent2,
-    WiMoonWaxingCrescent3,
-    WiMoonWaxingCrescent4,
-    WiMoonWaxingCrescent5,
+    WiMoonWaxingGibbous1,
+    WiMoonWaxingGibbous2,
+    WiMoonWaxingGibbous3,
+    WiMoonWaxingGibbous4,
+    WiMoonWaxingGibbous5,
     WiMoonFull,
     WiMoonWaningCrescent1,
     WiMoonWaningCrescent2,
@@ -53,30 +53,11 @@ const WeatherIcon = ({ condition, size = 64 }) => {
 };
 
 const MoonPhaseIcon = ({ phase, size = 64 }) => {
-    const getMoonIcon = () => {
-        switch (phase) {
-            case 'NEW':
-                return <WiMoonNew size={size} />;
-            case 'WAXING_CRESCENT':
-                return <WiMoonWaxingCrescent3 size={size} />;
-            case 'FIRST_QUARTER':
-                return <WiMoonWaxingCrescent5 size={size} />;
-            case 'WAXING_GIBBOUS':
-                return <WiMoonWaxingCrescent4 size={size} />;
-            case 'FULL':
-                return <WiMoonFull size={size} />;
-            case 'WANING_GIBBOUS':
-                return <WiMoonWaningCrescent2 size={size} />;
-            case 'LAST_QUARTER':
-                return <WiMoonWaningCrescent3 size={size} />;
-            case 'WANING_CRESCENT':
-                return <WiMoonWaningCrescent4 size={size} />;
-            default:
-                return <WiMoonFull size={size} />;
-        }
-    };
-
-    return getMoonIcon();
+    return (
+        <div style={{ fontSize: `${size * 0.75}px` }}>
+            {Moon.lunarPhaseEmoji()}
+        </div>
+    );
 };
 
 const WeatherWidget = () => {
@@ -212,7 +193,7 @@ const WeatherWidget = () => {
             {/* Right Column - Lunar Phase */}
             <div className="flex flex-col items-center justify-center md:col-span-3 py-6 md:py-0 md:pl-6">
                 <h3 className="text-base font-medium text-tertiary font-dmsans mb-2">Current Moon Phase</h3>
-                <div className="relative text-fifth">
+                <div className="relative text-tertiary">  {/* Changed from text-fifth */}
                     <MoonPhaseIcon phase={moonPhase} size={60} />
                 </div>
                 <p className="text-gray-700 font-dmsans font-medium mt-2">
