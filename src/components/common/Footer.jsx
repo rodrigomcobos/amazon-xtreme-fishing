@@ -57,7 +57,7 @@ const Footer = () => {
 
                 {/* Contact Section */}
                 <p className='text-sm font-medium text-center text-gray-300'>For assistance with your Amazon Xtreme Fishing adventure, including package bookings, please call +1 (469) 995-5351.<br />
-                    <span className='text-tertiary text-sm'>8:00 AM to 5:00 PM Central Time. Guests under 18 years of age must have parent or guardian permission to call.</span>
+                    <span className='text-tertiary text-sm'>Business Hours: Monday to Friday 8:00 AM to 5:00 PM Central Time. Guests under 18 years of age must have parent or guardian permission to call.</span>
                 </p>
 
                 <hr className="my-8 border-secondary" />
