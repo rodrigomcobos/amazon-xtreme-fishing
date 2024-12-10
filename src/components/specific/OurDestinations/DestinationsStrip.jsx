@@ -201,7 +201,7 @@ const DestinationsStrip = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, ease: "easeOut" }}
-            className="relative min-h-[150px] py-4 px-4 md:py-6 md:px-6 bg-white bg-gradient-to-b from-white to-tertiary/10 font-sans overflow-hidden -mt-8 sm:-mt-20 z-10 max-w-[95%] lg:max-w-[90%] mx-auto rounded-lg mb-0 md:mb-24 lg:mb-8 shadow-lg"
+            className="relative min-h-[150px] py-4 px-4 md:py-6 md:px-6 bg-white bg-gradient-to-b from-white to-tertiary/5 font-sans overflow-hidden -mt-8 sm:-mt-20 z-10 max-w-[95%] lg:max-w-[90%] mx-auto rounded-lg mb-0 md:mb-24 lg:mb-8 shadow-lg"
         >
             <WeatherWidget />
         </motion.div>

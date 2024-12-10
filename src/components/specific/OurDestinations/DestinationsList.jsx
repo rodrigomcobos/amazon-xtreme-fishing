@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { Users, ShipWheel, Waves, Calendar, ChevronLeft, ChevronRight, Ruler, BedDouble, BadgePlus } from 'lucide-react';
 import ZaltanaBoatImg1 from '../../../assets/images/zaltanaboatimg1.jpg';
 import ZaltanaBoatImg2 from '../../../assets/images/zaltanaboatimg2.jpg';
@@ -10,6 +10,8 @@ import ZaltanaBoatImg7 from '../../../assets/images/zaltanaboatimg7.jpg';
 
 const DestinationsList = () => {
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
+    const [isHovered, setIsHovered] = useState(false);
+    const [fadeIn, setFadeIn] = useState(true);
 
     const images = [
         { src: ZaltanaBoatImg1, alt: "Zaltana Boat View 1" },
@@ -21,17 +23,35 @@ const DestinationsList = () => {
         { src: ZaltanaBoatImg7, alt: "Zaltana Boat View 7" },
     ];
 
-    const nextImage = () => {
-        setCurrentImageIndex((prevIndex) =>
-            prevIndex === images.length - 1 ? 0 : prevIndex + 1
-        );
-    };
+    const nextImage = useCallback(() => {
+        setFadeIn(false);
+        setTimeout(() => {
+            setCurrentImageIndex((prevIndex) =>
+                prevIndex === images.length - 1 ? 0 : prevIndex + 1
+            );
+            setFadeIn(true);
+        }, 300);
+    }, [images.length]);
 
     const previousImage = () => {
-        setCurrentImageIndex((prevIndex) =>
-            prevIndex === 0 ? images.length - 1 : prevIndex - 1
-        );
+        setFadeIn(false);
+        setTimeout(() => {
+            setCurrentImageIndex((prevIndex) =>
+                prevIndex === 0 ? images.length - 1 : prevIndex - 1
+            );
+            setFadeIn(true);
+        }, 80);
     };
+
+    useEffect(() => {
+        let interval;
+        if (!isHovered) {
+            interval = setInterval(() => {
+                nextImage();
+            }, 5000);
+        }
+        return () => clearInterval(interval);
+    }, [isHovered, nextImage]);
 
     return (
         <div className="p-6 m-10 rounded-lg bg-white bg-gradient-to-b from-white to-tertiary/5 shadow-lg">
@@ -41,7 +61,9 @@ const DestinationsList = () => {
                     <h2 className="text-4xl font-bold text-tertiary mb-2 font-roxale">
                         The Zaltana Mothership
                     </h2>
-                    <p className='text-gray-600 font-dmsans font-light uppercase mb-4'>onboard Brazil's #1 Luxury Floating Hotel</p>
+                    <p className='text-gray-600 font-dmsans font-light uppercase mb-4'>
+                        onboard Brazil's #1 Luxury Floating Hotel
+                    </p>
 
                     <hr className="border-gray-200 mb-6" />
 
@@ -100,12 +122,17 @@ const DestinationsList = () => {
 
                 {/* Right Column - Image Slideshow */}
                 <div className="w-7/12 relative mx-0 sm:mx-6">
-                    <div className="aspect-square relative overflow-visible rounded-lg">
+                    <div
+                        className="aspect-square relative overflow-visible rounded-lg"
+                        onMouseEnter={() => setIsHovered(true)}
+                        onMouseLeave={() => setIsHovered(false)}
+                    >
                         <div className="w-full h-full">
                             <img
                                 src={images[currentImageIndex].src}
                                 alt={images[currentImageIndex].alt}
-                                className="w-full h-full object-cover rounded-lg transition-opacity duration-300"
+                                className={`w-full h-full object-cover rounded-lg transition-opacity duration-600 ${fadeIn ? 'opacity-100' : 'opacity-0'
+                                    }`}
                             />
                         </div>
 
