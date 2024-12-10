@@ -62,10 +62,10 @@ const DestinationsList = () => {
                 </h2>
             </div>
 
-            <div className="p-4 md:p-6 mx-4 md:m-10 rounded-lg bg-white bg-gradient-to-b from-white to-tertiary/5 shadow-lg">
+            <div className="p-4 md:p-6 mx-4 md:m-10 rounded-lg bg-white bg-gradient-to-b from-white to-tertiary/5 shadow-lg ring-1 ring-tertiary/25">
                 <div className="flex flex-col md:flex-row md:gap-6">
                     {/* Info Column */}
-                    <div className="w-full md:w-5/12 order-2 md:order-1 mt-6 md:mt-0 md:m-4">
+                    <div className="w-full md:w-5/12 order-2 md:order-1 mt-6 md:mt-4 md:m-4">
                         <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-tertiary mb-2 font-roxale">
                             The Zaltana Mothership
                         </h2>
@@ -129,7 +129,7 @@ const DestinationsList = () => {
                     </div>
 
                     {/* Image Column */}
-                    <div className="w-full md:w-7/12 order-1 md:order-2 relative mx-0 sm:mx-6">
+                    <div className="w-full md:w-7/12 order-1 md:order-2 relative mx-auto sm:mx-6 my-0 sm:my-4 p-2 sm:p-0">
                         <div
                             className="aspect-square relative overflow-visible rounded-lg"
                             onMouseEnter={() => setIsHovered(true)}
@@ -146,13 +146,13 @@ const DestinationsList = () => {
                             {/* Navigation Buttons */}
                             <button
                                 onClick={previousImage}
-                                className="absolute -left-3 md:-left-6 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-fifth hover:text-white p-2 md:p-3 rounded-full shadow-lg transition duration-300 border border-secondary"
+                                className="absolute -left-3 md:-left-6 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-fifth hover:text-white p-2 md:p-3 rounded-full shadow-lg transition duration-300 border border-secondary hover:border hover:border-white"
                             >
                                 <ChevronLeft className="w-5 h-5 md:w-6 md:h-6" />
                             </button>
                             <button
                                 onClick={nextImage}
-                                className="absolute -right-3 md:-right-6 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-fifth hover:text-white p-2 md:p-3 rounded-full shadow-lg transition duration-300 border border-secondary"
+                                className="absolute -right-3 md:-right-6 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-fifth hover:text-white p-2 md:p-3 rounded-full shadow-lg transition duration-300 border border-secondary hover:border hover:border-white"
                             >
                                 <ChevronRight className="w-5 h-5 md:w-6 md:h-6" />
                             </button>
