@@ -88,7 +88,7 @@ const DestinationCard = ({ destination }) => {
                     >
                         <div className="w-full h-full">
                             <img
-                                src={`/api/placeholder/800/800`} // Replace with actual image import
+                                src={destination.images[currentImageIndex].src}
                                 alt={destination.images[currentImageIndex].alt}
                                 className={`w-full h-full object-cover rounded-lg transition duration-600 ${fadeIn ? 'opacity-100' : 'opacity-0'}`}
                             />

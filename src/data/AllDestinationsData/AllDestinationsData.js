@@ -1,3 +1,11 @@
+import ZaltanaBoatImg1 from '../../assets/images/zaltanaboatimg1.jpg';
+import ZaltanaBoatImg2 from '../../assets/images/zaltanaboatimg2.jpg';
+import ZaltanaBoatImg3 from '../../assets/images/zaltanaboatimg3.jpg';
+import ZaltanaBoatImg4 from '../../assets/images/zaltanaboatimg4.png';
+import ZaltanaBoatImg5 from '../../assets/images/zaltanaboatimg5.png';
+import ZaltanaBoatImg6 from '../../assets/images/zaltanaboatimg6.jpg';
+import ZaltanaBoatImg7 from '../../assets/images/zaltanaboatimg7.jpg';
+
 export const destinationsData = [
   {
     id: 'zaltana-mothership',
@@ -18,13 +26,13 @@ export const destinationsData = [
       },
     ],
     images: [
-      { src: 'ZaltanaBoatImg1', alt: 'Zaltana Mothership View 1' },
-      { src: 'ZaltanaBoatImg2', alt: 'Zaltana Mothership View 2' },
-      { src: 'ZaltanaBoatImg3', alt: 'Zaltana Mothership View 3' },
-      { src: 'ZaltanaBoatImg4', alt: 'Zaltana Mothership View 4' },
-      { src: 'ZaltanaBoatImg5', alt: 'Zaltana Mothership View 5' },
-      { src: 'ZaltanaBoatImg6', alt: 'Zaltana Mothership View 6' },
-      { src: 'ZaltanaBoatImg7', alt: 'Zaltana Mothership View 7' },
+      { src: ZaltanaBoatImg1, alt: 'Zaltana Mothership View 1' },
+      { src: ZaltanaBoatImg2, alt: 'Zaltana Mothership View 2' },
+      { src: ZaltanaBoatImg3, alt: 'Zaltana Mothership View 3' },
+      { src: ZaltanaBoatImg4, alt: 'Zaltana Mothership View 4' },
+      { src: ZaltanaBoatImg5, alt: 'Zaltana Mothership View 5' },
+      { src: ZaltanaBoatImg6, alt: 'Zaltana Mothership View 6' },
+      { src: ZaltanaBoatImg7, alt: 'Zaltana Mothership View 7' },
     ],
   },
   {
