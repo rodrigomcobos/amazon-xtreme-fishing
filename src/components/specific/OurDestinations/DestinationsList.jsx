@@ -121,7 +121,7 @@ const DestinationCard = ({ destination }) => {
 
 const DestinationsList = () => {
     return (
-        <section className="max-w-9xl mx-auto my-6">
+        <section className="max-w-[100rem] mx-auto my-6">
             <div className="text-center my-8 md:my-12 pt-6 md:pt-10">
                 <p className="text-sm sm:text-base mb-1 mx-auto text-center font-dmsans uppercase">
                     Your Gateway to Adventure

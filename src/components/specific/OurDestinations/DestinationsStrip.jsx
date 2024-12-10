@@ -162,7 +162,7 @@ const WeatherWidget = () => {
                 {forecast?.map((day) => (
                     <div
                         key={day.dt}
-                        className="flex flex-col items-center p-3 bg-white rounded-lg hover:bg-white/75 ring-1 ring-tertiary transition-colors"
+                        className="flex flex-col items-center p-3 bg-white rounded-lg hover:bg-white/75 ring-1 ring-tertiary/25 transition duration-300 ease-in-out"
                     >
                         <p className="font-semibold text-tertiary text-sm mb-2">{formatDate(day.dt)}</p>
                         <WeatherIcon
@@ -180,14 +180,14 @@ const WeatherWidget = () => {
 
             {/* Right Column - Lunar Phase */}
             <div className="flex flex-col items-center justify-center md:col-span-2 py-6 md:py-0 md:pl-6">
-                <h3 className="text-base text-center font-medium text-tertiary font-dmsans mb-2">Current Moon Phase</h3>
+                <h3 className="text-base text-center font-medium text-tertiary font-dmsans">Current Moon Phase</h3>
                 <div className="relative text-tertiary">  {/* Changed from text-fifth */}
-                    <MoonPhaseIcon phase={moonPhase} size={60} />
+                    <MoonPhaseIcon phase={moonPhase} size={70} />
                 </div>
-                <p className="text-gray-700 font-dmsans font-medium mt-2">
+                <p className="text-gray-700 font-dmsans font-medium">
                     {formatMoonPhase(moonPhase)}
                 </p>
-                <p className="text-gray-600 text-sm font-dmsans font-light mt-2">
+                <p className="text-gray-600 text-xs font-dmsans font-light uppercase">
                     {Moon.lunarAgePercent().toFixed(1)}% through cycle
                 </p>
             </div>
@@ -201,7 +201,7 @@ const DestinationsStrip = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, ease: "easeOut" }}
-            className="relative min-h-[150px] py-4 px-4 md:py-6 md:px-6 bg-white bg-gradient-to-b from-white to-tertiary/5 font-sans overflow-hidden -mt-8 sm:-mt-20 z-10 max-w-[95%] lg:max-w-[90%] mx-auto rounded-lg mb-0 md:mb-24 lg:mb-8 shadow-lg"
+            className="relative min-h-[150px] py-4 px-4 md:py-6 md:px-6 bg-white ring-1 ring-tertiary/25 bg-gradient-to-b from-white to-tertiary/5 font-sans overflow-hidden -mt-8 sm:-mt-20 z-10 max-w-[95%] lg:max-w-[90%] mx-auto rounded-lg mb-0 md:mb-24 lg:mb-8 shadow-lg"
         >
             <WeatherWidget />
         </motion.div>
