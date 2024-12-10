@@ -57,8 +57,12 @@ const DestinationsList = () => {
         <section className="w-full my-6">
             {/* Section Header */}
             <div className="text-center my-8 md:my-12 pt-6 md:pt-10">
+                <p className="text-sm sm:text-base mb-1 mx-auto text-center font-dmsans uppercase">
+                    Your Gateway to Adventure
+                </p>
+                <hr className='w-[20%] border-t-2 border-fifth mb-3 mx-auto' />
                 <h2 className="section-title">
-                    All Destinations
+                    Unforgettable Fishing Destinations
                 </h2>
             </div>
 
