@@ -52,7 +52,7 @@ const Accommodations = () => {
             </div>
 
             {/* Overlapping white container */}
-            <div className="relative max-w-[90%] lg:max-w-[90%] mx-auto -mt-24 bg-white rounded-lg shadow-lg p-8 md:p-12">
+            <div className="relative max-w-[90%] lg:max-w-[90%] mx-auto -mt-24 bg-white bg-gradient-to-b from-white to-tertiary/5 rounded-lg shadow-lg p-8 md:p-12">
                 {/* Indicators */}
                 <div className="absolute -top-5 left-0 right-0 flex justify-center gap-2">
                     {images.map((_, index) => (
