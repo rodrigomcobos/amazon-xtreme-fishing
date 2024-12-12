@@ -11,27 +11,27 @@ const Welcome = () => {
     const stats = [
         {
             number: 3000,
-            suffix: '',
-            label: 'Fish Species',
+            suffix: '+',
+            label: ' Fish Species',
             description: 'Including the Iconic Peacock Bass'
         },
         {
             number: 1100,
-            suffix: '',
-            label: 'Tributaries',
+            suffix: '+',
+            label: ' Tributaries',
             description: 'Including the Rio Negro'
         },
         {
             number: 5.5,
-            suffix: ' Million',
-            label: 'Square Km',
+            suffix: '+ Million',
+            label: 'Sqkm',
             description: 'Spanning 9 Countries'
         },
         {
-            number: 15,
-            suffix: '',
-            label: 'years of Experience',
-            description: 'Since 2009'
+            number: 22,
+            suffix: '+',
+            label: ' Years',
+            description: 'of Experience'
         },
         {
             number: 5,
@@ -89,13 +89,17 @@ const Welcome = () => {
             />
 
             {/* Gradient overlay */}
-            <div className="absolute inset-0 bg-gradient-to-b from-white via-white/40 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-b from-white via-white/30 to-transparent" />
 
             {/* Content Container */}
             <div className="relative px-4 pt-16 sm:pt-10 pb-[26rem]">
                 {/* Title */}
+                <p className="text-sm sm:text-base mb-1 mx-auto text-center font-dmsans uppercase">
+                    Welcome to
+                </p>
+                <hr className='w-[10%] border-t-2 border-fifth mb-3 mx-auto' />
                 <h2 className="text-2xl md:text-3xl lg:text-3xl font-roxale text-center text-primary mb-8 uppercase">
-                    Step Into the Wonders of the Amazon
+                    The Wonders of the Amazon
                 </h2>
 
                 {/* Stats Grid */}
@@ -106,7 +110,7 @@ const Welcome = () => {
                     {stats.map((stat, index) => (
                         <div key={index} className="text-center">
                             <div className="flex items-center justify-center gap-2">
-                                <div className="text-3xl md:text-4xl font-medium text-primary font-dmsans">
+                                <div className="text-2xl md:text-4xl font-bold text-secondary font-dmsans">
                                     {counts[index].toFixed(stat.number % 1 === 0 ? 0 : 1)}
                                     {stat.suffix}
                                 </div>

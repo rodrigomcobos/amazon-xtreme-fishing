@@ -3,6 +3,7 @@ import Hero from '../../components/specific/OurDestinations/Hero'
 import DestinationsStrip from '../../components/specific/OurDestinations/DestinationsStrip'
 import DestinationsIntro from '../../components/specific/OurDestinations/DestinationsIntro'
 import Welcome from '../../components/specific/OurDestinations/Welcome'
+import DestinationsList from '../../components/specific/OurDestinations/DestinationsList'
 
 const AllDestinations = () => {
     return (
@@ -13,6 +14,7 @@ const AllDestinations = () => {
                 <Welcome />
             </div>
             <DestinationsIntro />
+            <DestinationsList />
         </div>
     );
 };
