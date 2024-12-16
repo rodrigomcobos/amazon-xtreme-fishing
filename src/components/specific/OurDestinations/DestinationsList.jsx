@@ -81,8 +81,9 @@ const DestinationCard = ({ destination }) => {
 
                 {/* Image Column */}
                 <div className="w-full md:w-7/12 order-1 md:order-2 relative mx-auto sm:mx-6 my-0 sm:my-4 p-2 sm:p-0">
+                    {/* Image container with fixed height - Adjust the h-[500px] value to change the height */}
                     <div
-                        className="aspect-square relative overflow-visible rounded-lg"
+                        className="h-[500px] relative overflow-visible rounded-lg"
                         onMouseEnter={() => setIsHovered(true)}
                         onMouseLeave={() => setIsHovered(false)}
                     >
