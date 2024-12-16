@@ -30,6 +30,14 @@ import EcolodgeImg5 from '../../assets/images/ecolodgeimg5.png';
 import EcolodgeImg6 from '../../assets/images/ecolodgeimg6.png';
 import EcolodgeImg7 from '../../assets/images/ecolodgeimg7.png';
 
+import PeacockBassexpImg1 from '../../assets/images/peacockbassexpimg1.png';
+import PeacockBassexpImg2 from '../../assets/images/peacockbassexpimg2.png';
+import PeacockBassexpImg3 from '../../assets/images/peacockbassexpimg3.png';
+import PeacockBassexpImg4 from '../../assets/images/peacockbassexpimg4.png';
+import PeacockBassexpImg5 from '../../assets/images/peacockbassexpimg5.png';
+import PeacockBassexpImg6 from '../../assets/images/peacockbassexpimg6.png';
+import PeacockBassexpImg7 from '../../assets/images/peacockbassexpimg7.png';
+
 import GalapagosImg1 from '../../assets/images/galapagosimg1.png';
 import GalapagosImg2 from '../../assets/images/galapagosimg2.png';
 import GalapagosImg3 from '../../assets/images/galapagosimg3.png';
@@ -157,12 +165,15 @@ export const destinationsData = [
       { icon: 'Calendar', text: 'Custom Trip Length' },
       { icon: 'BadgePlus', text: 'Photography Tours Available' },
     ],
-    images: Array(7)
-      .fill(null)
-      .map((_, i) => ({
-        src: `ExpeditionImg${i + 1}`,
-        alt: `Peacock Bass Expedition View ${i + 1}`,
-      })),
+    images: [
+      { src: PeacockBassexpImg1, alt: 'Peacock Bass Expeditions View 1' },
+      { src: PeacockBassexpImg2, alt: 'Peacock Bass Expeditions View 2' },
+      { src: PeacockBassexpImg3, alt: 'Peacock Bass Expeditions View 3' },
+      { src: PeacockBassexpImg4, alt: 'Peacock Bass Expeditions View 4' },
+      { src: PeacockBassexpImg5, alt: 'Peacock Bass Expeditions View 5' },
+      { src: PeacockBassexpImg6, alt: 'Peacock Bass Expeditions View 6' },
+      { src: PeacockBassexpImg7, alt: 'Peacock Bass Expeditions View 7' },
+    ],
   },
   {
     id: 'galapagos-fishing',
