@@ -42,27 +42,31 @@ const DestinationCard = ({ destination }) => {
     }, [isHovered, nextImage]);
 
     return (
-        <div className="p-4 md:p-6 mx-4 md:m-10 rounded-lg bg-white bg-gradient-to-b from-white to-tertiary/5 shadow-lg ring-1 ring-tertiary/25">
+        <div className="p-4 md:p-6 mx-4 md:m-10 rounded-lg bg-white bg-gradient-to-b from-white to-tertiary/5 shadow-lg ring-1 ring-tertiary/25 overflow-hidden mb-8 sm:mb-0">
+            {/* Title section with full-width background */}
+            <div className="relative -mx-4 md:-mx-6 -mt-4 md:-mt-6 mb-6 bg-tertiary">
+                <div className="px-4 md:px-6 pt-6 sm:pt-8 pb-4">
+                    <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-fourth mb-2 font-roxale">
+                        {destination.title}
+                    </h2>
+                    <p className='text-white/75 font-dmsans font-light uppercase'>
+                        {destination.subtitle}
+                    </p>
+                </div>
+                <hr className="border-b-2 border-fifth" />
+            </div>
+
             <div className="flex flex-col md:flex-row md:gap-6">
                 {/* Info Column */}
                 <div className="w-full md:w-5/12 order-2 md:order-1 mt-6 md:mt-4 md:m-4">
-                    <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-tertiary mb-2 font-roxale">
-                        {destination.title}
-                    </h2>
-                    <p className='text-gray-600 font-dmsans font-light uppercase mb-4'>
-                        {destination.subtitle}
-                    </p>
-
-                    <hr className="border-gray-200 mb-6" />
-
                     {/* Features List */}
                     <div className="space-y-4 mb-6 font-dmsans font-light">
                         {destination.features.map((feature, index) => {
                             const Icon = iconComponents[feature.icon];
                             return (
                                 <div key={index} className="flex items-center gap-3">
-                                    <Icon className="w-6 md:w-7 h-6 md:h-7 text-gray-600" />
-                                    <span className="text-gray-700">{feature.text}</span>
+                                    <Icon className="w-6 md:w-7 h-5 md:h-7 text-gray-600" />
+                                    <span className="text-gray-700 text-sm sm:text-base">{feature.text}</span>
                                 </div>
                             );
                         })}
@@ -83,7 +87,7 @@ const DestinationCard = ({ destination }) => {
                 <div className="w-full md:w-7/12 order-1 md:order-2 relative mx-auto sm:mx-6 my-0 sm:my-4 p-2 sm:p-0">
                     {/* Image container with fixed height - Adjust the h-[500px] value to change the height */}
                     <div
-                        className="h-[500px] relative overflow-visible rounded-lg"
+                        className="h-[250px] sm:h-[500px] relative overflow-visible rounded-lg bottom-0 sm:bottom-20"
                         onMouseEnter={() => setIsHovered(true)}
                         onMouseLeave={() => setIsHovered(false)}
                     >
