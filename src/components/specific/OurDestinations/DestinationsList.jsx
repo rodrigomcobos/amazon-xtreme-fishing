@@ -48,7 +48,7 @@ const DestinationCard = ({ destination }) => {
             <div className="relative -mx-4 md:-mx-6 -mt-4 md:-mt-6 mb-6 bg-tertiary overflow-hidden">
                 {/* Background Image */}
                 <div
-                    className="absolute right-0 top-0 w-[60%] h-full opacity-20"
+                    className="absolute right-0 top-0 w-[80%] sm:w-[60%] h-full opacity-20"
                     style={{
                         backgroundImage: `url(${TopoBackground})`,
                         backgroundPosition: 'center right',
@@ -58,7 +58,7 @@ const DestinationCard = ({ destination }) => {
                 />
 
                 {/* Content */}
-                <div className="relative px-4 md:px-6 pt-6 sm:pt-8 pb-4">
+                <div className="relative px-4 md:px-6 pt-6 sm:pt-8 pb-20 sm:pb-4">
                     <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-fourth mb-2 font-roxale">
                         {destination.title}
                     </h2>
@@ -99,7 +99,7 @@ const DestinationCard = ({ destination }) => {
                 {/* Image Column */}
                 <div className="w-full md:w-7/12 order-1 md:order-2 relative mx-auto sm:mx-6 my-0 sm:my-4 p-2 sm:p-0">
                     <div
-                        className="h-[250px] sm:h-[500px] relative overflow-visible rounded-lg bottom-0 sm:bottom-20"
+                        className="h-[250px] sm:h-[500px] relative overflow-visible rounded-lg bottom-20 sm:bottom-20 -mb-20 sm:mb-0"
                         onMouseEnter={() => setIsHovered(true)}
                         onMouseLeave={() => setIsHovered(false)}
                     >
