@@ -4,6 +4,7 @@ import DestinationsStrip from '../../components/specific/OurDestinations/Destina
 import DestinationsIntro from '../../components/specific/OurDestinations/DestinationsIntro'
 import Welcome from '../../components/specific/OurDestinations/Welcome'
 import DestinationsList from '../../components/specific/OurDestinations/DestinationsList'
+import DontLetItGetAway from '../../components/specific/OurDestinations/DontLetItGetAway'
 
 const AllDestinations = () => {
     return (
@@ -15,6 +16,7 @@ const AllDestinations = () => {
             </div>
             <DestinationsIntro />
             <DestinationsList />
+            <DontLetItGetAway />
         </div>
     );
 };
