@@ -82,13 +82,16 @@ export const destinationsData = [
     description:
       'Experience luxury in the heart of the Amazon at our riverside lodge. Featuring spacious rooms with modern amenities, expert guides, and direct access to prime fishing spots. Our lodge combines comfort with adventure for an unforgettable Amazon experience.',
     features: [
-      { icon: 'Users', text: '12-16 Anglers Per Group' },
-      { icon: 'ShipWheel', text: '8 custom fishing boats' },
-      { icon: 'Home', text: 'Deluxe Lodge Rooms' },
-      { icon: 'BedDouble', text: 'Double Occupancy Available' },
-      { icon: 'Waves', text: 'Prime Amazon River Location' },
-      { icon: 'Calendar', text: '5-7 Night Packages Available' },
-      { icon: 'BadgePlus', text: 'Custom Group Packages Available' },
+      { icon: 'Users', text: '12 Anglers Per Group' },
+      { icon: 'ShipWheel', text: '6 fully equipped bass boats' },
+      { icon: 'Ruler', text: '6 VIP Suites - Full-Size Beds' },
+      { icon: 'BedDouble', text: 'Single & Double Occupancy' },
+      { icon: 'Waves', text: 'Located on Lost River Tributaries' },
+      { icon: 'Calendar', text: '7-Nights, 6-Full Days of Fishing' },
+      {
+        icon: 'BadgePlus',
+        text: 'Ask about Private Charters, Single, Couples, Groups & Family Pkgs',
+      },
     ],
     images: [
       { src: ZaltanaLodgeImg1, alt: 'Zaltana Lodge View 1' },
@@ -107,13 +110,19 @@ export const destinationsData = [
     description:
       'Our eco-friendly lodge offers an immersive Amazon experience while maintaining environmental responsibility. Enjoy comfortable accommodations, locally sourced cuisine, and world-class peacock bass fishing in protected waters.',
     features: [
-      { icon: 'Users', text: '8-12 Anglers Per Group' },
-      { icon: 'ShipWheel', text: '6 eco-friendly boats' },
-      { icon: 'Leaf', text: 'Sustainable Eco-Lodging' },
-      { icon: 'BedDouble', text: 'Private Bungalows' },
-      { icon: 'Waves', text: 'Protected Water Access' },
-      { icon: 'Calendar', text: 'Flexible Stay Options' },
-      { icon: 'BadgePlus', text: 'Eco-Tours Available' },
+      { icon: 'Users', text: '16 Anglers Per Group' },
+      { icon: 'ShipWheel', text: '8 fully equipped bass boats' },
+      { icon: 'Ruler', text: '8 - 280sf VIP Suites' },
+      { icon: 'BedDouble', text: 'Double Occupancy' },
+      {
+        icon: 'Waves',
+        text: 'Located on 3 Rivers - Confluence Teles-Pires, Juruena & Tapajós',
+      },
+      { icon: 'Calendar', text: '7-Nights, 6-Full Days of Fishing' },
+      {
+        icon: 'BadgePlus',
+        text: 'Ask about Private Charters, Single, Couples, Groups & Family Pkgs',
+      },
     ],
     images: [
       { src: EcolodgeImg1, alt: 'Ecolodge View 1' },
@@ -132,13 +141,16 @@ export const destinationsData = [
     description:
       'Fish in pristine waters within protected indigenous territories. Our partnership with local communities provides exclusive access while supporting sustainable practices and cultural preservation.',
     features: [
-      { icon: 'Users', text: '6-8 Anglers Per Group' },
-      { icon: 'ShipWheel', text: '4 traditional boats' },
-      { icon: 'Home', text: 'Traditional Accommodations' },
-      { icon: 'Users', text: 'Cultural Immersion' },
-      { icon: 'Waves', text: 'Exclusive Territory Access' },
-      { icon: 'Calendar', text: 'Limited Seasonal Availability' },
-      { icon: 'BadgePlus', text: 'Cultural Exchange Programs' },
+      { icon: 'Users', text: '16-20 Anglers Per Group' },
+      { icon: 'ShipWheel', text: '10 fully equipped bass boats' },
+      { icon: 'Ruler', text: 'VIP - 180sf Suites' },
+      { icon: 'BedDouble', text: 'Double Occupancy' },
+      { icon: 'Waves', text: 'Located on Rio Negro Tributaries' },
+      { icon: 'Calendar', text: '7-Nights, 6-Full Days of Fishing' },
+      {
+        icon: 'BadgePlus',
+        text: 'Ask about Private Charters, Single, Couples, Groups & Family Pkgs',
+      },
     ],
     images: [
       { src: XinguReservationImg1, alt: 'Xingu Reservation View 1' },
@@ -157,13 +169,16 @@ export const destinationsData = [
     description:
       'For the adventurous angler, our mobile expedition camps follow the best fishing opportunities throughout the season. Experience camping in comfort while accessing remote, rarely-fished waters.',
     features: [
-      { icon: 'Users', text: '4-6 Anglers Per Group' },
-      { icon: 'ShipWheel', text: '3 expedition boats' },
-      { icon: 'Tent', text: 'Luxury Camp Setup' },
-      { icon: 'Compass', text: 'Remote Locations' },
-      { icon: 'Waves', text: 'Virgin Waters Access' },
-      { icon: 'Calendar', text: 'Custom Trip Length' },
-      { icon: 'BadgePlus', text: 'Photography Tours Available' },
+      { icon: 'Users', text: '14 Anglers Per Group' },
+      { icon: 'ShipWheel', text: '7 fully equipped bass boats' },
+      { icon: 'Ruler', text: 'Private Ample Suites' },
+      { icon: 'BedDouble', text: 'Double Occupancy' },
+      { icon: 'Waves', text: 'Located on the Xereuini River System' },
+      { icon: 'Calendar', text: '7-Nights, 5-Full Days of Fishing' },
+      {
+        icon: 'BadgePlus',
+        text: 'Ask about Private Charters, Single, Couples, Groups & Family Pkgs',
+      },
     ],
     images: [
       { src: PeacockBassexpImg1, alt: 'Peacock Bass Expeditions View 1' },
@@ -182,13 +197,16 @@ export const destinationsData = [
     description:
       'Combine world-class fishing with incredible wildlife encounters in the Galapagos Islands. Our specialized programs offer both inshore and offshore fishing opportunities while exploring this unique ecosystem.',
     features: [
-      { icon: 'Users', text: '4-8 Anglers Per Group' },
-      { icon: 'ShipWheel', text: '4 specialized boats' },
-      { icon: 'Home', text: 'Island Lodge' },
-      { icon: 'Camera', text: 'Wildlife Photography' },
-      { icon: 'Waves', text: 'Multiple Species Target' },
-      { icon: 'Calendar', text: 'Year-round Availability' },
-      { icon: 'BadgePlus', text: 'Diving Packages Available' },
+      { icon: 'Users', text: '16-20 Anglers Per Group' },
+      { icon: 'ShipWheel', text: '10 fully equipped bass boats' },
+      { icon: 'Ruler', text: 'VIP - 180sf Suites' },
+      { icon: 'BedDouble', text: 'Double Occupancy' },
+      { icon: 'Waves', text: 'Located on Rio Negro Tributaries' },
+      { icon: 'Calendar', text: '7-Nights, 6-Full Days of Fishing' },
+      {
+        icon: 'BadgePlus',
+        text: 'Ask about Private Charters, Single, Couples, Groups & Family Pkgs',
+      },
     ],
     images: [
       { src: GalapagosImg1, alt: 'Galapagos Fishing View 1' },
