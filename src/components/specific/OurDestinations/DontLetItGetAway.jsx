@@ -30,7 +30,7 @@ const DontLetItGetAway = () => {
             </div>
 
             {/* Background Image with Gradient Overlay */}
-            <div className="relative w-full h-[300px] sm:h-[850px] -mt-16 sm:mt-0">
+            <div className="relative w-full h-[300px] sm:h-[800px] -mt-16 sm:mt-0">
                 <img
                     src={DontMissItBackgroundImg}
                     alt="Don't miss out background"
