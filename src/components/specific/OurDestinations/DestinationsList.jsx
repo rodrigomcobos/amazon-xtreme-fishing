@@ -43,7 +43,7 @@ const DestinationCard = ({ destination }) => {
     }, [isHovered, nextImage]);
 
     return (
-        <div className="p-4 md:p-6 mx-4 md:m-10 rounded-lg bg-white bg-gradient-to-b from-white to-tertiary/5 shadow-lg ring-1 ring-tertiary/25 overflow-hidden mb-8 sm:mb-0">
+        <div className="p-4 md:p-6 mx-2 md:m-10 rounded-lg bg-white bg-gradient-to-b from-white to-tertiary/5 shadow-lg ring-1 ring-tertiary/25 overflow-hidden mb-8 sm:mb-0">
             {/* Title section with full-width background */}
             <div className="relative -mx-4 md:-mx-6 -mt-4 md:-mt-6 mb-6 bg-tertiary overflow-hidden">
                 {/* Background Image */}
@@ -143,7 +143,7 @@ const DestinationsList = () => {
                 <p className="text-sm sm:text-base mb-1 mx-auto text-center font-dmsans uppercase">
                     Your Gateway to Adventure
                 </p>
-                <hr className='w-[20%] border-t-2 border-fifth mb-3 mx-auto' />
+                <hr className='w-[55%] sm:w-[20%] border-t-2 border-fifth mb-3 mx-auto' />
                 <h2 className="section-title uppercase">
                     Unforgettable Fishing Destinations
                 </h2>
