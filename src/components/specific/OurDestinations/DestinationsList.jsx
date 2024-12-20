@@ -1,12 +1,13 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { Users, ShipWheel, Waves, Calendar, ChevronLeft, ChevronRight, Ruler, BedDouble, BadgePlus, Home, Leaf, Tent, Compass, Camera } from 'lucide-react';
+import { BsGraphUpArrow } from "react-icons/bs";
 import { destinationsData } from '../../../data/AllDestinationsData/AllDestinationsData';
 import TopoBackground from '../../../assets/images/topobackground.svg';
 
 // Map icon strings to components
 const iconComponents = {
     Users, ShipWheel, Waves, Calendar, Ruler, BedDouble, BadgePlus,
-    Home, Leaf, Tent, Compass, Camera
+    Home, Leaf, Tent, Compass, Camera, BsGraphUpArrow
 };
 
 const DestinationCard = ({ destination }) => {
@@ -99,7 +100,7 @@ const DestinationCard = ({ destination }) => {
                 {/* Image Column */}
                 <div className="w-full md:w-7/12 order-1 md:order-2 relative mx-auto sm:mx-6 my-0 sm:my-4 p-2 sm:p-0">
                     <div
-                        className="h-[250px] sm:h-[500px] relative overflow-visible rounded-lg bottom-20 sm:bottom-20 -mb-20 sm:mb-0"
+                        className="h-[250px] sm:h-[500px] relative overflow-visible rounded-lg bottom-[5.5rem] sm:bottom-20 -mb-20 sm:mb-0"
                         onMouseEnter={() => setIsHovered(true)}
                         onMouseLeave={() => setIsHovered(false)}
                     >

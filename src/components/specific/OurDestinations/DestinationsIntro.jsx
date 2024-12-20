@@ -57,7 +57,7 @@ const DestinationsIntro = () => {
     };
 
     return (
-        <div className="bg-tertiary px-4 py-16 sm:py-20 pb-52 sm:pb-24 border-t-4 border-fifth">
+        <div className="bg-tertiary px-4 py-10 sm:py-20 pb-52 sm:pb-24 border-t-4 border-fifth">
             <div className="grid lg:grid-cols-2 gap-12 lg:gap-12 lg:max-w-7xl max-w-7xl mx-auto">
                 {/* Text Content */}
                 <section className="text-left order-1 lg:order-none">
@@ -95,7 +95,7 @@ const DestinationsIntro = () => {
                     </div>
 
                     {/* Container with Text and Slide Buttons */}
-                    <section className="absolute -bottom-36 sm:-bottom-10 left-0 right-0 bg-secondary px-6 py-4 mx-6 rounded-lg">
+                    <section className="absolute -bottom-40 sm:-bottom-10 left-0 right-0 bg-secondary px-6 py-4 mx-4 sm:mx-6 rounded-lg">
                         <div className="flex flex-col lg:flex-row lg:items-center">
                             <div className="flex-1 mb-4 lg:mb-0 lg:mr-8">
                                 <div className="overflow-hidden">
@@ -111,7 +111,7 @@ const DestinationsIntro = () => {
                                 </div>
                                 <div className="overflow-hidden">
                                     <p
-                                        className="text-white text-sm font-dmsans font-light transition-all duration-500 ease-in-out"
+                                        className="text-white text-sm sm:text-sm font-dmsans font-light transition-all duration-500 ease-in-out"
                                         style={{
                                             opacity: isAnimating ? 0 : 1,
                                             transform: isAnimating ? 'translateY(20px)' : 'translateY(0)'

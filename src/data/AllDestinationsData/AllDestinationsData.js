@@ -54,6 +54,7 @@ export const destinationsData = [
     description:
       'With accommodations for 20 guests, this retreat offers stylish comfort and stunning views. Enjoy 10 spacious, air-conditioned staterooms (double occupancy, featuring full-size beds), each with a private bathroom complete with hot water, river views, ample storage space, and the convenience of daily maid and laundry service.',
     features: [
+      { icon: 'BsGraphUpArrow', text: 'PEAK SEASON: September-March' },
       { icon: 'Users', text: '16-20 Anglers Per Group' },
       { icon: 'ShipWheel', text: '10 fully equipped bass boats' },
       { icon: 'Ruler', text: 'VIP - 180sf Suites' },
@@ -82,6 +83,7 @@ export const destinationsData = [
     description:
       'Experience luxury in the heart of the Amazon at our riverside lodge. Featuring spacious rooms with modern amenities, expert guides, and direct access to prime fishing spots. Our lodge combines comfort with adventure for an unforgettable Amazon experience.',
     features: [
+      { icon: 'BsGraphUpArrow', text: 'PEAK SEASON: September-March' },
       { icon: 'Users', text: '12 Anglers Per Group' },
       { icon: 'ShipWheel', text: '6 fully equipped bass boats' },
       { icon: 'Ruler', text: '6 VIP Suites - Full-Size Beds' },
@@ -110,6 +112,7 @@ export const destinationsData = [
     description:
       'Our eco-friendly lodge offers an immersive Amazon experience while maintaining environmental responsibility. Enjoy comfortable accommodations, locally sourced cuisine, and world-class peacock bass fishing in protected waters.',
     features: [
+      { icon: 'BsGraphUpArrow', text: 'PEAK SEASON: June-August' },
       { icon: 'Users', text: '16 Anglers Per Group' },
       { icon: 'ShipWheel', text: '8 fully equipped bass boats' },
       { icon: 'Ruler', text: '8 - 280sf VIP Suites' },
@@ -141,15 +144,16 @@ export const destinationsData = [
     description:
       'Fish in pristine waters within protected indigenous territories. Our partnership with local communities provides exclusive access while supporting sustainable practices and cultural preservation.',
     features: [
-      { icon: 'Users', text: '16-20 Anglers Per Group' },
-      { icon: 'ShipWheel', text: '10 fully equipped bass boats' },
-      { icon: 'Ruler', text: 'VIP - 180sf Suites' },
-      { icon: 'BedDouble', text: 'Double Occupancy' },
-      { icon: 'Waves', text: 'Located on Rio Negro Tributaries' },
-      { icon: 'Calendar', text: '7-Nights, 6-Full Days of Fishing' },
+      { icon: 'BsGraphUpArrow', text: 'PEAK SEASON: June-August' },
+      { icon: 'Users', text: '6-8 Anglers Per Group' },
+      { icon: 'ShipWheel', text: '4 equipped aluminium jon boats' },
+      { icon: 'Ruler', text: 'Individual Tents within Native Huts' },
+      { icon: 'BedDouble', text: 'Single Occupancy' },
+      { icon: 'Waves', text: 'Located on the Mouth of Xingu/Arayo River' },
+      { icon: 'Calendar', text: '7-Nights, 5-Full Days of Fishing' },
       {
         icon: 'BadgePlus',
-        text: 'Ask about Private Charters, Single, Couples, Groups & Family Pkgs',
+        text: 'Ask about Eco-tours',
       },
     ],
     images: [
@@ -169,6 +173,7 @@ export const destinationsData = [
     description:
       'For the adventurous angler, our mobile expedition camps follow the best fishing opportunities throughout the season. Experience camping in comfort while accessing remote, rarely-fished waters.',
     features: [
+      { icon: 'BsGraphUpArrow', text: 'PEAK SEASON: September-February' },
       { icon: 'Users', text: '14 Anglers Per Group' },
       { icon: 'ShipWheel', text: '7 fully equipped bass boats' },
       { icon: 'Ruler', text: 'Private Ample Suites' },
@@ -197,15 +202,25 @@ export const destinationsData = [
     description:
       'Combine world-class fishing with incredible wildlife encounters in the Galapagos Islands. Our specialized programs offer both inshore and offshore fishing opportunities while exploring this unique ecosystem.',
     features: [
-      { icon: 'Users', text: '16-20 Anglers Per Group' },
-      { icon: 'ShipWheel', text: '10 fully equipped bass boats' },
-      { icon: 'Ruler', text: 'VIP - 180sf Suites' },
-      { icon: 'BedDouble', text: 'Double Occupancy' },
-      { icon: 'Waves', text: 'Located on Rio Negro Tributaries' },
-      { icon: 'Calendar', text: '7-Nights, 6-Full Days of Fishing' },
+      { icon: 'BsGraphUpArrow', text: 'PEAK SEASON: February-July' },
+      { icon: 'Users', text: '4-6 Anglers Per Boat' },
+      {
+        icon: 'ShipWheel',
+        text: '3x 300hp Suzuki Outboard',
+      },
+      {
+        icon: 'Ruler',
+        text: '38ft Custom Sportfisher Vessel - Fly Bridge Electronics',
+      },
+      { icon: 'BedDouble', text: '5 Star Hotel - Double Occupancy' },
+      { icon: 'Waves', text: 'Located on San Cristobal' },
+      {
+        icon: 'Calendar',
+        text: 'Custom Days of Fishing, 4-Full Days of Fishing + 1 Day of Ecotour',
+      },
       {
         icon: 'BadgePlus',
-        text: 'Ask about Private Charters, Single, Couples, Groups & Family Pkgs',
+        text: 'Ask about trips options, tour options, custom days of fishing',
       },
     ],
     images: [

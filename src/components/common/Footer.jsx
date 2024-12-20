@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 // Icons
 import {
@@ -23,7 +23,37 @@ import ShimanoLogo from '../../assets/logos/shimanologo.png';
 import TfoLogo from '../../assets/logos/tfologo.png';
 import KLuresLogo from '../../assets/logos/klureslogo.png';
 
+const AccordionSection = ({ title, isOpen, onToggle, children }) => {
+    return (
+        <div className="border-b border-secondary">
+            <button
+                onClick={onToggle}
+                className="w-full flex justify-between items-center py-4"
+            >
+                <h4 className="text-sm font-semibold text-tertiary uppercase">{title}</h4>
+                <FaChevronDown
+                    className={`text-tertiary transition-transform duration-300 ${isOpen ? 'rotate-180' : ''
+                        }`}
+                />
+            </button>
+            <div
+                className={`transition-all duration-300 ease-in-out overflow-hidden ${isOpen ? 'max-h-96 opacity-100 mb-4' : 'max-h-0 opacity-0'
+                    }`}
+            >
+                {children}
+            </div>
+        </div>
+    )
+}
+
+
 const Footer = () => {
+    const [openSection, setOpenSection] = useState(null);
+
+    const toggleSection = (section) => {
+        setOpenSection(openSection === section ? null : section);
+    };
+
     return (
         <footer className="bg-gradient-to-b from-primary via-primary to-black py-12 px-3 sm:px-4 font-dmsans w-full mt-auto relative">
             {/* Background Image - Changed positioning to relative to footer */}
@@ -79,7 +109,7 @@ const Footer = () => {
                     <section>
                         <h4 className="text-sm font-semibold mb-4 text-tertiary uppercase">Social Links</h4>
                         {/* Social Icons */}
-                        <section className="grid grid-cols-4 gap-6 pr-20 mb-6">
+                        <section className="grid grid-cols-7 sm:grid-cols-4 gap-6 pr-20 mb-6">
                             <a href="https://www.facebook.com/amazonmarc" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-tertiary transition-colors" aria-label="Visit our Facebook page">
                                 <FaFacebook size={24} />
                             </a>
