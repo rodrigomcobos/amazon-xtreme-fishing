@@ -132,7 +132,7 @@ const WeatherWidget = () => {
     return (
         <div className="grid md:grid-cols-12 divide-y md:divide-y-0 md:divide-x divide-gray-200">
             {/* Left Column - Current Weather */}
-            <div className="relative flex items-start md:col-span-4 md:pr-6 pb-6 sm:pb-0">
+            <div className="relative flex items-start md:col-span-4 pb-6 sm:pb-0 p-2 pr-0 sm:pr-5">
                 <div className="space-y-2 flex-1">
                     <h2 className="text-xl font-medium text-tertiary font-dmsans">Manaus, Brazil</h2>
                     <p className="text-gray-600 font-dmsans font-light text-sm">{formatDate(currentWeather?.dt)}</p>
@@ -144,7 +144,7 @@ const WeatherWidget = () => {
                         L: {Math.round(currentWeather?.main.temp_min)}°F
                     </div>
                 </div>
-                <div className="space-y-2 ml-8">
+                <div className="space-y-2">
                     <p className="capitalize text-gray-700 font-dmsans font-medium">{currentWeather?.weather[0].description}</p>
                     <p className="text-gray-600 text-sm font-dmsans font-light">Wind: {Math.round(currentWeather?.wind.speed)} mph</p>
                     <p className="text-gray-600 text-sm font-dmsans font-light">Humidity: {currentWeather?.main.humidity}%</p>

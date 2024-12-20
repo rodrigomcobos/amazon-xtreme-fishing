@@ -4,7 +4,7 @@ import Portal from '../Portal/Portal';
 import Logo from '../../assets/logos/amazonxtremelogo.png';
 import Topographic from '../../assets/images/topographicwhite.png';
 import {
-    FaPhone,
+    FaWhatsapp,
     FaChevronDown,
     FaChevronUp,
     FaBars,
@@ -161,7 +161,7 @@ const Header = () => {
                         {/* Right Column */}
                         <div className='hidden sm:flex items-center gap-6'>
                             <p className='text-base font-normal'>
-                                <FaPhoneSquareAlt size={20} className='text-base inline-block mr-2' />
+                                <FaWhatsapp size={20} className='text-base inline-block mr-2' />
                                 +1 (469) 995-5351
                             </p>
                             <button className="bg-tertiary text-white uppercase font-semibold py-2 px-4 rounded-md text-sm hover:ring-2 hover:ring-fifth transition duration-500 hover:bg-secondary hover:text-fifth">
@@ -387,7 +387,7 @@ const Header = () => {
                     className="bg-tertiary hover:bg-secondary text-white p-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center"
                     aria-label="Call us"
                 >
-                    <FaPhone size={24} />
+                    <FaWhatsapp size={24} />
                 </a>
             </div>
         </>

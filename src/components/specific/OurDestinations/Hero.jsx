@@ -21,7 +21,7 @@ const Hero = () => {
                 <p className="text-sm sm:text-base mb-1 max-w-2xl text-center font-dmsans uppercase">
                     All Inclusive
                 </p>
-                <hr className='w-[10%] border-t-2 border-fifth mb-2' />
+                <hr className='w-[30%] sm:w-[10%] border-t-2 border-fifth mb-2' />
                 <h1 className="text-2xl sm:text-4xl md:text-5xl font-roxale-calligraphy font-bold mb-1 text-center">
                     Ultimate Peacock Bass
                 </h1>

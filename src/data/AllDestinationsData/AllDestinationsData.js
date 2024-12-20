@@ -30,6 +30,14 @@ import EcolodgeImg5 from '../../assets/images/ecolodgeimg5.png';
 import EcolodgeImg6 from '../../assets/images/ecolodgeimg6.png';
 import EcolodgeImg7 from '../../assets/images/ecolodgeimg7.png';
 
+import PeacockBassexpImg1 from '../../assets/images/peacockbassexpimg1.png';
+import PeacockBassexpImg2 from '../../assets/images/peacockbassexpimg2.png';
+import PeacockBassexpImg3 from '../../assets/images/peacockbassexpimg3.png';
+import PeacockBassexpImg4 from '../../assets/images/peacockbassexpimg4.png';
+import PeacockBassexpImg5 from '../../assets/images/peacockbassexpimg5.png';
+import PeacockBassexpImg6 from '../../assets/images/peacockbassexpimg6.png';
+import PeacockBassexpImg7 from '../../assets/images/peacockbassexpimg7.png';
+
 import GalapagosImg1 from '../../assets/images/galapagosimg1.png';
 import GalapagosImg2 from '../../assets/images/galapagosimg2.png';
 import GalapagosImg3 from '../../assets/images/galapagosimg3.png';
@@ -46,6 +54,7 @@ export const destinationsData = [
     description:
       'With accommodations for 20 guests, this retreat offers stylish comfort and stunning views. Enjoy 10 spacious, air-conditioned staterooms (double occupancy, featuring full-size beds), each with a private bathroom complete with hot water, river views, ample storage space, and the convenience of daily maid and laundry service.',
     features: [
+      { icon: 'BsGraphUpArrow', text: 'PEAK SEASON: September-March' },
       { icon: 'Users', text: '16-20 Anglers Per Group' },
       { icon: 'ShipWheel', text: '10 fully equipped bass boats' },
       { icon: 'Ruler', text: 'VIP - 180sf Suites' },
@@ -74,13 +83,17 @@ export const destinationsData = [
     description:
       'Experience luxury in the heart of the Amazon at our riverside lodge. Featuring spacious rooms with modern amenities, expert guides, and direct access to prime fishing spots. Our lodge combines comfort with adventure for an unforgettable Amazon experience.',
     features: [
-      { icon: 'Users', text: '12-16 Anglers Per Group' },
-      { icon: 'ShipWheel', text: '8 custom fishing boats' },
-      { icon: 'Home', text: 'Deluxe Lodge Rooms' },
-      { icon: 'BedDouble', text: 'Double Occupancy Available' },
-      { icon: 'Waves', text: 'Prime Amazon River Location' },
-      { icon: 'Calendar', text: '5-7 Night Packages Available' },
-      { icon: 'BadgePlus', text: 'Custom Group Packages Available' },
+      { icon: 'BsGraphUpArrow', text: 'PEAK SEASON: September-March' },
+      { icon: 'Users', text: '12 Anglers Per Group' },
+      { icon: 'ShipWheel', text: '6 fully equipped bass boats' },
+      { icon: 'Ruler', text: '6 VIP Suites - Full-Size Beds' },
+      { icon: 'BedDouble', text: 'Single & Double Occupancy' },
+      { icon: 'Waves', text: 'Located on Lost River Tributaries' },
+      { icon: 'Calendar', text: '7-Nights, 6-Full Days of Fishing' },
+      {
+        icon: 'BadgePlus',
+        text: 'Ask about Private Charters, Single, Couples, Groups & Family Pkgs',
+      },
     ],
     images: [
       { src: ZaltanaLodgeImg1, alt: 'Zaltana Lodge View 1' },
@@ -99,13 +112,20 @@ export const destinationsData = [
     description:
       'Our eco-friendly lodge offers an immersive Amazon experience while maintaining environmental responsibility. Enjoy comfortable accommodations, locally sourced cuisine, and world-class peacock bass fishing in protected waters.',
     features: [
-      { icon: 'Users', text: '8-12 Anglers Per Group' },
-      { icon: 'ShipWheel', text: '6 eco-friendly boats' },
-      { icon: 'Leaf', text: 'Sustainable Eco-Lodging' },
-      { icon: 'BedDouble', text: 'Private Bungalows' },
-      { icon: 'Waves', text: 'Protected Water Access' },
-      { icon: 'Calendar', text: 'Flexible Stay Options' },
-      { icon: 'BadgePlus', text: 'Eco-Tours Available' },
+      { icon: 'BsGraphUpArrow', text: 'PEAK SEASON: June-August' },
+      { icon: 'Users', text: '16 Anglers Per Group' },
+      { icon: 'ShipWheel', text: '8 fully equipped bass boats' },
+      { icon: 'Ruler', text: '8 - 280sf VIP Suites' },
+      { icon: 'BedDouble', text: 'Double Occupancy' },
+      {
+        icon: 'Waves',
+        text: 'Located on 3 Rivers - Confluence Teles-Pires, Juruena & Tapajós',
+      },
+      { icon: 'Calendar', text: '7-Nights, 6-Full Days of Fishing' },
+      {
+        icon: 'BadgePlus',
+        text: 'Ask about Private Charters, Single, Couples, Groups & Family Pkgs',
+      },
     ],
     images: [
       { src: EcolodgeImg1, alt: 'Ecolodge View 1' },
@@ -124,13 +144,17 @@ export const destinationsData = [
     description:
       'Fish in pristine waters within protected indigenous territories. Our partnership with local communities provides exclusive access while supporting sustainable practices and cultural preservation.',
     features: [
+      { icon: 'BsGraphUpArrow', text: 'PEAK SEASON: June-August' },
       { icon: 'Users', text: '6-8 Anglers Per Group' },
-      { icon: 'ShipWheel', text: '4 traditional boats' },
-      { icon: 'Home', text: 'Traditional Accommodations' },
-      { icon: 'Users', text: 'Cultural Immersion' },
-      { icon: 'Waves', text: 'Exclusive Territory Access' },
-      { icon: 'Calendar', text: 'Limited Seasonal Availability' },
-      { icon: 'BadgePlus', text: 'Cultural Exchange Programs' },
+      { icon: 'ShipWheel', text: '4 equipped aluminium jon boats' },
+      { icon: 'Ruler', text: 'Individual Tents within Native Huts' },
+      { icon: 'BedDouble', text: 'Single Occupancy' },
+      { icon: 'Waves', text: 'Located on the Mouth of Xingu/Arayo River' },
+      { icon: 'Calendar', text: '7-Nights, 5-Full Days of Fishing' },
+      {
+        icon: 'BadgePlus',
+        text: 'Ask about Eco-tours',
+      },
     ],
     images: [
       { src: XinguReservationImg1, alt: 'Xingu Reservation View 1' },
@@ -149,20 +173,27 @@ export const destinationsData = [
     description:
       'For the adventurous angler, our mobile expedition camps follow the best fishing opportunities throughout the season. Experience camping in comfort while accessing remote, rarely-fished waters.',
     features: [
-      { icon: 'Users', text: '4-6 Anglers Per Group' },
-      { icon: 'ShipWheel', text: '3 expedition boats' },
-      { icon: 'Tent', text: 'Luxury Camp Setup' },
-      { icon: 'Compass', text: 'Remote Locations' },
-      { icon: 'Waves', text: 'Virgin Waters Access' },
-      { icon: 'Calendar', text: 'Custom Trip Length' },
-      { icon: 'BadgePlus', text: 'Photography Tours Available' },
+      { icon: 'BsGraphUpArrow', text: 'PEAK SEASON: September-February' },
+      { icon: 'Users', text: '14 Anglers Per Group' },
+      { icon: 'ShipWheel', text: '7 fully equipped bass boats' },
+      { icon: 'Ruler', text: 'Private Ample Suites' },
+      { icon: 'BedDouble', text: 'Double Occupancy' },
+      { icon: 'Waves', text: 'Located on the Xereuini River System' },
+      { icon: 'Calendar', text: '7-Nights, 5-Full Days of Fishing' },
+      {
+        icon: 'BadgePlus',
+        text: 'Ask about Private Charters, Single, Couples, Groups & Family Pkgs',
+      },
     ],
-    images: Array(7)
-      .fill(null)
-      .map((_, i) => ({
-        src: `ExpeditionImg${i + 1}`,
-        alt: `Peacock Bass Expedition View ${i + 1}`,
-      })),
+    images: [
+      { src: PeacockBassexpImg1, alt: 'Peacock Bass Expeditions View 1' },
+      { src: PeacockBassexpImg2, alt: 'Peacock Bass Expeditions View 2' },
+      { src: PeacockBassexpImg3, alt: 'Peacock Bass Expeditions View 3' },
+      { src: PeacockBassexpImg4, alt: 'Peacock Bass Expeditions View 4' },
+      { src: PeacockBassexpImg5, alt: 'Peacock Bass Expeditions View 5' },
+      { src: PeacockBassexpImg6, alt: 'Peacock Bass Expeditions View 6' },
+      { src: PeacockBassexpImg7, alt: 'Peacock Bass Expeditions View 7' },
+    ],
   },
   {
     id: 'galapagos-fishing',
@@ -171,13 +202,26 @@ export const destinationsData = [
     description:
       'Combine world-class fishing with incredible wildlife encounters in the Galapagos Islands. Our specialized programs offer both inshore and offshore fishing opportunities while exploring this unique ecosystem.',
     features: [
-      { icon: 'Users', text: '4-8 Anglers Per Group' },
-      { icon: 'ShipWheel', text: '4 specialized boats' },
-      { icon: 'Home', text: 'Island Lodge' },
-      { icon: 'Camera', text: 'Wildlife Photography' },
-      { icon: 'Waves', text: 'Multiple Species Target' },
-      { icon: 'Calendar', text: 'Year-round Availability' },
-      { icon: 'BadgePlus', text: 'Diving Packages Available' },
+      { icon: 'BsGraphUpArrow', text: 'PEAK SEASON: February-July' },
+      { icon: 'Users', text: '4-6 Anglers Per Boat' },
+      {
+        icon: 'ShipWheel',
+        text: '3x 300hp Suzuki Outboard',
+      },
+      {
+        icon: 'Ruler',
+        text: '38ft Custom Sportfisher Vessel - Fly Bridge Electronics',
+      },
+      { icon: 'BedDouble', text: '5 Star Hotel - Double Occupancy' },
+      { icon: 'Waves', text: 'Located on San Cristobal' },
+      {
+        icon: 'Calendar',
+        text: 'Custom Days of Fishing, 4-Full Days of Fishing + 1 Day of Ecotour',
+      },
+      {
+        icon: 'BadgePlus',
+        text: 'Ask about trips options, tour options, custom days of fishing',
+      },
     ],
     images: [
       { src: GalapagosImg1, alt: 'Galapagos Fishing View 1' },
