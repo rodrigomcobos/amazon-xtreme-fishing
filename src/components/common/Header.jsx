@@ -18,6 +18,9 @@ import ExperienceMenuImg from '../../assets/images/experiencemenuimg.png';
 import SpeciesMenuImg from '../../assets/images/speciesmenuimg.png';
 import GalleryMenuImg from '../../assets/images/gallerymenuimg.png';
 
+// Mobile Menu Banner
+import MobileMenuBanner from '../../assets/images/mobilemenubanner.png';
+
 const Header = () => {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
@@ -292,53 +295,56 @@ const Header = () => {
             {/* Mobile menu portal */}
             {mobileMenuOpen && (
                 <Portal>
-                    <div className='fixed inset-0 bg-primary z-[60] overflow-y-auto'>
+                    <div className='fixed inset-0 bg-primary z-[60] h-screen overflow-y-auto'>
                         {/* Topographic Background */}
                         <div
-                            className="absolute inset-0 w-full h-full opacity-100 pointer-events-none"
+                            className="fixed inset-0 w-full h-full opacity-100 pointer-events-none bg-cover bg-repeat"
                             style={{
                                 backgroundImage: `url(${Topographic})`,
-                                backgroundRepeat: 'repeat',
-                                backgroundSize: 'cover',
                                 mixBlendMode: 'overlay',
                             }}
                         />
 
-                        {/* Close button */}
-                        <button
-                            onClick={() => setMobileMenuOpen(false)}
-                            className="absolute top-6 right-6 text-white z-50"
-                        >
-                            <FaXmark className="w-8 h-8" />
-                        </button>
+                        {/* Main Content Wrapper */}
+                        <div className="min-h-screen flex flex-col relative z-10">
+                            {/* Close button */}
+                            <button
+                                onClick={() => setMobileMenuOpen(false)}
+                                className="absolute top-6 right-6 text-white z-50"
+                            >
+                                <FaXmark className="w-8 h-8" />
+                            </button>
 
-                        {/* Mobile Menu Content */}
-                        <nav className='relative z-10 pt-20 px-6'>
-                            <ul className='space-y-4'>
-                                <li>
-                                    <Link
-                                        to="/"
-                                        className="block py-2 text-xl font-bold text-white hover:text-tertiary transition-colors"
-                                        onClick={() => setMobileMenuOpen(false)}
-                                    >
-                                        Home
-                                    </Link>
-                                </li>
-                                {Object.entries(menuItems).map(([key, value]) => (
-                                    <li key={key} className="border-b border-secondary">
-                                        <button
-                                            onClick={() => toggleAccordion(key)}
-                                            className="w-full flex justify-between items-center py-4 text-xl font-bold text-white hover:text-tertiary transition-colors"
+                            {/* Mobile Menu Content */}
+                            <nav className='pt-20 px-6 flex-1'>
+                                <ul className='space-y-4'>
+                                    <li>
+                                        <Link
+                                            to="/"
+                                            className="block py-2 text-xl font-bold text-white hover:text-tertiary transition-colors"
+                                            onClick={() => setMobileMenuOpen(false)}
                                         >
-                                            {key}
-                                            {openAccordion === key ? (
-                                                <FaChevronUp className="w-5 h-5" />
-                                            ) : (
-                                                <FaChevronDown className="w-5 h-5" />
-                                            )}
-                                        </button>
-                                        {openAccordion === key && (
-                                            <ul className="pl-4 pb-4 space-y-3">
+                                            Home
+                                        </Link>
+                                    </li>
+                                    {Object.entries(menuItems).map(([key, value]) => (
+                                        <li key={key} className="border-b border-secondary">
+                                            <button
+                                                onClick={() => toggleAccordion(key)}
+                                                className="w-full flex justify-between items-center py-4 text-xl font-bold text-white hover:text-tertiary transition-colors"
+                                            >
+                                                {key}
+                                                <div className={`transform transition-transform duration-300 ${openAccordion === key ? 'rotate-180' : ''
+                                                    }`}>
+                                                    <FaChevronDown className="w-5 h-5" />
+                                                </div>
+                                            </button>
+                                            <ul
+                                                className={`pl-4 transition-all duration-300 ease-in-out overflow-hidden ${openAccordion === key
+                                                    ? 'max-h-[500px] opacity-100 pb-4'
+                                                    : 'max-h-0 opacity-0'
+                                                    }`}
+                                            >
                                                 {value.items.map((item, index) => (
                                                     <li key={index}>
                                                         <Link
@@ -351,20 +357,29 @@ const Header = () => {
                                                     </li>
                                                 ))}
                                             </ul>
-                                        )}
+                                        </li>
+                                    ))}
+                                    <li>
+                                        <Link
+                                            to="/contact"
+                                            className="block py-2 text-xl font-bold text-white hover:text-tertiary transition-colors"
+                                            onClick={() => setMobileMenuOpen(false)}
+                                        >
+                                            Contact
+                                        </Link>
                                     </li>
-                                ))}
-                                <li>
-                                    <Link
-                                        to="/contact"
-                                        className="block py-2 text-xl font-bold text-white hover:text-tertiary transition-colors"
-                                        onClick={() => setMobileMenuOpen(false)}
-                                    >
-                                        Contact
-                                    </Link>
-                                </li>
-                            </ul>
-                        </nav>
+                                </ul>
+                            </nav>
+
+                            {/* Mobile Menu Banner */}
+                            <div className="relative z-10 mt-8 mx-4 bottom-4">
+                                <img
+                                    src={MobileMenuBanner}
+                                    alt="Amazon Xtreme Fishing Mobile Banner"
+                                    className="w-full h-auto object-cover"
+                                />
+                            </div>
+                        </div>
                     </div>
                 </Portal>
             )}
