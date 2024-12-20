@@ -8,7 +8,9 @@ import {
     FaYoutube,
     FaXTwitter,
     FaGooglePlus,
-    FaPinterest
+    FaPinterest,
+    FaChevronDown,
+    FaChevronUp,
 } from 'react-icons/fa6';
 
 // Background Overlay
@@ -56,7 +58,7 @@ const Footer = () => {
 
     return (
         <footer className="bg-gradient-to-b from-primary via-primary to-black py-12 px-3 sm:px-4 font-dmsans w-full mt-auto relative">
-            {/* Background Image - Changed positioning to relative to footer */}
+            {/* Background Image */}
             <div
                 className="absolute inset-0 w-full h-full opacity-75 pointer-events-none"
                 style={{
@@ -69,7 +71,7 @@ const Footer = () => {
                 }}
             />
 
-            {/* Content container - relative to stay above background */}
+            {/* Content container */}
             <section className="relative z-10 px-0 sm:px-2">
                 {/* Newsletter Section */}
                 <section className="grid max-sm:grid-cols-1 lg:grid-cols-3 items-center gap-8 mb-12">
@@ -105,10 +107,9 @@ const Footer = () => {
                 </style>
 
                 <section className="grid max-sm:grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 my-12 w-full mx-auto footer-grid">
-                    {/* About Section */}
+                    {/* Social Links and Mobile Accordion Section */}
                     <section>
                         <h4 className="text-sm font-semibold mb-4 text-tertiary uppercase">Social Links</h4>
-                        {/* Social Icons */}
                         <section className="grid grid-cols-7 sm:grid-cols-4 gap-6 pr-20 mb-6">
                             <a href="https://www.facebook.com/amazonmarc" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-tertiary transition-colors" aria-label="Visit our Facebook page">
                                 <FaFacebook size={24} />
@@ -132,17 +133,69 @@ const Footer = () => {
                                 <FaPinterest size={24} />
                             </a>
                         </section>
-                        <h4 className="text-sm font-semibold mb-4 text-tertiary uppercase">About</h4>
-                        <ul className="space-y-4 mb-8">
-                            <li><Link to="/about-us" className="text-gray-300 hover:text-tertiary transition duration-300 text-sm">About Us</Link></li>
-                            <li><Link to="/welcome" className="text-gray-300 hover:text-tertiary transition duration-300 text-sm">Welcome</Link></li>
-                            <li><Link to="/experience-the-amazon" className="text-gray-300 hover:text-tertiary transition duration-300 text-sm">Experience The Amazon</Link></li>
-                            <li><Link to="/meet-your-host" className="text-gray-300 hover:text-tertiary transition duration-300 text-sm">Meet Your Host</Link></li>
-                        </ul>
+
+                        {/* Mobile Accordion */}
+                        <div className="sm:hidden space-y-2">
+                            <AccordionSection
+                                title="About"
+                                isOpen={openSection === 'about'}
+                                onToggle={() => toggleSection('about')}
+                            >
+                                <ul className="space-y-4">
+                                    <li><Link to="/about-us" className="text-gray-300 hover:text-tertiary transition duration-300 text-sm">About Us</Link></li>
+                                    <li><Link to="/welcome" className="text-gray-300 hover:text-tertiary transition duration-300 text-sm">Welcome</Link></li>
+                                    <li><Link to="/experience-the-amazon" className="text-gray-300 hover:text-tertiary transition duration-300 text-sm">Experience The Amazon</Link></li>
+                                    <li><Link to="/meet-your-host" className="text-gray-300 hover:text-tertiary transition duration-300 text-sm">Meet Your Host</Link></li>
+                                </ul>
+                            </AccordionSection>
+
+                            <AccordionSection
+                                title="Destinations"
+                                isOpen={openSection === 'destinations'}
+                                onToggle={() => toggleSection('destinations')}
+                            >
+                                <ul className="space-y-4">
+                                    <li><Link to="/destinations" className="text-gray-300 hover:text-tertiary transition duration-300 text-sm">Our Destinations</Link></li>
+                                    <li><Link to="/zaltan-mothership" className="text-gray-300 hover:text-tertiary transition duration-300 text-sm">The Zaltan Mothership</Link></li>
+                                    <li><Link to="/zaltan-lodge" className="text-gray-300 hover:text-tertiary transition duration-300 text-sm">The Zaltan Lodge</Link></li>
+                                    <li><Link to="/ecolodge" className="text-gray-300 hover:text-tertiary transition duration-300 text-sm">Eco Lodge</Link></li>
+                                    <li><Link to="/xingu" className="text-gray-300 hover:text-tertiary transition duration-300 text-sm">Xingu Reservation</Link></li>
+                                    <li><Link to="/headwaters-camp" className="text-gray-300 hover:text-tertiary transition duration-300 text-sm">Headwaters Safari Camp</Link></li>
+                                    <li><Link to="/peacock-bass-expeditions" className="text-gray-300 hover:text-tertiary transition duration-300 text-sm">Peacock Bass Expeditions</Link></li>
+                                </ul>
+                            </AccordionSection>
+
+                            <AccordionSection
+                                title="Experience"
+                                isOpen={openSection === 'experience'}
+                                onToggle={() => toggleSection('experience')}
+                            >
+                                <ul className="space-y-4">
+                                    <li><Link to="/experience" className="text-gray-300 hover:text-tertiary transition duration-300 text-sm">Experience The Amazon</Link></li>
+                                    <li><Link to="/getting-there" className="text-gray-300 hover:text-tertiary transition duration-300 text-sm">Getting There</Link></li>
+                                    <li><Link to="/lures-and-tackle" className="text-gray-300 hover:text-tertiary transition duration-300 text-sm">Lures & Tackle</Link></li>
+                                    <li><Link to="/passport-and-visa" className="text-gray-300 hover:text-tertiary transition duration-300 text-sm">Passport & Visa</Link></li>
+                                    <li><Link to="/travel-insurance" className="text-gray-300 hover:text-tertiary transition duration-300 text-sm">Travel Insurance</Link></li>
+                                    <li><Link to="/why-us" className="text-gray-300 hover:text-tertiary transition duration-300 text-sm">Why Us</Link></li>
+                                    <li><Link to="/faq" className="text-gray-300 hover:text-tertiary transition duration-300 text-sm">FAQs</Link></li>
+                                </ul>
+                            </AccordionSection>
+                        </div>
+
+                        {/* Desktop About Section */}
+                        <div className="hidden sm:block">
+                            <h4 className="text-sm font-semibold mb-4 text-tertiary uppercase">About</h4>
+                            <ul className="space-y-4 mb-8">
+                                <li><Link to="/about-us" className="text-gray-300 hover:text-tertiary transition duration-300 text-sm">About Us</Link></li>
+                                <li><Link to="/welcome" className="text-gray-300 hover:text-tertiary transition duration-300 text-sm">Welcome</Link></li>
+                                <li><Link to="/experience-the-amazon" className="text-gray-300 hover:text-tertiary transition duration-300 text-sm">Experience The Amazon</Link></li>
+                                <li><Link to="/meet-your-host" className="text-gray-300 hover:text-tertiary transition duration-300 text-sm">Meet Your Host</Link></li>
+                            </ul>
+                        </div>
                     </section>
 
-                    {/* Destinations Section */}
-                    <section>
+                    {/* Desktop Destinations Section */}
+                    <section className="hidden sm:block">
                         <h4 className="text-sm font-semibold mb-4 text-tertiary uppercase">Destinations</h4>
                         <ul className="space-y-4">
                             <li><Link to="/destinations" className="text-gray-300 hover:text-tertiary transition duration-300 text-sm">Our Destinations</Link></li>
@@ -155,8 +208,8 @@ const Footer = () => {
                         </ul>
                     </section>
 
-                    {/* Experience Section */}
-                    <section>
+                    {/* Desktop Experience Section */}
+                    <section className="hidden sm:block">
                         <h4 className="text-sm font-semibold mb-4 text-tertiary uppercase">Experience</h4>
                         <ul className="space-y-4">
                             <li><Link to="/experience" className="text-gray-300 hover:text-tertiary transition duration-300 text-sm">Experience The Amazon</Link></li>
