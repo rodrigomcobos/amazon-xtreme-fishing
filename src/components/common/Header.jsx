@@ -192,32 +192,32 @@ const Header = () => {
                     {/* Desktop Navigation */}
                     <nav className='hidden lg:block w-auto'>
                         <ul className='flex gap-x-5 uppercase'>
-                            <li className='px-3'>
+                            <li className='px-3 group/nav peer'>
                                 <Link
                                     to="/"
                                     className={`block font-normal text-[15px] py-4 ${location.pathname === '/'
                                         ? 'text-fifth font-semibold'
                                         : isScrolled
                                             ? 'text-primary hover:text-tertiary'
-                                            : 'text-white hover:text-tertiary'
+                                            : 'text-white hover:text-tertiary group-hover/nav:text-primary peer-hover/dropdown:text-primary'
                                         }`}
                                 >
                                     Home
                                 </Link>
                             </li>
                             {Object.entries(menuItems).map(([key, value]) => (
-                                <li key={key} className='group static px-3'>
+                                <li key={key} className='group/dropdown static px-3 peer'>
                                     <span className={`block font-normal text-[15px] py-4 cursor-pointer ${isScrolled
-                                        ? 'text-primary group-hover:text-tertiary'
-                                        : 'text-white group-hover:text-tertiary'
+                                        ? 'text-primary group-hover/dropdown:text-tertiary'
+                                        : 'text-white group-hover/dropdown:text-tertiary group-hover/nav:text-primary peer-hover/dropdown:text-primary'
                                         }`}>
                                         {key}
                                     </span>
                                     {/* Full-width white background that appears on hover */}
-                                    <div className='invisible group-hover:visible opacity-0 group-hover:opacity-100 transition-all duration-300 absolute top-0 left-0 w-full h-full bg-white -z-10' />
+                                    <div className='invisible group-hover/dropdown:visible opacity-0 group-hover/dropdown:opacity-100 transition-all duration-300 absolute top-0 left-0 w-full h-full bg-white -z-10' />
 
                                     {/* Full-width dropdown content */}
-                                    <div className='invisible group-hover:visible absolute left-0 right-0 top-full mt-0 w-full bg-white overflow-hidden opacity-0 group-hover:opacity-100 transition-all duration-300 border-t border-gray-100'>
+                                    <div className='invisible group-hover/dropdown:visible absolute left-0 right-0 top-full mt-0 w-full bg-white overflow-hidden opacity-0 group-hover/dropdown:opacity-100 transition-all duration-300 border-t border-gray-100'>
                                         <div className='container mx-auto px-4'>
                                             <div className='py-8 max-w-6xl mx-auto'>
                                                 <div className='grid grid-cols-12 gap-12'>
@@ -257,14 +257,14 @@ const Header = () => {
                                     </div>
                                 </li>
                             ))}
-                            <li className='px-3'>
+                            <li className='px-3 group/nav peer'>
                                 <Link
                                     to="/contact"
                                     className={`block font-normal text-[15px] py-4 ${location.pathname === '/contact'
                                         ? 'text-tertiary'
                                         : isScrolled
                                             ? 'text-primary hover:text-tertiary'
-                                            : 'text-white hover:text-tertiary'
+                                            : 'text-white hover:text-tertiary group-hover/nav:text-primary peer-hover/dropdown:text-primary'
                                         }`}
                                 >
                                     Contact
