@@ -37,12 +37,12 @@ const MobilePortal = ({
                     </button>
 
                     {/* Mobile Menu Content */}
-                    <nav className='pt-20 px-6 flex-1'>
-                        <ul className='space-y-4'>
+                    <nav className='pt-10 px-6 flex-1'>
+                        <ul className=''>
                             <li>
                                 <Link
                                     to="/"
-                                    className="block py-2 text-xl font-bold text-white hover:text-tertiary transition-colors"
+                                    className="block py-6 text-xl font-bold text-white hover:text-tertiary transition-colors border-b border-secondary"
                                     onClick={onClose}
                                 >
                                     Home
@@ -52,7 +52,7 @@ const MobilePortal = ({
                                 <li key={key} className="border-b border-secondary">
                                     <button
                                         onClick={() => toggleAccordion(key)}
-                                        className="w-full flex justify-between items-center py-4 text-xl font-bold text-white hover:text-tertiary transition-colors"
+                                        className="w-full flex justify-between items-center py-6 text-xl font-bold text-white hover:text-tertiary transition-colors"
                                     >
                                         {key}
                                         <div className={`transform transition-transform duration-300 ${openAccordion === key ? 'rotate-180' : ''
@@ -62,15 +62,15 @@ const MobilePortal = ({
                                     </button>
                                     <ul
                                         className={`pl-4 transition-all duration-300 ease-in-out overflow-hidden ${openAccordion === key
-                                                ? 'max-h-[500px] opacity-100 pb-4'
-                                                : 'max-h-0 opacity-0'
+                                            ? 'max-h-fit opacity-100 pb-4'
+                                            : 'max-h-0 opacity-0'
                                             }`}
                                     >
                                         {value.items.map((item, index) => (
                                             <li key={index}>
                                                 <Link
                                                     to={item.path}
-                                                    className="block py-2 text-gray-300 hover:text-tertiary transition-colors"
+                                                    className="block py-3 text-gray-300 hover:text-tertiary transition-colors"
                                                     onClick={onClose}
                                                 >
                                                     {item.name}
@@ -83,7 +83,7 @@ const MobilePortal = ({
                             <li>
                                 <Link
                                     to="/contact"
-                                    className="block py-2 text-xl font-bold text-white hover:text-tertiary transition-colors"
+                                    className="block py-6 text-xl font-bold text-white hover:text-tertiary transition-colors"
                                     onClick={onClose}
                                 >
                                     Contact
