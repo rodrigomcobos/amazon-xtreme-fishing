@@ -3,7 +3,6 @@ import { fetchInstagramPosts } from '../../../utils/instagramApi';
 import { MdChevronLeft, MdChevronRight } from 'react-icons/md';
 import { FaInstagram } from "react-icons/fa";
 
-
 const Instagram = () => {
     const [posts, setPosts] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -22,15 +21,15 @@ const Instagram = () => {
     }, []);
 
     const getSlideIncrement = () => {
-        if (windowWidth >= 1024) return 5; // Large screens 5 columns
-        if (windowWidth >= 768) return 4;  // Medium screens 4 columns
-        return 2; // Small screens 2 columns
+        if (windowWidth >= 1024) return 5;
+        if (windowWidth >= 768) return 4;
+        return 2;
     };
 
     const getItemWidth = () => {
-        if (windowWidth >= 1024) return '20%'; // 5 columns
-        if (windowWidth >= 768) return '25%';      // 4 columns
-        return '50%';                              // 2 columns
+        if (windowWidth >= 1024) return '20%';
+        if (windowWidth >= 768) return '25%';
+        return '50%';
     };
 
     useEffect(() => {
@@ -72,25 +71,35 @@ const Instagram = () => {
     };
 
     const renderMedia = (post) => {
-        if (post?.media_type === 'VIDEO') {
-            return (
-                <video
-                    autoPlay
-                    muted
-                    loop
-                    playsInline
-                    className="w-full h-full object-cover hover:opacity-75 transition-opacity duration-300"
-                >
-                    <source src={post.media_url} type="video/mp4" />
-                </video>
-            );
-        }
         return (
-            <img
-                src={post.media_url}
-                alt={post.caption?.slice(0, 100) || 'Instagram post'}
-                className="w-full h-full object-cover hover:opacity-75 transition duration-500"
-            />
+            <div className="group relative w-full h-full">
+                {post?.media_type === 'VIDEO' ? (
+                    <video
+                        autoPlay
+                        muted
+                        loop
+                        playsInline
+                        className="w-full h-full object-cover group-hover:opacity-50 transition-opacity duration-300"
+                    >
+                        <source src={post.media_url} type="video/mp4" />
+                    </video>
+                ) : (
+                    <img
+                        src={post.media_url}
+                        alt={post.caption?.slice(0, 100) || 'Instagram post'}
+                        className="w-full h-full object-cover group-hover:opacity-50 transition duration-500"
+                    />
+                )}
+
+                <div className="absolute inset-0 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/50 p-4">
+                    <p className="text-white text-sm mb-2">
+                        {new Date(post.timestamp).toLocaleDateString()}
+                    </p>
+                    <p className="text-white text-xs text-center line-clamp-3">
+                        {post.caption || 'No caption'}
+                    </p>
+                </div>
+            </div>
         );
     };
 
@@ -116,21 +125,20 @@ const Instagram = () => {
 
     return (
         <section className="w-full py-16 overflow-hidden bg-white">
-            {/* Title Section */}
             <div className="text-center mb-8">
-                <h2 className="text-base text-primary uppercase tracking-wider mb-2 font-dmsans flex items-center justify-center">Follow us on Instagram<FaInstagram className='text-fifth ml-2' />                </h2>
+                <h2 className="text-base text-primary uppercase tracking-wider mb-2 font-dmsans flex items-center justify-center">
+                    Follow us on Instagram<FaInstagram className='text-fifth ml-2' />
+                </h2>
                 <hr className='w-7/12 sm:w-[20%] mx-auto border-t-2 border-fifth mb-6' />
-                <a
-                    href="https://www.instagram.com/amazonxtreme"
+
+                <a href="https://www.instagram.com/amazonxtreme"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-2xl sm:text-3xl font-bold font-roxale italic text-tertiary hover:text-fifth transition duration-500"
-                >
+                    className="text-2xl sm:text-3xl font-bold font-roxale italic text-tertiary hover:text-fifth transition duration-500">
                     <span className='font-cormorant'>@</span>AmazonXtreme
                 </a>
             </div>
 
-            {/* Instagram Feed Grid */}
             <div className="relative w-screen -ml-[50vw] left-1/2">
                 <div className="relative max-w-[120%] mx-auto overflow-hidden">
                     <div
@@ -155,7 +163,6 @@ const Instagram = () => {
                         ))}
                     </div>
 
-                    {/* Navigation Buttons */}
                     <button
                         onClick={() => handleSlideChange('prev')}
                         className="absolute left-4 top-1/2 -translate-y-1/2 p-2 bg-white/80 rounded-full shadow-lg hover:bg-fifth hover:text-white transition duration-300 z-10"
@@ -171,8 +178,8 @@ const Instagram = () => {
                         <MdChevronRight size={24} />
                     </button>
                 </div>
-            </div>
-        </section>
+            </div >
+        </section >
     );
 };
 
