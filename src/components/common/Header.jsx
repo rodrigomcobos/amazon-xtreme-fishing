@@ -88,7 +88,7 @@ const Header = () => {
                             <img
                                 src={Logo}
                                 alt="logo"
-                                className={`transition-all duration-300 ${isScrolled ? 'w-24 sm:w-32' : 'w-36 sm:w-56'
+                                className={`transition-all duration-300 ${isScrolled ? 'w-24 mb-2 ml-2 sm:w-30' : 'w-32 ml-2 sm:w-56'
                                     }`}
                             />
                         </Link>
@@ -101,10 +101,10 @@ const Header = () => {
                                 <Link
                                     to="/"
                                     className={`block font-normal text-[15px] py-4 ${location.pathname === '/'
-                                            ? 'text-fifth font-semibold'
-                                            : isScrolled
-                                                ? 'text-primary hover:text-tertiary'
-                                                : 'text-white hover:text-tertiary group-hover/nav:text-primary peer-hover/dropdown:text-primary'
+                                        ? 'text-fifth font-semibold'
+                                        : isScrolled
+                                            ? 'text-primary hover:text-tertiary'
+                                            : 'text-white hover:text-tertiary group-hover/nav:text-primary peer-hover/dropdown:text-primary'
                                         }`}
                                 >
                                     Home
@@ -113,8 +113,8 @@ const Header = () => {
                             {Object.entries(menuItems).map(([key, value]) => (
                                 <li key={key} className='group/dropdown static px-3 peer'>
                                     <span className={`block font-normal text-[15px] py-4 cursor-pointer ${isScrolled
-                                            ? 'text-primary group-hover/dropdown:text-tertiary'
-                                            : 'text-white group-hover/dropdown:text-tertiary group-hover/nav:text-primary peer-hover/dropdown:text-primary'
+                                        ? 'text-primary group-hover/dropdown:text-tertiary'
+                                        : 'text-white group-hover/dropdown:text-tertiary group-hover/nav:text-primary peer-hover/dropdown:text-primary'
                                         }`}>
                                         {key}
                                     </span>
@@ -138,8 +138,8 @@ const Header = () => {
                                                                     <Link
                                                                         to={item.path}
                                                                         className={`block py-2 text-sm ${location.pathname === item.path
-                                                                                ? 'text-tertiary'
-                                                                                : 'text-gray-700 hover:text-tertiary'
+                                                                            ? 'text-tertiary'
+                                                                            : 'text-gray-700 hover:text-tertiary'
                                                                             }`}
                                                                     >
                                                                         {item.name}
@@ -158,10 +158,10 @@ const Header = () => {
                                 <Link
                                     to="/contact"
                                     className={`block font-normal text-[15px] py-4 ${location.pathname === '/contact'
-                                            ? 'text-tertiary'
-                                            : isScrolled
-                                                ? 'text-primary hover:text-tertiary'
-                                                : 'text-white hover:text-tertiary group-hover/nav:text-primary peer-hover/dropdown:text-primary'
+                                        ? 'text-tertiary'
+                                        : isScrolled
+                                            ? 'text-primary hover:text-tertiary'
+                                            : 'text-white hover:text-tertiary group-hover/nav:text-primary peer-hover/dropdown:text-primary'
                                         }`}
                                 >
                                     Contact
