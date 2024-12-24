@@ -3,7 +3,7 @@ import HighlightBackgroundImg from '../../../../assets/images/HighlightBackgroun
 
 const Highlight = () => {
     return (
-        <div className="relative">
+        <div className="relative border-b-8 border-tertiary">
             <div
                 className="absolute inset-0 bg-cover bg-right bg-no-repeat"
                 style={{
@@ -13,7 +13,7 @@ const Highlight = () => {
 
             <div className="absolute inset-0 bg-gradient-to-b from-white via-white/5 to-transparent" />
 
-            <div className="relative px-4 pt-16 sm:pt-10 pb-[24rem] sm:pb-[32rem]">
+            <div className="relative px-4 pt-16 sm:pt-10 pb-[24rem] sm:pb-[30rem]">
                 <p className="text-sm sm:text-base mb-1 mx-auto text-center font-dmsans uppercase">
                     Santa Isabel of Rio Negro
                 </p>
@@ -22,7 +22,7 @@ const Highlight = () => {
                     Land of Trophy Peacock Bass
                 </h2>
                 <p className=" max-w-3xl mx-auto text-center font-dmsans text-sm sm:text-base text-gray-700 drop-shadow-[0_0_10px_rgba(255,255,255,2)]">
-                    A groundbreaking concept combining luxury, regal comfort, and an unparalleled Amazon adventure. Discover the record waters of Uneuixi, Tea, Aiuana, Rio Preto, and the tributaries of the Rio Negro—a Peacock Bass fishing experience that must be lived firsthand!
+                    A groundbreaking concept combining luxury, regal comfort, and an unparalleled Amazon adventure. Discover the record waters of Uneuixi, Tea, Aiuana, Rio Preto, and the tributaries of the Rio Negro, a Peacock Bass fishing experience that must be lived firsthand!
                 </p>
             </div>
         </div>
