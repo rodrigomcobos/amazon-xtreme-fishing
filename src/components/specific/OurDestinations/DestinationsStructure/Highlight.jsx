@@ -18,7 +18,7 @@ const Highlight = () => {
                     Santa Isabel of Rio Negro
                 </p>
                 <hr className='w-[55%] sm:w-[18%] border-t-2 border-fifth mb-3 mx-auto' />
-                <h2 className="text-2xl md:text-3xl lg:text-3xl font-roxale uppercase text-center text-primary mb-8">
+                <h2 className="text-2xl md:text-3xl lg:text-3xl font-roxale uppercase text-center text-primary mb-4">
                     Land of Trophy Peacock Bass
                 </h2>
                 <p className=" max-w-3xl mx-auto text-center font-dmsans text-sm sm:text-base text-gray-700 drop-shadow-[0_0_10px_rgba(255,255,255,2)]">
