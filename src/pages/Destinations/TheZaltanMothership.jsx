@@ -3,6 +3,8 @@ import Hero from '../../components/specific/OurDestinations/DestinationsStructur
 import Intro from '../../components/specific/OurDestinations/DestinationsStructure/Intro'
 import Highlight from '../../components/specific/OurDestinations/DestinationsStructure/Highlight'
 import Accommodations from '../../components/specific/OurDestinations/DestinationsStructure/Accommodations'
+import SpotlightVideo from '../../components/specific/OurDestinations/DestinationsStructure/SpotlightVideo'
+import DontLetItGetAway from '../../components/specific/OurDestinations/DontLetItGetAway'
 
 
 const TheZaltanMothership = () => {
@@ -11,7 +13,9 @@ const TheZaltanMothership = () => {
             <Hero />
             <Intro />
             <Highlight />
-            <Accommodations />
+            <SpotlightVideo />
+            {/* <Accommodations /> */}
+            <DontLetItGetAway />
         </>
     )
 }

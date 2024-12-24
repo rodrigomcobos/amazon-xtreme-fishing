@@ -3,7 +3,7 @@ import HeroImg from '../../../../assets/images/zaltanahero.png';
 
 const Hero = () => {
     return (
-        <section className="relative h-[65dvh] sm:h-[600px] w-full overflow-hidden">
+        <section className="relative h-[65dvh] sm:h-[700px] w-full overflow-hidden">
             {/* Image Background */}
             <img
                 src={HeroImg}
@@ -28,6 +28,9 @@ const Hero = () => {
                 <h1 className="text-3xl sm:text-5xl md:text-6xl font-roxale font-bold uppercase mb-2 sm:mb-0 text-center ">
                     Zaltana Mothership
                 </h1>
+                <p className="text-sm sm:text-xl mb-2 max-w-2xl text-center font-dmsans uppercase">
+                    Peak Season September through March
+                </p>
             </section>
         </section>
     );
