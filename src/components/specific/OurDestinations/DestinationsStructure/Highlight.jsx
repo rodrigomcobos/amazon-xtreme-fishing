@@ -11,9 +11,9 @@ const Highlight = () => {
                 }}
             />
 
-            <div className="absolute inset-0 bg-gradient-to-b from-white via-white/10 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-b from-white via-white/5 to-transparent" />
 
-            <div className="relative px-4 pt-16 sm:pt-10 pb-[24rem] sm:pb-[35rem]">
+            <div className="relative px-4 pt-16 sm:pt-10 pb-[24rem] sm:pb-[32rem]">
                 <p className="text-sm sm:text-base mb-1 mx-auto text-center font-dmsans uppercase">
                     Santa Isabel of Rio Negro
                 </p>
