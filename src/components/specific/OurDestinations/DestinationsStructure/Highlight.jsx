@@ -3,7 +3,7 @@ import HighlightBackgroundImg from '../../../../assets/images/HighlightBackgroun
 
 const Highlight = () => {
     return (
-        <div className="relative border-b-8 border-tertiary">
+        <div className="relative">
             <div
                 className="absolute inset-0 bg-cover bg-right bg-no-repeat"
                 style={{
