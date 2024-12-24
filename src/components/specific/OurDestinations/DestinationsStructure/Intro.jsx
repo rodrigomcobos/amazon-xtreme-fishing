@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import HighlightImg1 from '../../../../assets/images/zaltanaintroimg1.png';
-import HighlightImg2 from '../../../../assets/images/zaltanaintroimg2.png';
-import HighlightImg3 from '../../../../assets/images/zaltanaintroimg3.png';
-import HighlightImg4 from '../../../../assets/images/zaltanaintroimg4.png';
+import ZaltanaIntroImg1 from '../../../../assets/images/zaltanaintroimg1.png';
+import ZaltanaIntroImg2 from '../../../../assets/images/zaltanaintroimg2.png';
+import ZaltanaIntroImg3 from '../../../../assets/images/zaltanaintroimg3.png';
+import ZaltanaIntroImg4 from '../../../../assets/images/zaltanaintroimg4.png';
 
 const IntroCard = ({ title, description, backgroundImage }) => (
     <div className="relative aspect-square overflow-hidden rounded-lg shadow-lg group transition-transform duration-300 hover:scale-105 hover:border-2 hover:border-fifth flex-shrink-0 w-full">
@@ -36,22 +36,22 @@ const Intro = () => {
         {
             title: "IGFA Record Fishery",
             description: "Experience the ultimate fishing adventure in pristine waters, home to record-breaking catches and an unmatched variety of species.",
-            image: HighlightImg1
+            image: ZaltanaIntroImg1
         },
         {
             title: "Tailored for Comfort",
             description: "Enjoy modern amenities and stunning views designed to make your stay unforgettable, blending luxury and relaxation in the heart of the Amazon.",
-            image: HighlightImg2
+            image: ZaltanaIntroImg2
         },
         {
             title: "Engineered for Excellence",
             description: "Built with precision and efficiency, our destinations exemplify innovation and quality, setting a new benchmark in fishing retreats.",
-            image: HighlightImg3
+            image: ZaltanaIntroImg3
         },
         {
             title: "All-Inclusive Adventure",
             description: "From gear to gourmet meals, enjoy a hassle-free journey where every detail is handled, leaving you free to focus on the thrill of fishing and exploration.",
-            image: HighlightImg4
+            image: ZaltanaIntroImg4
         }
     ];
 
