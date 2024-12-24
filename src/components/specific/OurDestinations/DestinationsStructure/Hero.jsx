@@ -8,7 +8,7 @@ const Hero = () => {
             <img
                 src={HeroImg}
                 alt="Hero background"
-                className="absolute top-0 left-0 w-full h-full object-cover"
+                className="absolute top-0 left-0 w-full h-full object-cover object-left"
             />
 
             {/* Gradient Overlays */}
@@ -21,7 +21,7 @@ const Hero = () => {
                 <p className="text-sm sm:text-base mb-1 max-w-2xl text-center font-dmsans uppercase">
                     IGFA World Record Fishery
                 </p>
-                <hr className='w-[30%] sm:w-[18%] border-t-2 border-fifth mb-2' />
+                <hr className='w-[50%] sm:w-[18%] border-t-2 border-fifth mb-2' />
                 <h1 className="text-2xl sm:text-4xl md:text-5xl font-roxale-calligraphy font-bold mb-1 text-center">
                     5 Star Floating Hotel
                 </h1>
