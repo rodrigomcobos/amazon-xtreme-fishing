@@ -15,7 +15,7 @@ const TheZaltanMothership = () => {
             <Intro />
             <Highlight />
             <SpotlightVideo />
-            {/* <Accommodations /> */}
+            <Accommodations />
             <WhichPackageIsRight />
             <DontLetItGetAway />
         </>

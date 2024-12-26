@@ -74,12 +74,12 @@ const WhichPackageIsRight = () => {
     const packages = [
         {
             title: "Zaltana Mothership",
-            description: "Experience luxury on the water with our state-of-the-art mothership. Perfect for groups seeking the ultimate combination of comfort and adventure in the Rio Negro River.",
+            description: "Experience luxury on the water with our state-of-the-art mothership. Perfect for groups seeking the ultimate combination of comfort and adventure.",
             image: ZaltanaBoatImg
         },
         {
             title: "Zaltana Lodge",
-            description: "Our flagship lodge offers an immersive Amazon experience with world-class amenities. Ideal for those who want to experience the rainforest without compromising on comfort.",
+            description: "Immerse yourself in the heart of the Amazon with in the lodge. Offering top-tier amenities and seamless access to adventure, ideal for nature enthusiasts.",
             image: ZaltanaLodgeImg
         },
         {
