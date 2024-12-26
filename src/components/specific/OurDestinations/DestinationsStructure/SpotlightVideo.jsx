@@ -29,7 +29,7 @@ const SpotlightVideo = () => {
 
                 {/* Text Content  - Column 2*/}
                 <section className="text-left order-2 ml-0 sm:ml-32 z-10 -mt-14 sm:mt-4">
-                    <p className="text-sm text-white uppercase font-dmsans font-light mb-4">
+                    <p className="text-sm sm:text-base text-white uppercase font-dmsans font-light mb-4">
                         The River's at your mercy
                     </p>
                     <h2 className="text-white text-2xl sm:text-4xl font-roxale italic font-bold mb-6">
