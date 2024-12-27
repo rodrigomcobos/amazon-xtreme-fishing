@@ -135,7 +135,7 @@ const WhichPackageIsRight = () => {
                 {/* Cards Grid Container */}
                 <div className="px-2 sm:px-0">
                     <div className="max-w-[95%] sm:max-w-9xl mx-auto">
-                        <div className="grid md:grid-cols-3 gap-5 mt-6 sm:mt-12">
+                        <div className="grid md:grid-cols-3 gap-5 mt-6 sm:mt-10">
                             {packages.map((pkg, index) => (
                                 <PackageCard
                                     key={index}
