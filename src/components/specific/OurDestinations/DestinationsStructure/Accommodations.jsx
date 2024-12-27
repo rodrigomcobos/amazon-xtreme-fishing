@@ -61,7 +61,7 @@ const Accommodations = () => {
 
     return (
         <div className="w-full bg-white overflow-hidden">
-            <div className="max-w-9xl mx-auto px-4 py-16 sm:px-6 lg:px-0 lg:pl-8">
+            <div className="max-w-9xl mx-auto px-4 py-16 sm:px-6 lg:px-0 lg:pl-16">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                     {/* Left Column - Text Content */}
                     <div className="pr-8">
