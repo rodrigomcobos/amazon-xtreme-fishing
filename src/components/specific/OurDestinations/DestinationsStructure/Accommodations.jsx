@@ -62,9 +62,8 @@ const Accommodations = () => {
     return (
         <div className="w-full bg-white overflow-hidden">
             <div className="max-w-full mx-auto pl-4 py-16 sm:pl-6 lg:px-0 lg:pl-16">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-                    {/* Left Column - Text Content */}
-                    <div className="pr-8">
+                <div className="grid grid-cols-1 lg:grid-cols-[40%_60%] gap-10 items-center">                    {/* Left Column - Text Content */}
+                    <div className="pr-4">
                         <div className="uppercase text-secondary tracking-wider text-sm font-dmsans mb-3 text-center sm:text-left">
                             Your Floating Oasis Awaits
                         </div>
