@@ -14,7 +14,7 @@ const SpotlightVideo = () => {
                 />
             </div>
 
-            <div className="flex flex-col xl:grid xl:grid-cols-[60%_40%] gap-4 xl:gap-14 xl:max-w-9xl max-w-7xl mx-auto">
+            <div className="flex flex-col xl:grid xl:grid-cols-[60%_40%] gap-4 xl:gap-8 xl:max-w-[85rem] max-w-7xl mx-auto">
 
                 {/* Video Section */}
                 <section className="relative bottom-24 mx-4 sm:mx-0">
@@ -37,7 +37,7 @@ const SpotlightVideo = () => {
                     <p className="text-sm sm:text-base text-white uppercase font-dmsans font-light mb-4">
                         The River's at your mercy
                     </p>
-                    <h2 className="text-white text-3xl sm:text-4xl font-roxale italic font-bold mb-6">
+                    <h2 className="text-white text-3xl sm:text-5xl font-roxale italic font-bold mb-6">
                         The World<span className="text-white font-cormorant italic"> '</span>s Most Demanding Anglers Fish with Us
                     </h2>
                     <p className="mb-14 lg:mb-14 text-sm text-white font-dmsans font-light">
