@@ -105,7 +105,7 @@ const WhichPackageIsRight = () => {
     ];
 
     return (
-        <section className=" m-4 ">
+        <section className="m-4">
             {/* Container with border */}
             <div className=" overflow-hidden bg-white bg-gradient-to-b from-white to-tertiary/5 shadow-lg ring-1 ring-tertiary/25 rounded-lg">
                 {/* Section Header with background - now spans full width */}
