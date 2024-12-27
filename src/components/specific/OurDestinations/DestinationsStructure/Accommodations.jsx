@@ -61,8 +61,8 @@ const Accommodations = () => {
 
     return (
         <div className="w-full bg-white overflow-hidden">
-            <div className="max-w-9xl mx-auto px-4 py-16 sm:px-6 lg:px-0 lg:pl-16">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="max-w-full mx-auto pl-4 py-16 sm:pl-6 lg:px-0 lg:pl-16">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
                     {/* Left Column - Text Content */}
                     <div className="pr-8">
                         <div className="uppercase text-secondary tracking-wider text-sm font-dmsans mb-3 text-center sm:text-left">
@@ -72,10 +72,10 @@ const Accommodations = () => {
                             Luxury Meets Mobility in the Heart of the Amazon
                         </h2>
                         <p className="text-gray-600 text-sm font-dmsans mb-4 text-center sm:text-left">
-                            Welcome aboard the Zaltan Floating Hotel, where unmatched comfort and breathtaking views create your private paradise on the water. Accommodating up to 20 guests, the Zaltan features 10 spacious, air-conditioned staterooms with full-size beds, private bathrooms with hot water, river views, ample storage, and daily maid and laundry services.
+                            Welcome aboard the Zaltana Mothership Floating Hotel, where unmatched comfort and breathtaking views create your private paradise on the water. Accommodating up to 20 guests, the Zaltana Mothership features 10 spacious, air-conditioned staterooms with full-size beds, private bathrooms with hot water, river views, ample storage, and daily maid and laundry services.
                         </p>
                         <p className="text-gray-600 text-sm font-dmsans text-center sm:text-left">
-                            Relax in the beautifully crafted lounge adorned with native woodwork, or enjoy the solarium for panoramic Amazonian vistas. Unwind at the open bar under starlit skies, or savor the sights from barbecue facilities and spacious gathering areas. With its dual-hull design and shallow draft, the Zaltan ventures where others can't, combining state-of-the-art navigation with the comforts of a luxury retreat.
+                            Relax in the beautifully crafted lounge adorned with native woodwork, or enjoy the solarium for panoramic Amazonian vistas. Unwind at the open bar under starlit skies, or savor the sights from barbecue facilities and spacious gathering areas. With its dual-hull design and shallow draft, the Zaltana Mothership ventures where others can't, combining state-of-the-art navigation with the comforts of a luxury retreat.
                         </p>
                     </div>
 
@@ -85,7 +85,7 @@ const Accommodations = () => {
                             <div
                                 className="flex gap-4 transition-transform duration-500 ease-in-out"
                                 style={{
-                                    transform: `translateX(-${currentSlide * 84}%)`,
+                                    transform: `translateX(-${currentSlide * 87.5}%)`,
                                     transitionDuration: isTransitioning ? '0ms' : '500ms'
                                 }}
                                 onTransitionEnd={handleTransitionEnd}
@@ -93,7 +93,7 @@ const Accommodations = () => {
                                 {slides.map((slide, index) => (
                                     <div
                                         key={index}
-                                        className="w-[80%] flex-shrink-0 first:ml-0"
+                                        className="w-[85%] flex-shrink-0 first:ml-0"
                                     >
                                         <img
                                             src={slide.url}

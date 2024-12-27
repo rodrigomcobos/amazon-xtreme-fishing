@@ -5,6 +5,8 @@ import Highlight from '../../components/specific/OurDestinations/DestinationsStr
 import Accommodations from '../../components/specific/OurDestinations/DestinationsStructure/Accommodations'
 import SpotlightVideo from '../../components/specific/OurDestinations/DestinationsStructure/SpotlightVideo'
 import Map from '../../components/specific/OurDestinations/DestinationsStructure/Map'
+import Schedule from '../../components/specific/OurDestinations/DestinationsStructure/Schedule'
+import FAQ from '../../components/specific/OurDestinations/DestinationsStructure/FAQ'
 import WhichPackageIsRight from '../../components/specific/OurDestinations/DestinationsStructure/WhichPackageIsRight'
 import DontLetItGetAway from '../../components/specific/OurDestinations/DontLetItGetAway'
 
@@ -18,6 +20,8 @@ const TheZaltanMothership = () => {
             <SpotlightVideo />
             <Accommodations />
             <Map />
+            <Schedule />
+            <FAQ />
             <WhichPackageIsRight />
             <DontLetItGetAway />
         </>
