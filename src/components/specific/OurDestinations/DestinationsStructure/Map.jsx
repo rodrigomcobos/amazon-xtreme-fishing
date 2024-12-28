@@ -3,6 +3,10 @@ import Zoom from 'react-medium-image-zoom';
 import 'react-medium-image-zoom/dist/styles.css';
 import ZaltanaBoatMap from '../../../../assets/images/zaltanaboatmap.png';
 
+import BassBoatIcon from '../../../../assets/images/bassboat.svg';
+import LureIcon from '../../../../assets/images/lure.svg';
+import PlaneIcon from '../../../../assets/images/plane.svg';
+
 const Map = () => {
     return (
         <div className="w-full bg-white overflow-hidden">
@@ -45,6 +49,25 @@ const Map = () => {
                             <p className="text-gray-600 text-sm font-dmsans text-center lg:text-left max-w-prose">
                                 Over six incredible days, you'll explore the legendary waters of Uneuixi, Tea, Aiuana, Rio Preto, and the tributaries of the Rio Negro. These record-breaking fisheries are teeming with the prized peacock bass, offering anglers an unparalleled opportunity to connect with nature and test their skills. From the moment you step aboard to your final cast, every detail is designed for comfort, adventure, and memories to last a lifetime.
                             </p>
+
+                            {/* Icons Section */}
+                            <div className="grid grid-cols-3 gap-8 mt-8 w-full">
+                                <div className="flex flex-col items-center">
+                                    <img src={PlaneIcon} alt="Plane" className="w-10 h-10 sm:w-12 sm:h-12 mb-2 [filter:invert(48%)_sepia(11%)_saturate(754%)_hue-rotate(77deg)_brightness(92%)_contrast(86%)]" />
+                                    <span className="text-base text-gray-600 font-dmsans text-center">MAO to IRZ</span>
+                                    <span className="text-sm text-gray-600 font-dmsans text-center">Charted Flight</span>
+                                </div>
+                                <div className="flex flex-col items-center">
+                                    <img src={BassBoatIcon} alt="Bass Boat" className="w-10 h-10 sm:w-12 sm:h-12 mb-2 [filter:invert(48%)_sepia(11%)_saturate(754%)_hue-rotate(77deg)_brightness(92%)_contrast(86%)]" />
+                                    <span className="text-base text-gray-600 font-dmsans text-center">10 Equipped</span>
+                                    <span className="text-sm text-gray-600 font-dmsans text-center">Bass Boats</span>
+                                </div>
+                                <div className="flex flex-col items-center">
+                                    <img src={LureIcon} alt="Lure" className="w-10 h-10 sm:w-12 sm:h-12 mb-2 [filter:invert(48%)_sepia(11%)_saturate(754%)_hue-rotate(77deg)_brightness(92%)_contrast(86%)]" />
+                                    <span className="text-base text-gray-600 font-dmsans text-center">6 Full Days</span>
+                                    <span className="text-sm text-gray-600 font-dmsans text-center">of Fishing</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
