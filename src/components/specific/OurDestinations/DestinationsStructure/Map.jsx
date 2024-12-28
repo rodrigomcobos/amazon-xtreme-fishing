@@ -1,4 +1,6 @@
-import React from 'react'
+import React from 'react';
+import Zoom from 'react-medium-image-zoom';
+import 'react-medium-image-zoom/dist/styles.css';
 import ZaltanaBoatMap from '../../../../assets/images/zaltanaboatmap.png';
 
 const Map = () => {
@@ -8,13 +10,23 @@ const Map = () => {
                 <div className="grid grid-cols-1 lg:grid-cols-[60%_40%] gap-4 items-center">
                     {/* Left Column - Map Image */}
                     <div className="relative flex justify-center items-center">
-                        <div className="relative w-full h-[350px] sm:h-[750px] flex justify-center items-center">
+                        <div className="relative w-full h-[350px] sm:h-[750px] flex justify-center items-center group">
                             <div className="absolute inset-0 bg-radial-gradient-to-tr from-white via-transparent to-transparent shadow-[inset_0_0_20px_20px_rgba(255,255,255,.9)]"></div>
-                            <img
-                                src={ZaltanaBoatMap}
-                                alt="Zaltana Boat Map"
-                                className="w-full h-full object-contain"
-                            />
+                            <div className="relative w-full h-full cursor-zoom-in transition-transform hover:scale-[1.01]">
+                                <Zoom zoomImg={{
+                                    src: ZaltanaBoatMap,
+                                    alt: "Zaltana Boat Map",
+                                }}>
+                                    <img
+                                        src={ZaltanaBoatMap}
+                                        alt="Zaltana Boat Map"
+                                        className="w-full h-full object-contain"
+                                    />
+                                </Zoom>
+                                <div className="absolute top-2 right-2 text-primary ring-1 ring-primary px-2 py-1 rounded text-sm opacity-0 group-hover:opacity-100 transition-opacity font-dmsans font-light">
+                                    Click to zoom
+                                </div>
+                            </div>
                         </div>
                     </div>
 
