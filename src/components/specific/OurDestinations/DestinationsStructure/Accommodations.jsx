@@ -1,16 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
-import AccommodationsImg3 from '../../../../assets/images/accommodationsimg3.png';
-import ZaltanaBoatImg4 from '../../../../assets/images/zaltanaboatimg4.png';
-import AccommodationsImg5 from '../../../../assets/images/accommodationsimg5.png';
-import ZaltanaBoatImg6 from '../../../../assets/images/zaltanaboatimg6.jpg';
-
 import ZaltanaBoatAccommodationsImg1 from '../../../../assets/images/zaltanaboataccommodationsimg1.png';
 import ZaltanaBoatAccommodationsImg2 from '../../../../assets/images/zaltanaboataccommodationsimg2.png';
 import ZaltanaBoatAccommodationsImg3 from '../../../../assets/images/zaltanaboataccommodationsimg3.png';
 import ZaltanaBoatAccommodationsImg4 from '../../../../assets/images/zaltanaboataccommodationsimg4.png';
 import ZaltanaBoatAccommodationsImg5 from '../../../../assets/images/zaltanaboataccommodationsimg5.png';
 import ZaltanaBoatAccommodationsImg6 from '../../../../assets/images/zaltanaboataccommodationsimg6.png';
+
+import BedroomIcon from '../../../../assets/images/bedroom.svg';
+import FoodIcon from '../../../../assets/images/food.svg';
+import SpaceIcon from '../../../../assets/images/space.svg';
 
 const Accommodations = () => {
     const [currentSlide, setCurrentSlide] = useState(1); // Start at 1 to allow backward transition to last slide
@@ -76,6 +75,26 @@ const Accommodations = () => {
                         <p className="text-gray-600 text-sm font-dmsans text-center sm:text-right">
                             Relax in the beautifully crafted lounge adorned with native woodwork, or enjoy the solarium for panoramic Amazonian vistas. Unwind at the open bar under starlit skies, or savor the sights from barbecue facilities and spacious gathering areas. With its dual-hull design and shallow draft, the Zaltana Mothership ventures where others can't, combining state-of-the-art navigation with the comforts of a luxury retreat.
                         </p>
+
+                        {/* Icons Section */}
+                        <div className="grid grid-cols-3 gap-4 mt-10">
+                            <div className="flex flex-col items-center sm:items-center">
+                                <img src={BedroomIcon} alt="Bedroom" className="w-10 h-10 sm:w-12 sm:h-12 mb-2 [filter:invert(48%)_sepia(11%)_saturate(754%)_hue-rotate(77deg)_brightness(92%)_contrast(86%)]" />
+                                <span className="text-base text-gray-600 font-dmsans text-center sm:text-right">20 Guests</span>
+                                <span className="text-sm text-gray-600 font-dmsans text-center sm:text-right">VIP Suites</span>
+                            </div>
+                            <div className="flex flex-col items-center sm:items-center">
+                                <img src={FoodIcon} alt="Food" className="w-10 h-10 sm:w-12 sm:h-12 mb-2 [filter:invert(48%)_sepia(11%)_saturate(754%)_hue-rotate(77deg)_brightness(92%)_contrast(86%)]" />
+                                <span className="text-base text-gray-600 font-dmsans text-center sm:text-right">Full Course</span>
+                                <span className="text-sm text-gray-600 font-dmsans text-center sm:text-right">Meals</span>
+                            </div>
+                            <div className="flex flex-col items-center sm:items-center">
+                                <img src={SpaceIcon} alt="Space" className="w-10 h-10 sm:w-12 sm:h-12 mb-2 [filter:invert(48%)_sepia(11%)_saturate(754%)_hue-rotate(77deg)_brightness(92%)_contrast(86%)]" />
+                                <span className="text-base text-gray-600 font-dmsans text-center sm:text-right">180sqft.</span>
+                                <span className="text-sm text-gray-600 font-dmsans text-center sm:text-right">Suites</span>
+                            </div>
+                        </div>
+
                     </div>
 
                     {/* Right Column - Slideshow */}
@@ -84,7 +103,7 @@ const Accommodations = () => {
                             <div
                                 className="flex gap-4 transition-transform duration-500 ease-in-out"
                                 style={{
-                                    transform: `translateX(-${currentSlide * 87.5}%)`,
+                                    transform: `translateX(-${currentSlide * 88.5}%)`,
                                     transitionDuration: isTransitioning ? '0ms' : '500ms'
                                 }}
                                 onTransitionEnd={handleTransitionEnd}
