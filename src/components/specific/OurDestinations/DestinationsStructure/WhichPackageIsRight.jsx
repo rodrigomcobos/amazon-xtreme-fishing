@@ -123,10 +123,10 @@ const WhichPackageIsRight = () => {
 
                     {/* Content */}
                     <div className="relative px-4 md:px-6 pt-8 pb-6">
-                        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-fourth mb-2 font-roxale text-center">
+                        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-fourth mb-2 font-roxale text-center sm:text-left">
                             Find Your Perfect Adventure
                         </h2>
-                        <p className="text-white/75 font-dmsans font-light uppercase text-center">
+                        <p className="text-white/75 font-dmsans font-light uppercase text-center sm:text-left">
                             Explore our tailored packages to discover the ideal fishing experience for your goals, group size, and preferences.
                         </p>
                     </div>

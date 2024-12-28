@@ -64,16 +64,16 @@ const Accommodations = () => {
             <div className="max-w-full mx-auto pl-4 py-16 sm:pl-6 lg:px-0 lg:pl-16">
                 <div className="grid grid-cols-1 lg:grid-cols-[40%_60%] gap-10 items-center">                    {/* Left Column - Text Content */}
                     <div className="pr-4">
-                        <div className="uppercase text-secondary tracking-wider text-sm font-dmsans mb-3 text-center sm:text-left">
+                        <div className="uppercase text-secondary tracking-wider text-sm font-dmsans mb-3 text-center sm:text-right">
                             Your Floating Oasis Awaits
                         </div>
-                        <h2 className="text-3xl sm:text-5xl tracking-tight text-tertiary font-roxale-calligraphy mb-6 text-center sm:text-left">
+                        <h2 className="text-3xl sm:text-5xl tracking-tight text-tertiary font-roxale-calligraphy mb-6 text-center sm:text-right">
                             Luxury Meets Mobility in the Heart of the Amazon
                         </h2>
-                        <p className="text-gray-600 text-sm font-dmsans mb-4 text-center sm:text-left">
+                        <p className="text-gray-600 text-sm font-dmsans mb-4 text-center sm:text-right">
                             Welcome aboard the Zaltana Mothership Floating Hotel, where unmatched comfort and breathtaking views create your private paradise on the water. Accommodating up to 20 guests, the Zaltana Mothership features 10 spacious, air-conditioned staterooms with full-size beds, private bathrooms with hot water, river views, ample storage, and daily maid and laundry services.
                         </p>
-                        <p className="text-gray-600 text-sm font-dmsans text-center sm:text-left">
+                        <p className="text-gray-600 text-sm font-dmsans text-center sm:text-right">
                             Relax in the beautifully crafted lounge adorned with native woodwork, or enjoy the solarium for panoramic Amazonian vistas. Unwind at the open bar under starlit skies, or savor the sights from barbecue facilities and spacious gathering areas. With its dual-hull design and shallow draft, the Zaltana Mothership ventures where others can't, combining state-of-the-art navigation with the comforts of a luxury retreat.
                         </p>
                     </div>
