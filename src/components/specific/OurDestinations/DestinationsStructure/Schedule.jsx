@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { BiChevronDown, BiChevronUp } from "react-icons/bi";
+import TopoBackgroundImg from '../../../../assets/images/topobackground2.svg';
 
 
 const Schedule = () => {
@@ -123,35 +124,53 @@ const Schedule = () => {
     };
 
     return (
-        <div className="p-4 font-dmsans my-10 sm:my-4">
-            <div className="relative px-4">
+        <div className="p-4 font-dmsans my-10 sm:my-8">
+            <section className="relative px-2 pb-10">
                 <p className="text-sm sm:text-base mb-1 mx-auto text-center font-dmsans uppercase">
                     Season's Prime Weeks
                 </p>
-                <hr className='w-[55%] sm:w-[15%] border-t-2 border-fifth mb-3 mx-auto' />
+                <hr className='w-[50%] sm:w-[15%] border-t-2 border-fifth mb-3 mx-auto' />
                 <h2 className="text-2xl md:text-3xl lg:text-3xl font-roxale uppercase text-center text-primary mb-4">
                     Plan Your Adventure
                 </h2>
-                <p className=" max-w-3xl mx-auto text-center font-dmsans text-xs sm:text-sm text-gray-700 mb-4">
+                <p className="max-w-full sm:max-w-3xl mx-auto text-center font-dmsans text-xs sm:text-sm text-gray-700 mb-4">
                     Experience why 95% of our anglers return year after year for the adventure of a lifetime. Our Prime Adventure Fishing Season is your chance to explore the Amazon’s world-class fisheries and create unforgettable memories.
                 </p>
-                <p className=" max-w-3xl mx-auto text-center font-dmsans text-xs sm:text-sm text-gray-700 mb-6">
+                <p className="max-w-full sm:max-w-3xl mx-auto text-center font-dmsans text-xs sm:text-sm text-gray-700 mb-6">
                     Spots fill quickly, so thank you to our loyal guests for your continued support. For last-minute availability, call to join the waiting list for cancellations on select sold-out weeks. Your ultimate fishing experience awaits!
                 </p>
-                <p className="text-xs sm:text-xs text-gray-500 mb-4 mx-auto text-center font-dmsans uppercase">
+                <p className="text-xs sm:text-xs text-gray-500 mx-auto text-center font-dmsans uppercase">
                     International Travel days may vary "Thursday to Saturday"
                 </p>
-            </div>
-            <div className="max-w-7xl mx-auto">
-                {/* Removed title and subtitle section */}
+            </section>
+            <section className="max-w-7xl mx-auto">
 
                 {/** Season 1 **/}
                 <section className="mb-4">
+                    {/* Season Header Button */}
                     <button
                         onClick={() => toggleSeason('season-1')}
-                        className="w-full bg-tertiary text-fourth px-4 py-2 text-left text-lg font-semibold flex justify-between items-center"
+                        className="w-full bg-tertiary text-fourth px-4 py-3 text-left text-lg font-semibold flex justify-between items-center rounded-lg relative overflow-hidden"
+                        style={{
+                            position: 'relative',
+                        }}
                     >
-                        <div className='flex flex-col'>
+                        <div
+                            style={{
+                                position: 'absolute',
+                                top: 0,
+                                right: 0,
+                                bottom: 0,
+                                width: '100%',
+                                backgroundImage: `url(${TopoBackgroundImg})`,
+                                backgroundPosition: 'right center',
+                                backgroundRepeat: 'no-repeat',
+                                backgroundSize: 'cover',
+                                opacity: 0.2,
+                                zIndex: 1
+                            }}
+                        />
+                        <div className="flex flex-col relative z-10">
                             <h2 className='uppercase'>Season 2025-2026</h2>
                             <span className='text-xs font-light'>(Unavailable Dates = Fully Booked)</span>
                         </div>
@@ -159,21 +178,41 @@ const Schedule = () => {
                             {activeSeason === 'season-1' ? <BiChevronUp size={34} /> : <BiChevronDown size={34} />}
                         </span>
                     </button>
-                    <div className={`transition-all duration-700 ease-in-out overflow-hidden ${activeSeason === 'season-1' ? 'max-h-[2000px] opacity-100' : 'max-h-0 opacity-0'
+                    {/* Table Section */}
+                    <section className={`transition-all duration-700 ease-in-out overflow-hidden ${activeSeason === 'season-1' ? 'max-h-[2000px] opacity-100' : 'max-h-0 opacity-0'
                         }`}>
-                        <div className="overflow-x-auto pt-4">
+                        <div className="overflow-x-auto pt-2">
                             <SeasonTable data={filteredSeason1} />
                         </div>
-                    </div>
+                    </section>
                 </section>
 
                 {/** Season 2 **/}
                 <section className="mb-4">
+                    {/* Season Header Button */}
                     <button
                         onClick={() => toggleSeason('season-2')}
-                        className="w-full bg-tertiary text-fourth px-4 py-2 text-left text-lg font-semibold flex justify-between items-center"
+                        className="w-full bg-tertiary text-fourth px-4 py-3 text-left text-lg font-semibold flex justify-between items-center rounded-lg relative overflow-hidden"
+                        style={{
+                            position: 'relative',
+                        }}
                     >
-                        <div className='flex flex-col'>
+                        <div
+                            style={{
+                                position: 'absolute',
+                                top: 0,
+                                right: 0,
+                                bottom: 0,
+                                width: '100%',
+                                backgroundImage: `url(${TopoBackgroundImg})`,
+                                backgroundPosition: 'right center',
+                                backgroundRepeat: 'no-repeat',
+                                backgroundSize: 'cover',
+                                opacity: 0.2,
+                                zIndex: 1
+                            }}
+                        />
+                        <div className="flex flex-col relative z-10">
                             <h2 className='uppercase'>Season 2026-2027</h2>
                             <span className='text-xs font-light'>(Unavailable Dates = Fully Booked)</span>
                         </div>
@@ -181,14 +220,15 @@ const Schedule = () => {
                             {activeSeason === 'season-2' ? <BiChevronUp size={34} /> : <BiChevronDown size={34} />}
                         </span>
                     </button>
-                    <div className={`transition-all duration-700 ease-in-out overflow-hidden ${activeSeason === 'season-2' ? 'max-h-[2000px] opacity-100' : 'max-h-0 opacity-0'
+                    {/* Table Section */}
+                    <section className={`transition-all duration-700 ease-in-out overflow-hidden ${activeSeason === 'season-2' ? 'max-h-[2000px] opacity-100' : 'max-h-0 opacity-0'
                         }`}>
-                        <div className="overflow-x-auto pt-4">
+                        <div className="overflow-x-auto pt-2">
                             <SeasonTable data={filteredSeason2} />
                         </div>
-                    </div>
+                    </section>
                 </section>
-            </div>
+            </section>
         </div>
     );
 };

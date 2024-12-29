@@ -105,7 +105,7 @@ const WhichPackageIsRight = () => {
     ];
 
     return (
-        <section className="m-10">
+        <section className="m-4 sm:m-4 md:m-6 lg:m-10 xl:m-12">
             {/* Container with border */}
             <div className=" overflow-hidden bg-white bg-gradient-to-b from-white to-tertiary/5 shadow-lg ring-1 ring-tertiary/25 rounded-lg">
                 {/* Section Header with background - now spans full width */}
@@ -135,7 +135,7 @@ const WhichPackageIsRight = () => {
                 {/* Cards Grid Container */}
                 <div className="px-2 sm:px-0">
                     <div className="max-w-[95%] sm:max-w-9xl mx-auto">
-                        <div className="grid md:grid-cols-3 gap-5 mt-6 sm:mt-10">
+                        <div className="grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-5 mt-6 sm:mt-10">
                             {packages.map((pkg, index) => (
                                 <PackageCard
                                     key={index}
