@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import { BiChevronDown, BiChevronUp } from "react-icons/bi";
+
 
 const Schedule = () => {
     const [season1Data, setSeason1Data] = useState([]);
@@ -121,7 +123,7 @@ const Schedule = () => {
     };
 
     return (
-        <div className="p-4 font-dmsans my-14">
+        <div className="p-4 font-dmsans my-10 sm:my-4">
             <div className="relative px-4">
                 <p className="text-sm sm:text-base mb-1 mx-auto text-center font-dmsans uppercase">
                     Season's Prime Weeks
@@ -133,50 +135,59 @@ const Schedule = () => {
                 <p className=" max-w-3xl mx-auto text-center font-dmsans text-xs sm:text-sm text-gray-700 mb-4">
                     Experience why 95% of our anglers return year after year for the adventure of a lifetime. Our Prime Adventure Fishing Season is your chance to explore the Amazon’s world-class fisheries and create unforgettable memories.
                 </p>
-                <p className=" max-w-3xl mx-auto text-center font-dmsans text-xs sm:text-sm text-gray-700 mb-10">
+                <p className=" max-w-3xl mx-auto text-center font-dmsans text-xs sm:text-sm text-gray-700 mb-6">
                     Spots fill quickly, so thank you to our loyal guests for your continued support. For last-minute availability, call to join the waiting list for cancellations on select sold-out weeks. Your ultimate fishing experience awaits!
+                </p>
+                <p className="text-xs sm:text-xs text-gray-500 mb-4 mx-auto text-center font-dmsans uppercase">
+                    International Travel days may vary "Thursday to Saturday"
                 </p>
             </div>
             <div className="max-w-7xl mx-auto">
                 {/* Removed title and subtitle section */}
 
-                {/* Season 1 */}
-                <div className="mb-4">
+                {/** Season 1 **/}
+                <section className="mb-4">
                     <button
                         onClick={() => toggleSeason('season-1')}
                         className="w-full bg-tertiary text-fourth px-4 py-2 text-left text-lg font-semibold flex justify-between items-center"
                     >
-                        <span>Season 2025-2026</span>
-                        <span className="transform transition-transform duration-200">
-                            {activeSeason === 'season-1' ? '−' : '+'}
+                        <div className='flex flex-col'>
+                            <h2 className='uppercase'>Season 2025-2026</h2>
+                            <span className='text-xs font-light'>(Unavailable Dates = Fully Booked)</span>
+                        </div>
+                        <span className="transform transition-transform duration-200 text-2xl">
+                            {activeSeason === 'season-1' ? <BiChevronUp size={34} /> : <BiChevronDown size={34} />}
                         </span>
                     </button>
-                    <div className={`transition-all duration-300 ease-in-out overflow-hidden ${activeSeason === 'season-1' ? 'max-h-[2000px] opacity-100' : 'max-h-0 opacity-0'
+                    <div className={`transition-all duration-700 ease-in-out overflow-hidden ${activeSeason === 'season-1' ? 'max-h-[2000px] opacity-100' : 'max-h-0 opacity-0'
                         }`}>
                         <div className="overflow-x-auto pt-4">
                             <SeasonTable data={filteredSeason1} />
                         </div>
                     </div>
-                </div>
+                </section>
 
-                {/* Season 2 */}
-                <div className="mb-4">
+                {/** Season 2 **/}
+                <section className="mb-4">
                     <button
                         onClick={() => toggleSeason('season-2')}
                         className="w-full bg-tertiary text-fourth px-4 py-2 text-left text-lg font-semibold flex justify-between items-center"
                     >
-                        <span>Season 2026-2027</span>
-                        <span className="transform transition-transform duration-200">
-                            {activeSeason === 'season-2' ? '−' : '+'}
+                        <div className='flex flex-col'>
+                            <h2 className='uppercase'>Season 2026-2027</h2>
+                            <span className='text-xs font-light'>(Unavailable Dates = Fully Booked)</span>
+                        </div>
+                        <span className="transform transition-transform duration-200 text-2xl">
+                            {activeSeason === 'season-2' ? <BiChevronUp size={34} /> : <BiChevronDown size={34} />}
                         </span>
                     </button>
-                    <div className={`transition-all duration-300 ease-in-out overflow-hidden ${activeSeason === 'season-2' ? 'max-h-[2000px] opacity-100' : 'max-h-0 opacity-0'
+                    <div className={`transition-all duration-700 ease-in-out overflow-hidden ${activeSeason === 'season-2' ? 'max-h-[2000px] opacity-100' : 'max-h-0 opacity-0'
                         }`}>
                         <div className="overflow-x-auto pt-4">
                             <SeasonTable data={filteredSeason2} />
                         </div>
                     </div>
-                </div>
+                </section>
             </div>
         </div>
     );

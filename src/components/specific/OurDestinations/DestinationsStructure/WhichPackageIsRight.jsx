@@ -18,26 +18,26 @@ const PackageCard = ({ title, description, image }) => {
             onClick={() => setIsExpanded(!isExpanded)}
         >
             {/* Image container with fixed aspect ratio */}
-            <div className="aspect-[4/3] overflow-hidden">
+            <section className="aspect-[4/3] overflow-hidden rounded-lg">
                 <img
                     src={image}
                     alt={title}
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
                 {/* Frosted glass overlay */}
-                <div className={`absolute inset-0 backdrop-blur-sm bg-white/10 transition-opacity duration-500
+                <div className={`absolute inset-0 backdrop-blur-sm bg-white/10 transition-opacity duration-500 rounded-lg
                     md:opacity-0 md:group-hover:opacity-100
                     ${isExpanded ? 'opacity-100' : 'opacity-0'}`}
                 />
                 {/* Gradient overlay */}
-                <div className={`absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-black/0 transition duration-500
+                <div className={`absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-black/0 transition duration-500 rounded-lg
                     md:group-hover:via-black/60 md:group-hover:to-black/30
                     ${isExpanded ? 'via-black/60 to-black/30' : ''}`}
                 />
-            </div>
+            </section>
 
             {/* Content */}
-            <div className={`absolute inset-0 flex flex-col justify-center md:justify-end p-6 transition-all duration-500
+            <section className={`absolute inset-0 flex flex-col justify-center md:justify-end p-6 transition-all duration-500 rounded-lg
                 ${isExpanded ? 'justify-end' : 'justify-center'}`}>
                 <div className="text-center">
                     <h3 className={`text-xl font-medium text-white font-dmsans transition-all duration-500
@@ -65,7 +65,7 @@ const PackageCard = ({ title, description, image }) => {
                         </p>
                     </div>
                 </div>
-            </div>
+            </section>
         </div>
     );
 };
@@ -105,7 +105,7 @@ const WhichPackageIsRight = () => {
     ];
 
     return (
-        <section className="m-4">
+        <section className="m-10">
             {/* Container with border */}
             <div className=" overflow-hidden bg-white bg-gradient-to-b from-white to-tertiary/5 shadow-lg ring-1 ring-tertiary/25 rounded-lg">
                 {/* Section Header with background - now spans full width */}
@@ -123,10 +123,10 @@ const WhichPackageIsRight = () => {
 
                     {/* Content */}
                     <div className="relative px-4 md:px-6 pt-8 pb-6">
-                        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-fourth mb-2 font-roxale text-center sm:text-left">
+                        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-fourth mb-2 font-roxale text-centersm:text-left">
                             Find Your Perfect Adventure
                         </h2>
-                        <p className="text-white/75 font-dmsans font-light uppercase text-center sm:text-left">
+                        <p className="text-white/75 font-dmsans font-light uppercase text-centersm:text-left">
                             Explore our tailored packages to discover the ideal fishing experience for your goals, group size, and preferences.
                         </p>
                     </div>
