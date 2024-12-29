@@ -11,7 +11,7 @@ const Map = () => {
     return (
         <div className="w-full bg-white overflow-hidden">
             <div className="max-w-full mx-auto px-4 sm:px-6 lg:px-10">
-                <div className="grid grid-cols-1 lg:grid-cols-[60%_40%] gap-4 items-center">
+                <div className="grid grid-cols-1 lg:grid-cols-[60%_40%] gap-8 sm:gap-4 items-center">
                     {/* Left Column - Map Image */}
                     <div className="relative flex justify-center items-center">
                         <div className="relative w-full h-[350px] sm:h-[750px] flex justify-center items-center group">

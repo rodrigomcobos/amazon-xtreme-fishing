@@ -89,7 +89,7 @@ const Schedule = () => {
                     {headers[0]?.map((header, index) => (
                         <th
                             key={index}
-                            className="px-4 py-2 border-b border-gray-200 bg-fifth text-secondary text-left text-sm font-semibold"
+                            className="px-4 py-2 border-b border-gray-200 bg-fifth text-secondary text-left text-xs sm:text-sm font-semibold"
                         >
                             {header}
                         </th>
@@ -105,7 +105,7 @@ const Schedule = () => {
                         {row.map((cell, cellIndex) => (
                             <td
                                 key={cellIndex}
-                                className="px-4 py-2 border-b border-gray-200 text-sm"
+                                className="px-4 py-2 border-b border-gray-200 text-xs sm:text-sm"
                             >
                                 {cell || ''}
                             </td>
@@ -121,8 +121,23 @@ const Schedule = () => {
     };
 
     return (
-        <div className="p-4 font-dmsans">
-            <div className="max-w-6xl mx-auto">
+        <div className="p-4 font-dmsans my-14">
+            <div className="relative px-4">
+                <p className="text-sm sm:text-base mb-1 mx-auto text-center font-dmsans uppercase">
+                    Season's Prime Weeks
+                </p>
+                <hr className='w-[55%] sm:w-[15%] border-t-2 border-fifth mb-3 mx-auto' />
+                <h2 className="text-2xl md:text-3xl lg:text-3xl font-roxale uppercase text-center text-primary mb-4">
+                    Plan Your Adventure
+                </h2>
+                <p className=" max-w-3xl mx-auto text-center font-dmsans text-xs sm:text-sm text-gray-700 mb-4">
+                    Experience why 95% of our anglers return year after year for the adventure of a lifetime. Our Prime Adventure Fishing Season is your chance to explore the Amazon’s world-class fisheries and create unforgettable memories.
+                </p>
+                <p className=" max-w-3xl mx-auto text-center font-dmsans text-xs sm:text-sm text-gray-700 mb-10">
+                    Spots fill quickly, so thank you to our loyal guests for your continued support. For last-minute availability, call to join the waiting list for cancellations on select sold-out weeks. Your ultimate fishing experience awaits!
+                </p>
+            </div>
+            <div className="max-w-7xl mx-auto">
                 {/* Removed title and subtitle section */}
 
                 {/* Season 1 */}

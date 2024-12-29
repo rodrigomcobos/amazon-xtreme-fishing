@@ -40,7 +40,7 @@ const SpotlightVideo = () => {
                     <h2 className="text-white text-3xl sm:text-5xl font-roxale italic font-bold mb-6">
                         The World<span className="text-white font-cormorant italic"> '</span>s Most Demanding Anglers Fish with Us
                     </h2>
-                    <p className="mb-14 lg:mb-14 text-sm text-white font-dmsans font-light">
+                    <p className="mb-8 md:mb-10 lg:mb-14 text-sm text-white font-dmsans font-light">
                         Born from a deep passion for the Amazon Forest and a commitment to excellence in sport fishing, The Zaltana Mothership Floating Hotel redefines world-class fishing in the Upper Rio Negro region. Designed to meet the highest expectations, it delivers an unparalleled Peacock Bass fishing experience in the heart of a new frontier. With its indigenous-inspired name, The Zaltana Mothership stands as a landmark in sport fishing, setting a new standard not only in the Amazon but across all of Brazil.
                     </p>
                 </section>
