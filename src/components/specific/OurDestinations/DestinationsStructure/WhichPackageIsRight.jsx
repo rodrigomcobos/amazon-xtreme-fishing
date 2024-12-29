@@ -105,11 +105,11 @@ const WhichPackageIsRight = () => {
     ];
 
     return (
-        <section className="m-4 sm:m-4 md:m-6 lg:m-10 xl:m-12">
+        <section className="m-4">
             {/* Container with border */}
-            <div className=" overflow-hidden bg-white bg-gradient-to-b from-white to-tertiary/5 shadow-lg ring-1 ring-tertiary/25 rounded-lg">
+            <div className=" overflow-hidden bg-white bg-gradient-to-b from-white to-tertiary/5 shadow-lg ring-1 ring-tertiary/25 rounded-lg max-w-[105rem] mx-auto">
                 {/* Section Header with background - now spans full width */}
-                <div className="relative bg-tertiary border-b-4 border-fifth">
+                <section className="relative bg-tertiary border-b-4 border-fifth">
                     {/* Background Image */}
                     <div
                         className="absolute right-0 top-0 w-[100%] sm:w-[100%] h-full opacity-40 sm:opacity-20 overflow-hidden"
@@ -130,10 +130,10 @@ const WhichPackageIsRight = () => {
                             Explore our tailored packages to discover the ideal fishing experience for your goals, group size, and preferences.
                         </p>
                     </div>
-                </div>
+                </section>
 
                 {/* Cards Grid Container */}
-                <div className="px-2 sm:px-0">
+                <section className="px-2 sm:px-0">
                     <div className="max-w-[95%] sm:max-w-9xl mx-auto">
                         <div className="grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-5 mt-6 sm:mt-10">
                             {packages.map((pkg, index) => (
@@ -151,7 +151,7 @@ const WhichPackageIsRight = () => {
                             </button>
                         </div>
                     </div>
-                </div>
+                </section>
             </div>
         </section>
     );
