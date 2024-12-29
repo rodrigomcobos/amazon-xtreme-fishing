@@ -123,7 +123,7 @@ const WhichPackageIsRight = () => {
 
                     {/* Content */}
                     <div className="relative px-4 md:px-6 pt-8 pb-6">
-                        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-fourth mb-2 font-roxale text-centersm:text-left">
+                        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-fourth mb-2 font-roxale italic text-centersm:text-left">
                             Find Your Perfect Adventure
                         </h2>
                         <p className="text-white/75 font-dmsans font-light uppercase text-centersm:text-left">
