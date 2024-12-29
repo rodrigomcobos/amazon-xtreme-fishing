@@ -10,11 +10,11 @@ import PlaneIcon from '../../../../assets/images/plane.svg';
 const Map = () => {
     return (
         <div className="w-full bg-white overflow-hidden">
-            <div className="max-w-full mx-auto px-4 sm:px-6 lg:px-10">
-                <div className="grid grid-cols-1 lg:grid-cols-[60%_40%] gap-8 sm:gap-4 items-center">
+            <div className="max-w-full mx-auto px-4 sm:px-6 lg:px-10 py-4 sm:py-0">
+                <div className="grid grid-cols-1 lg:grid-cols-[60%_40%] gap-8 sm:gap-4">
                     {/* Left Column - Map Image */}
-                    <div className="relative flex justify-center items-center">
-                        <div className="relative w-full h-[350px] sm:h-[750px] flex justify-center items-center group">
+                    <div className="relative w-full">
+                        <div className="relative w-full aspect-[3/3] flex justify-center items-center group">
                             <div className="absolute inset-0 bg-radial-gradient-to-tr from-white via-transparent to-transparent shadow-[inset_0_0_20px_20px_rgba(255,255,255,.9)]"></div>
                             <div className="relative w-full h-full cursor-zoom-in transition-transform hover:scale-[1.01]">
                                 <Zoom zoomImg={{
@@ -35,7 +35,7 @@ const Map = () => {
                     </div>
 
                     {/* Right Column - Text Content */}
-                    <div className="w-full flex justify-center px-0 sm:px-8 lg:px-0">
+                    <div className="w-full h-full flex items-center justify-center px-0 sm:px-8 lg:px-0 -mt-8 sm:mt-0 z-10">
                         <div className="w-full sm:max-w-2xl lg:max-w-lg flex flex-col items-center lg:items-start">
                             <div className="uppercase text-secondary tracking-wider text-sm font-dmsans mb-3 text-center lg:text-left">
                                 Discover Your Amazon Adventure

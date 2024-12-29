@@ -37,7 +37,7 @@ const DontLetItGetAway = () => {
                     className="w-full h-full object-cover"
                 />
                 {/* Gradient Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-b from-white via-white/5 to-transparent"></div>
+                <div className="absolute inset-0 bg-gradient-to-b from-white via-white/15 to-transparent -mt-1 sm:mt-0"></div>
             </div>
         </section>
     );

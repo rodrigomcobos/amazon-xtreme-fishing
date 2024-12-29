@@ -82,7 +82,7 @@ const Welcome = () => {
         <div className="relative">
             {/* Background container */}
             <div
-                className="absolute inset-0 bg-cover bg-left bg-no-repeat"
+                className="absolute inset-0 bg-cover bg-left bg-no-repeat mt-1 sm:mt-0"
                 style={{
                     backgroundImage: `url(${WelcomeBackgroundImg})`,
                 }}

@@ -5,7 +5,7 @@ const Highlight = () => {
     return (
         <div className="relative">
             <div
-                className="absolute inset-0 bg-cover bg-right bg-no-repeat"
+                className="absolute inset-0 bg-cover bg-right bg-no-repeat mt-1 sm:mt-0"
                 style={{
                     backgroundImage: `url(${HighlightBackgroundImg})`,
                 }}
