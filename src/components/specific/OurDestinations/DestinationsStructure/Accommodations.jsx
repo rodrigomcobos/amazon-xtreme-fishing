@@ -81,7 +81,7 @@ const Accommodations = () => {
                             <div className="flex flex-col items-center sm:items-center">
                                 <img src={BedroomIcon} alt="Bedroom" className="w-10 h-10 sm:w-12 sm:h-12 mb-2 [filter:invert(48%)_sepia(11%)_saturate(754%)_hue-rotate(77deg)_brightness(92%)_contrast(86%)]" />
                                 <span className="text-base text-gray-600 font-dmsans text-center sm:text-right">20 Guests</span>
-                                <span className="text-sm text-gray-600 font-dmsans text-center sm:text-right">VIP Suites</span>
+                                <span className="text-sm text-gray-600 font-dmsans text-center sm:text-right">2x Occupancy</span>
                             </div>
                             <div className="flex flex-col items-center sm:items-center">
                                 <img src={FoodIcon} alt="Food" className="w-10 h-10 sm:w-12 sm:h-12 mb-2 [filter:invert(48%)_sepia(11%)_saturate(754%)_hue-rotate(77deg)_brightness(92%)_contrast(86%)]" />
@@ -91,7 +91,7 @@ const Accommodations = () => {
                             <div className="flex flex-col items-center sm:items-center">
                                 <img src={SpaceIcon} alt="Space" className="w-10 h-10 sm:w-12 sm:h-12 mb-2 [filter:invert(48%)_sepia(11%)_saturate(754%)_hue-rotate(77deg)_brightness(92%)_contrast(86%)]" />
                                 <span className="text-base text-gray-600 font-dmsans text-center sm:text-right">180sqft.</span>
-                                <span className="text-sm text-gray-600 font-dmsans text-center sm:text-right">Suites</span>
+                                <span className="text-sm text-gray-600 font-dmsans text-center sm:text-right">VIP Suites</span>
                             </div>
                         </div>
 
