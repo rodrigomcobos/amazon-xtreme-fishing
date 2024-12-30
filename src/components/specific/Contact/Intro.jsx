@@ -19,9 +19,9 @@ const Intro = () => {
                 <div
                     style={{
                         position: 'absolute',
-                        top: '-25%',
-                        right: '-25%',
-                        bottom: '-25%',
+                        top: '-100%',
+                        right: '-40%',
+                        bottom: '-100%',
                         width: '160%',
                         backgroundImage: `url(${TopoBackgroundImg2})`,
                         backgroundPosition: 'right center',
