@@ -3,7 +3,7 @@ import HeroImg from '../../../assets/images/contactheroimg.png';
 
 const Hero = () => {
     return (
-        <section className="relative h-[65dvh] sm:h-[700px] w-full overflow-hidden">
+        <section className="relative h-[60dvh] sm:h-[700px] w-full overflow-hidden">
             {/* Image Background */}
             <img
                 src={HeroImg}
@@ -21,9 +21,9 @@ const Hero = () => {
                 <p className="text-sm sm:text-base mb-1 max-w-2xl text-center font-dmsans uppercase">
                     Ready to Serve You
                 </p>
-                <hr className='w-[50%] sm:w-[14%] border-t-2 border-fifth mb-2' />
+                <hr className='w-[40%] sm:w-[14%] border-t-2 border-fifth mb-2' />
                 <h1 className="text-2xl sm:text-4xl md:text-5xl font-roxale-calligraphy font-bold mb-1 text-center">
-                    Contact Us
+                    Get In Touch
                 </h1>
                 <h1 className="text-3xl sm:text-5xl md:text-6xl font-roxale font-bold uppercase mb-2 sm:mb-0 text-center ">
                     Let<span className='font-cormorant font-medium'>'</span>s Talk Fishing
