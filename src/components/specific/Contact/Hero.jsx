@@ -29,7 +29,7 @@ const Hero = () => {
                     Let<span className='font-cormorant font-medium'>'</span>s Talk Fishing
                 </h1>
                 <p className="text-sm sm:text-xl mb-8 max-w-2xl text-center font-dmsans uppercase">
-                    Peak Season September through March
+                    Limited Spots Available
                 </p>
             </section>
         </section>

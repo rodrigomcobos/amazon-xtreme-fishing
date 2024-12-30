@@ -4,7 +4,7 @@ import TopoBackgroundImg2 from '../../../assets/images/topobackground2.svg';
 
 const Intro = () => {
     return (
-        <div className="relative grid grid-cols-1 sm:grid-cols-2 items-center gap-8 min-h-[150px] py-4 px-4 md:py-6 md:px-6 bg-white ring-1 ring-tertiary/25 bg-gradient-to-b from-white to-tertiary/5 font-sans overflow-hidden -mt-14 sm:-mt-24 z-10 max-w-[95%] lg:max-w-[90%] mx-auto rounded-lg mb-0 md:mb-24 lg:mb-8 shadow-lg">
+        <div className="relative grid grid-cols-1 sm:grid-cols-2 items-center gap-8 min-h-[150px] py-4 px-4 md:py-6 md:px-6 bg-white ring-1 ring-tertiary/25 bg-gradient-to-b from-white to-tertiary/5  overflow-hidden -mt-14 sm:-mt-24 z-10 max-w-[95%] lg:max-w-[90%] mx-auto rounded-lg mb-0 md:mb-24 lg:mb-8 shadow-lg">
             {/* Left Column - Image */}
             <section className="w-full">
                 <img
