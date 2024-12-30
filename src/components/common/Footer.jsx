@@ -190,6 +190,7 @@ const Footer = () => {
                                 <li><Link to="/welcome" className="text-gray-300 hover:text-tertiary transition duration-300 text-sm">Welcome</Link></li>
                                 <li><Link to="/experience-the-amazon" className="text-gray-300 hover:text-tertiary transition duration-300 text-sm">Experience The Amazon</Link></li>
                                 <li><Link to="/meet-your-host" className="text-gray-300 hover:text-tertiary transition duration-300 text-sm">Meet Your Host</Link></li>
+                                <li><Link to="/experience" className="text-gray-300 hover:text-tertiary transition duration-300 text-sm">Experience The Amazon</Link></li>
                             </ul>
                         </div>
                     </section>
@@ -210,9 +211,8 @@ const Footer = () => {
 
                     {/* Desktop Experience Section */}
                     <section className="hidden sm:block">
-                        <h4 className="text-sm font-semibold mb-4 text-tertiary uppercase">Experience</h4>
+                        <h4 className="text-sm font-semibold mb-4 text-tertiary uppercase">Travel Planner</h4>
                         <ul className="space-y-4">
-                            <li><Link to="/experience" className="text-gray-300 hover:text-tertiary transition duration-300 text-sm">Experience The Amazon</Link></li>
                             <li><Link to="/getting-there" className="text-gray-300 hover:text-tertiary transition duration-300 text-sm">Getting There</Link></li>
                             <li><Link to="/lures-and-tackle" className="text-gray-300 hover:text-tertiary transition duration-300 text-sm">Lures & Tackle</Link></li>
                             <li><Link to="/passport-and-visa" className="text-gray-300 hover:text-tertiary transition duration-300 text-sm">Passport & Visa</Link></li>

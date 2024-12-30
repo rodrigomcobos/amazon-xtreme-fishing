@@ -28,7 +28,7 @@ export const menuItems = {
     image: DestinationsMenuImg,
     alt: 'Our Amazon Destinations',
   },
-  Experience: {
+  'Travel Planner': {
     items: [
       { name: 'Experience The Amazon', path: '/experience' },
       { name: 'Getting There', path: '/getting-there' },

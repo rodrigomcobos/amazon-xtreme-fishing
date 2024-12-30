@@ -130,11 +130,11 @@ const Schedule = () => {
                     Season's Prime Weeks
                 </p>
                 <hr className='w-[50%] sm:w-[15%] border-t-2 border-fifth mb-3 mx-auto' />
-                <h2 className="text-2xl md:text-3xl lg:text-5xl font-roxale-calligraphy text-center text-primary mb-4">
+                <h2 className="text-2xl md:text-3xl lg:text-5xl font-roxale-calligraphy text-center text-tertiary mb-4">
                     Plan Your Adventure
                 </h2>
                 <p className="max-w-full sm:max-w-3xl mx-auto text-center font-dmsans text-xs sm:text-sm text-gray-700 mb-4">
-                    Experience why 95% of our anglers return year after year for the adventure of a lifetime. Our Prime Adventure Fishing Season is your chance to explore the Amazon’s world-class fisheries and create unforgettable memories.
+                    Experience why 95% of our anglers return year after year for the adventure of a lifetime. Our Prime Fishing Season is your chance to explore the Amazon’s World-Class fisheries and create unforgettable memories.
                 </p>
                 <p className="max-w-full sm:max-w-3xl mx-auto text-center font-dmsans text-xs sm:text-sm text-gray-700 mb-6">
                     Spots fill quickly, so thank you to our loyal guests for your continued support. For last-minute availability, call to join the waiting list for cancellations on select sold-out weeks. Your ultimate fishing experience awaits!

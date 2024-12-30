@@ -15,7 +15,7 @@ const FAQ = () => {
         },
         {
             question: "What's included in the trip package?",
-            answer: "Our all-inclusive packages typically include lodging, meals, guided fishing, fishing equipment, and local transportation. International flights and personal items are not included."
+            answer: "Our All-Inclusive packages typically include lodging, meals, guided fishing, fishing equipment including rods, reels, and lures, and local transportation. International flights and personal items are not included."
         },
         {
             question: "Do I need prior fishing experience?",
@@ -29,10 +29,10 @@ const FAQ = () => {
             question: "Are there health requirements or vaccinations needed?",
             answer: "We recommend consulting with your healthcare provider regarding vaccinations and health precautions. Some basic vaccinations may be recommended for travel to the Amazon region."
         },
-        {
-            question: "What's your cancellation policy?",
-            answer: "Our standard cancellation policy includes full refund for cancellations made 90 days or more before the trip date. Different terms may apply for peak season bookings."
-        },
+        // {
+        //     question: "What's your cancellation policy?",
+        //     answer: "Our standard cancellation policy includes full refund for cancellations made 90 days or more before the trip date. Different terms may apply for peak season bookings."
+        // },
         {
             question: "Can you accommodate dietary restrictions?",
             answer: "Yes, we can accommodate most dietary requirements and restrictions. Please inform us of any specific needs when booking so we can make appropriate arrangements."
@@ -51,7 +51,7 @@ const FAQ = () => {
                     FAQ
                 </p>
                 <hr className='w-[50%] sm:w-[10%] border-t-2 border-fifth mb-3' />
-                <h2 className="text-2xl md:text-3xl lg:text-5xl font-roxale-calligraphy text-primary">
+                <h2 className="text-2xl md:text-3xl lg:text-5xl font-roxale-calligraphy text-tertiary">
                     Frequently Asked Questions
                 </h2>
                 <button className='btn-primary mt-10'>

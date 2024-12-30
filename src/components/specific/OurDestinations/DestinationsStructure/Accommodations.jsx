@@ -3,9 +3,10 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 import ZaltanaBoatAccommodationsImg1 from '../../../../assets/images/zaltanaboataccommodationsimg1.png';
 import ZaltanaBoatAccommodationsImg2 from '../../../../assets/images/zaltanaboataccommodationsimg2.png';
 import ZaltanaBoatAccommodationsImg3 from '../../../../assets/images/zaltanaboataccommodationsimg3.png';
-import ZaltanaBoatAccommodationsImg4 from '../../../../assets/images/zaltanaboataccommodationsimg4.png';
-import ZaltanaBoatAccommodationsImg5 from '../../../../assets/images/zaltanaboataccommodationsimg5.png';
-import ZaltanaBoatAccommodationsImg6 from '../../../../assets/images/zaltanaboataccommodationsimg6.png';
+import ZaltanaBoatAccommodationsImg9 from '../../../../assets/images/zaltanaboatimg9.png';
+import ZaltanaBoatAccommodationsImg5 from '../../../../assets/images/zaltanaboatimg8.png';
+import ZaltanaBoatAccommodationsImg6 from '../../../../assets/images/zaltanaboatimg14.png';
+import ZaltanaBoatAccommodationsImg7 from '../../../../assets/images/zaltanaboatimg13.png';
 
 import BedroomIcon from '../../../../assets/images/bedroom.svg';
 import FoodIcon from '../../../../assets/images/food.svg';
@@ -19,9 +20,10 @@ const Accommodations = () => {
         { url: ZaltanaBoatAccommodationsImg1, alt: "Luxury accommodation 1" },
         { url: ZaltanaBoatAccommodationsImg2, alt: "Luxury accommodation 2" },
         { url: ZaltanaBoatAccommodationsImg3, alt: "Luxury accommodation 3" },
-        { url: ZaltanaBoatAccommodationsImg4, alt: "Luxury accommodation 4" },
+        { url: ZaltanaBoatAccommodationsImg9, alt: "Luxury accommodation 4" },
         { url: ZaltanaBoatAccommodationsImg5, alt: "Luxury accommodation 5" },
-        { url: ZaltanaBoatAccommodationsImg6, alt: "Luxury accommodation 6" }
+        { url: ZaltanaBoatAccommodationsImg6, alt: "Luxury accommodation 6" },
+        { url: ZaltanaBoatAccommodationsImg7, alt: "Luxury accommodation 7" }
     ];
 
     // Create an array with duplicated slides for infinite effect
