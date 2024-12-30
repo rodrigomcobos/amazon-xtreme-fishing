@@ -1,25 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import Portal from '../Portal/Portal';
+import { FaWhatsapp } from "react-icons/fa6";
+import MobilePortal from './MobilePortal';
+import FloatingContactButtons from './FloatingContactButtons';
+import { menuItems } from '../../data/HeaderData/MenuItems';
 import Logo from '../../assets/logos/amazonxtremelogo.png';
-import Topographic from '../../assets/images/topographicwhite.png';
-import {
-    FaWhatsapp,
-    FaChevronDown,
-    FaChevronUp,
-    FaBars,
-    FaEnvelope,
-    FaXmark
-} from "react-icons/fa6";
-import { FaPhoneSquareAlt } from "react-icons/fa";
-import AboutMenuImg from '../../assets/images/aboutmenuimg.png';
-import DestinationsMenuImg from '../../assets/images/destinationsmenuimg.png';
-import ExperienceMenuImg from '../../assets/images/experiencemenuimg.png';
-import SpeciesMenuImg from '../../assets/images/speciesmenuimg.png';
-import GalleryMenuImg from '../../assets/images/gallerymenuimg.png';
-
-// Mobile Menu Banner
-import MobileMenuBanner from '../../assets/images/mobilemenubanner.png';
 
 const Header = () => {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -27,141 +12,60 @@ const Header = () => {
     const [openAccordion, setOpenAccordion] = useState('');
     const [isVisible, setIsVisible] = useState(true);
     const [lastScrollY, setLastScrollY] = useState(0);
+    const [showScrollTop, setShowScrollTop] = useState(false);
     const location = useLocation();
 
-    // Control header visibility on scroll
+    // Control header visibility and scroll-to-top button
     useEffect(() => {
         const controlNavbar = () => {
             if (typeof window !== 'undefined') {
                 const currentScrollY = window.scrollY;
 
-                // For scroll up/down detection with threshold
-                if (currentScrollY > lastScrollY && currentScrollY > 200) {
-                    // Scrolling down & past threshold
-                    setIsVisible(false);
-                } else {
-                    // Scrolling up or above threshold
-                    setIsVisible(true);
-                }
+                // Scroll up/down detection with threshold
+                setIsVisible(!(currentScrollY > lastScrollY && currentScrollY > 200));
 
-                // For background color change
-                if (currentScrollY > 0) {
-                    setIsScrolled(true);
-                } else {
-                    setIsScrolled(false);
-                }
+                // Background color change
+                setIsScrolled(currentScrollY > 0);
+
+                // Show/hide scroll-to-top button
+                setShowScrollTop(currentScrollY > 200);
 
                 setLastScrollY(currentScrollY);
             }
         };
 
         window.addEventListener('scroll', controlNavbar);
-        return () => {
-            window.removeEventListener('scroll', controlNavbar);
-        };
+        return () => window.removeEventListener('scroll', controlNavbar);
     }, [lastScrollY]);
 
     // Handle body scroll when mobile menu is open
     useEffect(() => {
-        if (mobileMenuOpen) {
-            document.body.style.overflow = 'hidden';
-        } else {
-            document.body.style.overflow = 'unset';
-        }
-        return () => {
-            document.body.style.overflow = 'unset';
-        };
+        document.body.style.overflow = mobileMenuOpen ? 'hidden' : 'unset';
+        return () => { document.body.style.overflow = 'unset'; };
     }, [mobileMenuOpen]);
+
+    const scrollToTop = () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
 
     const toggleAccordion = (key) => {
         setOpenAccordion(openAccordion === key ? '' : key);
     };
 
-    const menuItems = {
-        'About': {
-            items: [
-                { name: 'About Us', path: '/about-us' },
-                { name: 'Welcome', path: '/welcome' },
-                { name: 'Experience The Amazon', path: '/experience-the-amazon' },
-                { name: 'Meet Your Host', path: '/meet-your-host' },
-            ],
-            image: AboutMenuImg,
-            alt: 'About Us in the Amazon'
-        },
-        'Destinations': {
-            items: [
-                { name: 'Our Destinations', path: '/destinations' },
-                { name: 'The Zaltan Mothership', path: '/zaltan-mothership' },
-                { name: 'The Zaltan Lodge', path: '/zaltan-lodge' },
-                { name: 'Eco Lodge', path: '/ecolodge' },
-                { name: 'Xingu Reservation', path: '/xingu' },
-                { name: 'Headwaters Safari Camp', path: '/headwaters-camp' },
-                { name: 'Peacock Bass Expeditions', path: '/peacock-bass-expeditions' },
-            ],
-            image: DestinationsMenuImg,
-            alt: 'Our Amazon Destinations'
-        },
-        'Experience': {
-            items: [
-                { name: 'Experience The Amazon', path: '/experience' },
-                { name: 'Getting There', path: '/getting-there' },
-                { name: 'Lures & Tackle', path: '/lures-and-tackle' },
-                { name: 'Passport & Visa', path: '/passport-and-visa' },
-                { name: 'Travel Insurance', path: '/travel-insurance' },
-                { name: 'Why Us', path: '/why-us' },
-                { name: 'FAQs', path: '/faq' },
-            ],
-            image: ExperienceMenuImg,
-            alt: 'Amazon Experience'
-        },
-        'Species': {
-            items: [
-                { name: 'All Fish Species', path: '/species' },
-                { name: 'Peacock Bass', path: '/species/peacock-bass' },
-                { name: 'Red Tail Catfish', path: '/species/red-tail-catfish' },
-                { name: 'Goliath Catfish', path: '/species/goliath-catfish' },
-                { name: 'Arapaima', path: '/species/arapaima' },
-                { name: 'Piranha Species', path: '/species/piranha' },
-                { name: 'Traira', path: '/species/traira' },
-                { name: 'Arowana', path: '/species/arowana' },
-                { name: 'Payara', path: '/species/payara' },
-                { name: 'Giant Oscar', path: '/species/giant-oscar' },
-                { name: 'Needle Jaw', path: '/species/needle-jaw' },
-                { name: 'Aracu', path: '/species/aracu' },
-                { name: 'Pacu', path: '/species/pacu' },
-                { name: 'Bodo', path: '/species/bodo' },
-                { name: 'Sorubim', path: '/species/sorubim' },
-                { name: 'Tambaqui', path: '/species/tambaqui' },
-            ],
-            image: SpeciesMenuImg,
-            alt: 'Amazon Fish Species'
-        },
-        'Gallery': {
-            items: [
-                { name: 'Pictures', path: '/pictures' },
-                { name: 'Videos', path: '/videos' }
-            ],
-            image: GalleryMenuImg,
-            alt: 'Amazon Gallery'
-        }
-    };
-
     return (
         <>
-            <header
-                className={`tracking-wide fixed w-full z-50 font-dmsans transform transition-transform duration-300 ${isVisible ? 'translate-y-0' : '-translate-y-full'
-                    }`}
-            >
+            <header className={`tracking-wide fixed w-full z-50 font-dmsans transform transition-transform duration-300 ${isVisible ? 'translate-y-0' : '-translate-y-full'
+                }`}>
                 {/* Top bar */}
                 <section className='py-2 bg-primary text-white sm:px-4 px-2'>
                     <div className='flex justify-between items-center'>
-                        {/* Left Column */}
                         <div className='flex flex-col items-center sm:items-start mx-auto sm:mx-0'>
                             <p className='text-xs font-normal uppercase'>Now Booking Reservations for Next Season</p>
-                            <p className='text-xs sm:text-sm uppercase font-light tracking-wide text-fifth'>Get Your Spot On The River Today</p>
+                            <p className='text-xs sm:text-sm uppercase font-light tracking-wide text-fifth'>
+                                Get Your Spot On The River Today
+                            </p>
                         </div>
 
-                        {/* Right Column */}
                         <div className='hidden sm:flex items-center gap-6'>
                             <p className='text-base font-normal'>
                                 <FaWhatsapp size={20} className='text-base inline-block mr-2' />
@@ -175,15 +79,16 @@ const Header = () => {
                 </section>
 
                 {/* Main header */}
-                <div className={`flex flex-wrap items-center justify-between gap-4 pl-1 sm:pl-4 pr-4 sm:pr-4 min-h-[80px] overflow-visible transition-all duration-300 ${isScrolled ? 'bg-white shadow-lg' : ''}`}>
-                    <div className={`relative -bottom-1 z-50 transition-all duration-300 ${isScrolled ? '-bottom-0' : '-bottom-5'}`}>
+                <div className={`flex flex-wrap items-center justify-between gap-4 pl-1 sm:pl-4 pr-4 sm:pr-4 min-h-[80px] overflow-visible transition-all duration-300 ${isScrolled ? 'bg-white shadow-lg' : ''
+                    }`}>
+                    {/* Logo */}
+                    <div className={`relative -bottom-1 z-50 transition-all duration-300 ${isScrolled ? '-bottom-0' : '-bottom-5'
+                        }`}>
                         <Link to="/">
                             <img
                                 src={Logo}
                                 alt="logo"
-                                className={`transition-all duration-300 ${isScrolled
-                                    ? 'w-24 sm:w-32'
-                                    : 'w-36 sm:w-56'
+                                className={`transition-all duration-300 ${isScrolled ? 'w-24 mb-2 ml-2 sm:w-30' : 'w-32 ml-2 sm:w-56'
                                     }`}
                             />
                         </Link>
@@ -192,36 +97,32 @@ const Header = () => {
                     {/* Desktop Navigation */}
                     <nav className='hidden lg:block w-auto'>
                         <ul className='flex gap-x-5 uppercase'>
-                            <li className='px-3'>
+                            <li className='px-3 group/nav peer'>
                                 <Link
                                     to="/"
                                     className={`block font-normal text-[15px] py-4 ${location.pathname === '/'
                                         ? 'text-fifth font-semibold'
                                         : isScrolled
                                             ? 'text-primary hover:text-tertiary'
-                                            : 'text-white hover:text-tertiary'
+                                            : 'text-white hover:text-tertiary group-hover/nav:text-primary peer-hover/dropdown:text-primary'
                                         }`}
                                 >
                                     Home
                                 </Link>
                             </li>
                             {Object.entries(menuItems).map(([key, value]) => (
-                                <li key={key} className='group static px-3'>
+                                <li key={key} className='group/dropdown static px-3 peer'>
                                     <span className={`block font-normal text-[15px] py-4 cursor-pointer ${isScrolled
-                                        ? 'text-primary group-hover:text-tertiary'
-                                        : 'text-white group-hover:text-tertiary'
+                                        ? 'text-primary group-hover/dropdown:text-tertiary'
+                                        : 'text-white group-hover/dropdown:text-tertiary group-hover/nav:text-primary peer-hover/dropdown:text-primary'
                                         }`}>
                                         {key}
                                     </span>
-                                    {/* Full-width white background that appears on hover */}
-                                    <div className='invisible group-hover:visible opacity-0 group-hover:opacity-100 transition-all duration-300 absolute top-0 left-0 w-full h-full bg-white -z-10' />
-
-                                    {/* Full-width dropdown content */}
-                                    <div className='invisible group-hover:visible absolute left-0 right-0 top-full mt-0 w-full bg-white overflow-hidden opacity-0 group-hover:opacity-100 transition-all duration-300 border-t border-gray-100'>
+                                    <div className='invisible group-hover/dropdown:visible opacity-0 group-hover/dropdown:opacity-100 transition-all duration-300 absolute top-0 left-0 w-full h-full bg-white -z-10' />
+                                    <div className='invisible group-hover/dropdown:visible absolute left-0 right-0 top-full mt-0 w-full bg-white overflow-hidden opacity-0 group-hover/dropdown:opacity-100 transition-all duration-300 border-t border-gray-100'>
                                         <div className='container mx-auto px-4'>
                                             <div className='py-8 max-w-6xl mx-auto'>
                                                 <div className='grid grid-cols-12 gap-12'>
-                                                    {/* Image Column */}
                                                     <div className='col-span-4'>
                                                         <img
                                                             src={value.image}
@@ -229,13 +130,9 @@ const Header = () => {
                                                             className="w-full h-[200px] object-cover rounded-lg"
                                                         />
                                                     </div>
-
-                                                    {/* Links Section - Split into two columns */}
                                                     <div className='col-span-8'>
                                                         <ul className='grid grid-cols-2 gap-x-12 gap-y-4 relative'>
-                                                            {/* Divider line */}
                                                             <div className='absolute top-0 bottom-0 left-1/2 w-px bg-gray-200' />
-
                                                             {value.items.map((item, index) => (
                                                                 <li key={index}>
                                                                     <Link
@@ -257,14 +154,14 @@ const Header = () => {
                                     </div>
                                 </li>
                             ))}
-                            <li className='px-3'>
+                            <li className='px-3 group/nav peer'>
                                 <Link
                                     to="/contact"
                                     className={`block font-normal text-[15px] py-4 ${location.pathname === '/contact'
                                         ? 'text-tertiary'
                                         : isScrolled
                                             ? 'text-primary hover:text-tertiary'
-                                            : 'text-white hover:text-tertiary'
+                                            : 'text-white hover:text-tertiary group-hover/nav:text-primary peer-hover/dropdown:text-primary'
                                         }`}
                                 >
                                     Contact
@@ -292,119 +189,19 @@ const Header = () => {
                 </div>
             </header>
 
-            {/* Mobile menu portal */}
-            {mobileMenuOpen && (
-                <Portal>
-                    <div className='fixed inset-0 bg-primary z-[60] h-screen overflow-y-auto'>
-                        {/* Topographic Background */}
-                        <div
-                            className="fixed inset-0 w-full h-full opacity-100 pointer-events-none bg-cover bg-repeat"
-                            style={{
-                                backgroundImage: `url(${Topographic})`,
-                                mixBlendMode: 'overlay',
-                            }}
-                        />
+            <MobilePortal
+                isOpen={mobileMenuOpen}
+                onClose={() => setMobileMenuOpen(false)}
+                menuItems={menuItems}
+                openAccordion={openAccordion}
+                toggleAccordion={toggleAccordion}
+            />
 
-                        {/* Main Content Wrapper */}
-                        <div className="min-h-screen flex flex-col relative z-10">
-                            {/* Close button */}
-                            <button
-                                onClick={() => setMobileMenuOpen(false)}
-                                className="absolute top-6 right-6 text-white z-50"
-                            >
-                                <FaXmark className="w-8 h-8" />
-                            </button>
-
-                            {/* Mobile Menu Content */}
-                            <nav className='pt-20 px-6 flex-1'>
-                                <ul className='space-y-4'>
-                                    <li>
-                                        <Link
-                                            to="/"
-                                            className="block py-2 text-xl font-bold text-white hover:text-tertiary transition-colors"
-                                            onClick={() => setMobileMenuOpen(false)}
-                                        >
-                                            Home
-                                        </Link>
-                                    </li>
-                                    {Object.entries(menuItems).map(([key, value]) => (
-                                        <li key={key} className="border-b border-secondary">
-                                            <button
-                                                onClick={() => toggleAccordion(key)}
-                                                className="w-full flex justify-between items-center py-4 text-xl font-bold text-white hover:text-tertiary transition-colors"
-                                            >
-                                                {key}
-                                                <div className={`transform transition-transform duration-300 ${openAccordion === key ? 'rotate-180' : ''
-                                                    }`}>
-                                                    <FaChevronDown className="w-5 h-5" />
-                                                </div>
-                                            </button>
-                                            <ul
-                                                className={`pl-4 transition-all duration-300 ease-in-out overflow-hidden ${openAccordion === key
-                                                    ? 'max-h-[500px] opacity-100 pb-4'
-                                                    : 'max-h-0 opacity-0'
-                                                    }`}
-                                            >
-                                                {value.items.map((item, index) => (
-                                                    <li key={index}>
-                                                        <Link
-                                                            to={item.path}
-                                                            className="block py-2 text-gray-300 hover:text-tertiary transition-colors"
-                                                            onClick={() => setMobileMenuOpen(false)}
-                                                        >
-                                                            {item.name}
-                                                        </Link>
-                                                    </li>
-                                                ))}
-                                            </ul>
-                                        </li>
-                                    ))}
-                                    <li>
-                                        <Link
-                                            to="/contact"
-                                            className="block py-2 text-xl font-bold text-white hover:text-tertiary transition-colors"
-                                            onClick={() => setMobileMenuOpen(false)}
-                                        >
-                                            Contact
-                                        </Link>
-                                    </li>
-                                </ul>
-                            </nav>
-
-                            {/* Mobile Menu Banner */}
-                            <div className="relative z-10 mt-8 mx-4 bottom-4">
-                                <img
-                                    src={MobileMenuBanner}
-                                    alt="Amazon Xtreme Fishing Mobile Banner"
-                                    className="w-full h-auto object-cover"
-                                />
-                            </div>
-                        </div>
-                    </div>
-                </Portal>
-            )}
-
-            {/* Floating Contact Buttons - Only visible on mobile */}
-            <div className={`fixed bottom-4 right-4 flex flex-col gap-3 lg:hidden z-50 transform transition-transform duration-300 ${isVisible ? 'translate-y-0' : 'translate-y-32'
-                }`}>
-                {/* Email Button */}
-                <a
-                    href="mailto:info@amazonxtremefishing.com"
-                    className="bg-tertiary hover:bg-secondary text-white p-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center"
-                    aria-label="Send us an email"
-                >
-                    <FaEnvelope size={24} />
-                </a>
-
-                {/* Phone Button */}
-                <a
-                    href="tel:+14699955351"
-                    className="bg-tertiary hover:bg-secondary text-white p-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center"
-                    aria-label="Call us"
-                >
-                    <FaWhatsapp size={24} />
-                </a>
-            </div>
+            <FloatingContactButtons
+                isVisible={isVisible}
+                showScrollTop={showScrollTop}
+                scrollToTop={scrollToTop}
+            />
         </>
     );
 };

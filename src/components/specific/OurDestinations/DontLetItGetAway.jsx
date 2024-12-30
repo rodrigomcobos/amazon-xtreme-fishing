@@ -30,14 +30,14 @@ const DontLetItGetAway = () => {
             </div>
 
             {/* Background Image with Gradient Overlay */}
-            <div className="relative w-full h-[320px] sm:h-[800px] -mt-24 sm:mt-0">
+            <div className="relative w-full h-[320px] sm:h-[700px] -mt-24 sm:mt-0">
                 <img
                     src={DontMissItBackgroundImg}
                     alt="Don't miss out background"
                     className="w-full h-full object-cover"
                 />
                 {/* Gradient Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-b from-white via-white/5 to-transparent"></div>
+                <div className="absolute inset-0 bg-gradient-to-b from-white via-white/15 to-transparent -mt-1 sm:mt-0"></div>
             </div>
         </section>
     );

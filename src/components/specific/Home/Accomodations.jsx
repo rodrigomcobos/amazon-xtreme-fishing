@@ -76,12 +76,12 @@ const Accommodations = () => {
                     {/* Section Headline */}
                     <h3 className="text-xl md:text-2xl lg:text-3xl font-bold tracking-wide text-prumary mb-6 font-roxale">
                         <span className='font-roxale italic text-tertiary'>All Inclusive Amenities at the World<span className='font-dmsans font-light'>'</span>s</span><br />
-                        BEST FISHING DESTINATION IN THE AMAZON
+                        BEST FISHING DESTINATIONS IN THE AMAZON
                     </h3>
 
                     {/* Description */}
                     <p className="text-gray-700 text-sm md:text-sm leading-relaxed font-dmsans font-light">
-                        At Amazon Xtreme Fishing, we offer a range of accommodations and destination options to suit every preference. Choose from our luxurious 5-star mothership, The Zaltan, the laid-back comfort of a lodge, the serene escape of Headwaters Safari Camp, or the exclusivity of Peacock Bass Expeditions. Whether you're traveling solo, with a small group, or organizing a corporate retreat, each experience is set deep in the heart of the untouched Amazon Rainforest.
+                        At Amazon Xtreme Fishing, we offer a range of accommodations and destination options to suit every preference. Choose from our luxurious 5-star mothership, the laid-back comfort of a lodge, the serene escape of Headwaters Safari Camp, or the exclusivity of Peacock Bass Expeditions. Whether you're traveling solo, with a small group, or organizing a corporate retreat, each experience is set deep in the heart of the untouched Amazon Rainforest.
                     </p>
                     <button className="w-full mt-10 sm:w-auto ring-1 ring-primary text-sm hover:bg-secondary hover:ring-1 hover:ring-fifth hover:text-fifth text-pri mary font-normal py-3 px-8 rounded-md transition duration-500 uppercase font-dmsans">
                         Explore More
