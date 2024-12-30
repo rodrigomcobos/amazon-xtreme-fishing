@@ -5,17 +5,21 @@ import { Routes, Route } from 'react-router-dom';
 import Header from './components/common/Header';
 import Footer from './components/common/Footer';
 import CookieDisclaimer from './components/common/CookieDisclaimer';
+import TravelPlannerLayout from './components/layouts/TravelPlannerLayout';
+
 // Main Pages
 import Home from './pages/Home';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsAndConditions from './pages/TermsAndConditions';
 import CovidPolicy from './pages/CovidPolicy';
 import Contact from './pages/Contact';
+
 // About Pages
 import AboutUs from './pages/About/AboutUs';
 import ExperienceTheAmazon from './pages/About/ExperienceTheAmazon';
 import MeetYourHost from './pages/About/MeetYourHost';
 import Welcome from './pages/About/Welcome';
+
 // Destination Pages
 import AllDestinations from './pages/Destinations/AllDestinations';
 import TheZaltanMothership from './pages/Destinations/TheZaltanMothership';
@@ -24,32 +28,35 @@ import HeadwatersCamp from './pages/Destinations/HeadwatersCamp';
 import PeacockBassExpeditions from './pages/Destinations/PeacockBassExpeditions';
 import Xingu from './pages/Destinations/Xingu';
 import EcoLodge from './pages/Destinations/EcoLodge';
-// Experience Pages
-import Experience from './pages/Experience/Experience';
-import WhyUs from './pages/Experience/WhyUs';
-import GettingThere from './pages/Experience/GettingThere';
-import FAQ from './pages/Experience/FAQ';
-import LuresAndTackle from './pages/Experience/LuresAndTackle';
-import TravelInsurance from './pages/Experience/TravelInsurance';
-import PassportAndVisa from './pages/Experience/PassportAndVisa';
+
+// Travel Planner Pages
+import Experience from './pages/Travel_Planner/Experience';
+import WhyUs from './pages/Travel_Planner/WhyUs';
+import GettingThere from './pages/Travel_Planner/GettingThere';
+import FAQ from './pages/Travel_Planner/FAQ';
+import LuresAndTackle from './pages/Travel_Planner/LuresAndTackle';
+import TravelInsurance from './pages/Travel_Planner/TravelInsurance';
+import PassportAndVisa from './pages/Travel_Planner/PassportAndVisa';
+
 // Species Pages
-import Species from './pages/Experience/Species/FishSpecies';
-import FishSpeciePage from './pages/Experience/Species/FishSpeciePage';
-import PeacockSpecies from './pages/Experience/Species/PeacockSpecies';
-import RedTailCatfish from './pages/Experience/Species/RedTailCatfish';
-import GoliathCatfish from './pages/Experience/Species/GoliathCatfish';
-import Arapaima from './pages/Experience/Species/Arapaima';
-import PiranhaSpecies from './pages/Experience/Species/PiranhaSpecies';
-import Traira from './pages/Experience/Species/Traira';
-import Arowana from './pages/Experience/Species/Arowana';
-import Payara from './pages/Experience/Species/Payara';
-import GiantOscar from './pages/Experience/Species/GiantOscar';
-import NeedleJaw from './pages/Experience/Species/NeedleJaw';
-import Aracu from './pages/Experience/Species/Aracu';
-import Pacu from './pages/Experience/Species/Pacu';
-import Bodo from './pages/Experience/Species/Bodo';
-import Sorubim from './pages/Experience/Species/Sorubim';
-import Tambaqui from './pages/Experience/Species/Tambaqui';
+import Species from './pages/Travel_Planner/Species/FishSpecies';
+import FishSpeciePage from './pages/Travel_Planner/Species/FishSpeciePage';
+import PeacockSpecies from './pages/Travel_Planner/Species/PeacockSpecies';
+import RedTailCatfish from './pages/Travel_Planner/Species/RedTailCatfish';
+import GoliathCatfish from './pages/Travel_Planner/Species/GoliathCatfish';
+import Arapaima from './pages/Travel_Planner/Species/Arapaima';
+import PiranhaSpecies from './pages/Travel_Planner/Species/PiranhaSpecies';
+import Traira from './pages/Travel_Planner/Species/Traira';
+import Arowana from './pages/Travel_Planner/Species/Arowana';
+import Payara from './pages/Travel_Planner/Species/Payara';
+import GiantOscar from './pages/Travel_Planner/Species/GiantOscar';
+import NeedleJaw from './pages/Travel_Planner/Species/NeedleJaw';
+import Aracu from './pages/Travel_Planner/Species/Aracu';
+import Pacu from './pages/Travel_Planner/Species/Pacu';
+import Bodo from './pages/Travel_Planner/Species/Bodo';
+import Sorubim from './pages/Travel_Planner/Species/Sorubim';
+import Tambaqui from './pages/Travel_Planner/Species/Tambaqui';
+
 // Gallery Pages
 import Pictures from './pages/Gallery/Pictures';
 import Videos from './pages/Gallery/Videos';
@@ -82,16 +89,18 @@ const App = () => {
           <Route path="/headwaters-camp" element={<HeadwatersCamp />} />
           <Route path="/peacock-bass-expeditions" element={<PeacockBassExpeditions />} />
 
-          {/* Experience Routes */}
-          <Route path="/experience" element={<Experience />} />
-          <Route path="/getting-there" element={<GettingThere />} />
-          <Route path="/lures-and-tackle" element={<LuresAndTackle />} />
-          <Route path="/passport-and-visa" element={<PassportAndVisa />} />
-          <Route path="/travel-insurance" element={<TravelInsurance />} />
-          <Route path="/why-us" element={<WhyUs />} />
-          <Route path="/faq" element={<FAQ />} />
-          <Route path="/species" element={<Species />} />
-          <Route path="/species/:id" element={<FishSpeciePage />} />
+          {/* Travel Planner Routes */}
+          <Route element={<TravelPlannerLayout />}>
+            <Route path="/experience" element={<Experience />} />
+            <Route path="/getting-there" element={<GettingThere />} />
+            <Route path="/lures-and-tackle" element={<LuresAndTackle />} />
+            <Route path="/passport-and-visa" element={<PassportAndVisa />} />
+            <Route path="/travel-insurance" element={<TravelInsurance />} />
+            <Route path="/why-us" element={<WhyUs />} />
+            <Route path="/faq" element={<FAQ />} />
+            <Route path="/species" element={<Species />} />
+            <Route path="/species/:id" element={<FishSpeciePage />} />
+          </Route>
 
           {/* Gallery Routes */}
           <Route path="/pictures" element={<Pictures />} />
